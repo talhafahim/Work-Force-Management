@@ -1,0 +1,70 @@
+CRITICAL - 2021-06-14 07:24:36 --> Invalid file: dashboard.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('dashboard', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Home.php(9): view('dashboard')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Home->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-14 07:26:03 --> Invalid file: dashboard.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('dashboard', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Home.php(9): view('dashboard')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Home->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-14 08:18:32 --> Call to undefined function App\Controllers\isLoggedIn()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Login->index()
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-06-14 08:20:38 --> Call to undefined function App\Controllers\isLoggedIn()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Login->index()
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2021-06-14 08:39:29 --> Table 'talha_blackoptic.inv_users' doesn't exist
+CRITICAL - 2021-06-14 08:39:29 --> Table 'talha_blackoptic.inv_users' doesn't exist
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /developers/developer-talha/blackOptic/app/Models/Model_Login.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 /developers/developer-talha/blackOptic/app/Controllers/Login.php(39): App\Models\Model_Login->get_user_detail('admin')
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Login->loginCheck()
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2021-06-14 08:40:08 --> Table 'talha_blackoptic.inv_users' doesn't exist
+CRITICAL - 2021-06-14 08:40:08 --> Table 'talha_blackoptic.inv_users' doesn't exist
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /developers/developer-talha/blackOptic/app/Models/Model_Login.php(17): CodeIgniter\Database\BaseBuilder->get()
+#5 /developers/developer-talha/blackOptic/app/Controllers/Login.php(39): App\Models\Model_Login->get_user_detail('admin')
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Login->loginCheck()
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2021-06-14 08:41:30 --> Undefined property: stdClass::$access
+#0 /developers/developer-talha/blackOptic/app/Controllers/Login.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 43, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Login->loginCheck()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-06-14 08:43:15 --> Undefined property: stdClass::$depart_id
+#0 /developers/developer-talha/blackOptic/app/Controllers/Login.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 53, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Login->loginCheck()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -1,0 +1,28 @@
+CRITICAL - 2021-10-25 11:38:24 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#1 /developers/developer-talha/blackOptic/public/index.php(28): require('/developers/dev...')
+#2 {main}
+CRITICAL - 2021-10-25 11:38:26 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#1 /developers/developer-talha/blackOptic/public/index.php(28): require('/developers/dev...')
+#2 {main}
+CRITICAL - 2021-10-25 11:38:27 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#1 /developers/developer-talha/blackOptic/public/index.php(28): require('/developers/dev...')
+#2 {main}
+CRITICAL - 2021-10-25 11:38:27 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#1 /developers/developer-talha/blackOptic/public/index.php(28): require('/developers/dev...')
+#2 {main}
+CRITICAL - 2021-10-25 11:38:27 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#1 /developers/developer-talha/blackOptic/public/index.php(28): require('/developers/dev...')
+#2 {main}
+CRITICAL - 2021-10-25 11:38:27 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#1 /developers/developer-talha/blackOptic/public/index.php(28): require('/developers/dev...')
+#2 {main}
+CRITICAL - 2021-10-25 11:40:29 --> Call to undefined function CodeIgniter\locale_set_default()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#1 /developers/developer-talha/blackOptic/public/index.php(28): require('/developers/dev...')
+#2 {main}

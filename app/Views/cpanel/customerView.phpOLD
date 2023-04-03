@@ -1,0 +1,241 @@
+<?php
+echo view('cpanel-layout/header');
+// Top Bar Start
+echo view('cpanel-layout/topbar');
+// Top Bar End
+echo view('cpanel-layout/navbar');
+// Left Sidebar End
+
+?>
+<!--Jquery steps CSS -->
+<link rel="stylesheet" href="<?= base_url();?>/assets/plugins/jquery-steps/jquery.steps.css">
+<!-- <link href="<?= base_url();?>/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+<link href="<?= base_url();?>/assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
+<!-- <link href="<?= base_url();?>/assets/css/icons.css" rel="stylesheet" type="text/css"> -->
+<link href="<?= base_url();?>/assets/css/style.css" rel="stylesheet" type="text/css">
+<style>
+	.red{
+		color: red;
+	}
+	.img-thumbnail{
+		height:60px !important;
+	}
+</style>
+<div class="content-page">
+	<!-- Start content -->
+	<div class="content">
+		<div class="container-fluid">
+			<div class="page-title-box">
+				<div class="row align-items-center">
+					<div class="col-sm-6">
+						<h4 class="page-title">Task <small>View Details</small></h4>
+					</div>
+					<div class="col-sm-6">
+						<div class="float-right">
+							<?php if(isset($_SERVER['HTTP_REFERER'])){ ?>
+								<a type="button" class="btn btn-secondary btn-icon" href="<?= $_SERVER['HTTP_REFERER'];?>">
+									<span class="btn-icon-label"><i class="fa fa-arrow-left mr-2"></i></span> Go Back
+								</a>
+							<?php } ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end row -->
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							
+							<table class="table table-bordered">
+
+								<tr>
+									<td><b>Name</b></td>
+									<td><?= $info->name;?></td>
+								</tr>
+								<tr>
+									<td><b>Email</b></td>
+									<td><?= $info->email;?></td>
+								</tr>
+								<tr>
+									<td><b>Mobile</b></td>
+									<td><?= $info->mobile;?></td>
+								</tr>
+								<tr>
+									<td><b>UN#</b></td>
+									<td><?= $info->un_number;?></td>
+								</tr>
+								<tr>
+									<td><b>Meter#</b></td>
+									<td><?= $info->meter_number;?></td>
+								</tr>
+								<tr>
+									<td><b>Number of meter</b></td>
+									<td><?= $info->no_of_meter;?></td>
+								</tr>
+								<tr>
+									<td><b>Priority</b></td>
+									<td><?= $info->priority;?></td>
+								</tr>
+								<tr>
+									<td><b>Latitude</b></td>
+									<td><?= $info->latitude;?></td>
+								</tr>
+								<tr>
+									<td><b>Longitude</b></td>
+									<td><?= $info->longitude;?></td>
+								</tr>
+								<tr>
+									<td><b>Protocol</b></td>
+									<td><?= $info->protocol;?></td>
+								</tr>
+								<tr>
+									<td><b>MFG CD</b></td>
+									<td><?= $info->mfg_cd;?></td>
+								</tr>
+								<tr>
+									<td><b>Meter Model</b></td>
+									<td><?= $info->meter_model;?></td>
+								</tr>
+								<tr>
+									<td><b>Prem Type</b></td>
+									<td><?= $info->prem_type;?></td>
+								</tr>
+								<tr>
+									<td><b>Sector</b></td>
+									<td><?= $info->sector;?></td>
+								</tr>
+								<tr>
+									<td><b>Plot</b></td>
+									<td><?= $info->plot;?></td>
+								</tr>
+								<tr>
+									<td><b>Address</b></td>
+									<td><?= $info->address;?></td>
+								</tr>
+								<tr>
+									<td><b>Prem Name EN</b></td>
+									<td><?= $info->per_name_en;?></td>
+								</tr>
+								<tr>
+									<td><b>Created On</b></td>
+									<td><?= $info->created_on;?></td>
+								</tr>
+
+
+							</table>
+
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-body">
+									<iframe style="width: 100%;height: 500px;" src="https://maps.google.com/maps?q=<?= $info->latitude;?>,<?= $info->longitude;?>&hl=es;z=14&output=embed"></iframe>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-body">
+									<h5>Progress Detail</h5>
+									<div style="overflow-x:scroll;">
+										<table class="table table-bordered">
+											<tr>
+												<td><b>Status</b></td>
+												<td><span class="badge badge-soft-info" style="font-size:15px;"><?= ($info->status == 'complete') ? 'installed' : ( ($info->status == 'reject') ? 'return' : ($info->status) );
+											?></span></td>
+											</tr>
+											<?php if(!empty($info->assign_to)){?>
+												<tr>
+													<td><b>Assign To</b></td>
+													<td><?php $name = $modelUser->get_users($info->assign_to)->get()->getRow();
+													echo $name->firstname.' '.$name->lastname;
+												?></td>
+											</tr>
+										<?php } if($info->status == 'complete' || $info->status == 'commission'){?>
+											<tr>
+												<td><b>Gateway Serial#</b></td>
+												<td><?php foreach($taskGateway->getResult() as $gateway){ echo $gateway->gateway_serial.'  '; }?></td>
+											</tr>
+										<?php } if($info->status == 'complete' || $info->status == 'commission'){?>
+											<tr>
+												<td><b>Other Equipment</b></td>
+												<td>
+													<table class="table table-bordered">
+														<tr><td>Name</td><td>Quantity</td></tr>
+														<?php foreach ($taskEquip->getResult() as $value) { ?>
+															<tr><td><?= $modelGeneral->get_misc_equipment($value->equip_id)->get()->getRow()->name;?></td><td><?= $value->qty;?></td></tr>
+														<?php } ?>
+													</table>
+												</td>
+											</tr>
+										<?php } if($info->status == 'reject'){?>
+											<tr>
+												<td><b>Reject Reason</b></td>
+												<td><?= $returnReason->reason;?></td>
+											</tr>
+										<?php } if($info->status == 'complete' || $info->status == 'reject' || $info->status == 'commission'){?>
+											<tr>
+												<td><b>Picture</b></td>
+												<td>
+													<?php if(file_exists('./picture/'.$progress->picture1)){?>
+														<img src="<?= base_url();?>/picture/<?= $progress->picture1;?>" alt="..." class="img-thumbnail taskImg">
+													<?php }if(file_exists('./picture/'.$progress->picture2)){?>
+														<img src="<?= base_url();?>/picture/<?= $progress->picture2;?>" alt="..." class="img-thumbnail taskImg">
+													<?php }if(file_exists('./picture/'.$progress->picture3)){?>
+														<img src="<?= base_url();?>/picture/<?= $progress->picture3;?>" alt="..." class="img-thumbnail taskImg">
+													<?php }if(file_exists('./picture/'.$progress->picture4)){?>
+														<img src="<?= base_url();?>/picture/<?= $progress->picture4;?>" alt="..." class="img-thumbnail taskImg">
+													<?php }if(file_exists('./picture/'.$progress->picture5)){?>
+														<img src="<?= base_url();?>/picture/<?= $progress->picture5;?>" alt="..." class="img-thumbnail taskImg">
+													<?php } ?>
+												</td>
+											</tr>
+										<?php } ?>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+
+
+			</div>
+
+
+
+
+
+
+		</div>
+		<!-- end row -->
+	</div>
+	<!-- container-fluid -->
+
+</div>
+
+
+<!-- sample modal content -->
+
+<!-- content -->
+<div id="taskImgModel" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+		<img  src="" style="height: 500px;">
+	</div>
+</div>
+<?php 
+echo view('cpanel-layout/footer');
+?>
+
+<script type="text/javascript">
+	$(document).on('click','.taskImg',function(){
+		var img = $(this).attr('src');
+		$('#taskImgModel img').attr('src', img);
+		$('#taskImgModel').modal('show');
+	});
+</script>

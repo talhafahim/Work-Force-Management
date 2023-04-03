@@ -1,0 +1,120 @@
+CRITICAL - 2023-03-16 00:02:25 --> Cannot use [] for reading
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Dashboard->index()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-16 00:07:10 --> Undefined index: complete
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/dashboard.php(86): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Dashboard.php(29): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Dashboard->index()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-16 11:58:54 --> Undefined index: on site
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/dashboard.php(96): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Dashboard.php(30): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Dashboard->index()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-16 11:59:17 --> Undefined index: complete
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/dashboard.php(111): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Dashboard.php(36): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Dashboard->index()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-16 12:02:12 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerView.php(155): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(355): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-16 12:02:16 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerView.php(155): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(355): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-16 12:02:29 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerView.php(155): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(355): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-03-16 12:24:24 --> Incorrect DATETIME value: '2023-03-1600:00:00'
+CRITICAL - 2023-03-16 12:24:24 --> Incorrect DATETIME value: '2023-03-1600:00:00'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1981): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Dashboard.php(26): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Dashboard->index()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-03-16 20:48:44 --> Unknown column 'taskStatus' in 'order clause'
+CRITICAL - 2023-03-16 20:48:44 --> Unknown column 'taskStatus' in 'order clause'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+#5 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(67): Hermawan\DataTables\DataTable->toJson()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->show_assign_list()
+#9 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#10 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#11 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-03-16 20:51:21 --> Undefined index: travelling
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/dashboard.php(102): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Dashboard.php(33): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Dashboard->index()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-16 21:08:11 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -1,0 +1,22 @@
+CRITICAL - 2023-01-30 13:40:23 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1675068021, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-01-30 19:16:29 --> Error connecting to the database: Access denied for user '****'@'localhost' (using password: YES)
+CRITICAL - 2023-01-30 19:16:29 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /www/wwwroot/talha_logon/bo_old/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

@@ -1,0 +1,170 @@
+CRITICAL - 2022-06-27 11:41:15 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312074, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:20 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312079, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:27 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312087, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:31 --> Undefined property: stdClass::$service
+#0 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 32, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->show_list()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-27 11:41:31 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312090, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:38 --> Undefined property: stdClass::$service
+#0 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 32, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->show_list()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-27 11:41:38 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312098, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:41 --> Undefined property: stdClass::$service
+#0 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 32, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->show_list()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-27 11:41:41 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312100, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:49 --> Undefined property: stdClass::$service
+#0 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 32, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->show_list()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-27 11:41:49 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312108, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:51 --> Undefined property: stdClass::$service
+#0 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 32, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->show_list()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-27 11:41:51 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312111, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:41:53 --> Undefined property: stdClass::$service
+#0 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 32, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->show_list()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-27 11:41:53 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312112, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:42:00 --> Undefined variable: cities
+#0 /developers/developer-talha/blackOptic/app/Views/cpanel/taxation_Create.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/developers/dev...', 62, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(230): include('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('cpanel/taxation...', Array, true)
+#4 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(47): view('cpanel/taxation...')
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->create()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-06-27 11:42:03 --> Undefined property: stdClass::$service
+#0 /developers/developer-talha/blackOptic/app/Controllers/Taxation.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 32, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Taxation->show_list()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Taxation))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-06-27 11:42:03 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1656312122, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

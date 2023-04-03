@@ -1,0 +1,4 @@
+Utility #,Meter Serial,Priority,Scenario,Latitude,Longitude,Protocol,Manufacturar,Meter Model,Premesis Type,Sector,Plot,Address,Consumer Name,Consumer Contact,Consumer Email,Meter Type
+UNAD-00000000030010,H2016D53943479,P1,1:1 GW,24.45738144,54.33308579,M-Bus/Wireless M-Bus,HYDRUS,HYD171,Villa,W33,6,W33-6,Saoud Salem Shahdad Abdulla Al Neyadi,050-8393339,saudneyadi@gmail.com,Water
+UNAD-00000000030001,H2017D56191410,P2,1:2 GW,24.46390402,54.35303098,M-Bus/Wireless M-Bus,HYDRUS,HYD171,Building,W17_02,33,W17_02-33,Khaleefa Butti Omair Yousif Almuhairi,050-3443358,omran@kbbogroup.com,Electric
+UNAD-00000000030001,I1C14D008987,P3,1:M GW,24.46404675,54.35311119,DLMS,ISKRA,MT372,Shop,W17_02,33,W17_02-33,Khaleefa Butti Omair Yousif Almuhairi,050-3443358,omran@kbbogroup.com,Water

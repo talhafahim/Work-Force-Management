@@ -1,0 +1,310 @@
+<?php
+echo view('cpanel-layout/header');
+// Top Bar Start
+echo view('cpanel-layout/topbar');
+// Top Bar End
+echo view('cpanel-layout/navbar');
+// Left Sidebar End
+?>
+<link href="<?= base_url();?>/assets/css/select2.min.css" rel="stylesheet" type="text/css">
+<div class="content-page">
+	<!-- Start content -->
+	<div class="content">
+		<div class="container-fluid">
+			<div class="page-title-box">
+				<div class="row align-items-center">
+					<div class="col-sm-6">
+						<h4 class="page-title">Team <small></small></h4>
+					</div>
+                    <div class="col-sm-6">
+                        <div class="float-right">
+                          <a class="btn btn-primary mb-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa fa-plus"></i> Create New
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+        <!-- <div class="d-flex justify-content-end">
+            
+        </div> -->
+        
+        <div class="collapse" id="collapseExample">
+            <div class="card">
+                <div class="card-body">
+                    <form id="addNewCityForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-6">
+                                <label for="remind_for">Team Name</label>
+                                <input type="text" class="form-control" placeholder="Team Name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-6">
+                               <div class="form-group" id="reminder_for_group">
+                                <label for="remind_for">Team Member</label>
+                                <select name="member[]" class="form-control js-example-basic-multiple" id="memberListCreate" multiple="multiple" required>
+                                    <?php 
+                                    $usersCollection = $users->get();
+                                    foreach ($usersCollection->getResult() as $user){ ?>
+                                        <option value="<?= $user->id ?>"><?= $user->firstname.' '.$user->lastname.' ('.$user->status.')' ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mb-12">
+                            <button class="btn btn-primary" type="submit" style="float:right;">Create</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div style="overflow-x:scroll;">
+                        <table id="table1" class="table table-striped table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Team Name</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody1">
+                                <?php foreach($teamList->get()->getResult() as $key => $value){ ?>
+                                    <tr>
+                                        <td><?= $key+1;?></td>
+                                        <td><?= $value->name;?></td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="text-primary view" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" data-serial="<?php echo $value->id;?>"><i class="fa fa-list"></i></a>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <a href="javascript:void(0);" class="text-info edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-serial="<?php echo $value->id;?>"><i class="fa fa-edit"></i></a>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <a href="javascript:void(0);" class="text-danger delete" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" data-serial="<?php echo $value->id;?>"><i class="fa fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end col -->
+
+    </div>
+    <!-- end row -->
+</div>
+<!-- container-fluid -->
+</div>
+
+
+<div id="teamMemberModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Team Member</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div style="overflow-x:scroll;">
+                    <table id="table1" class="table table-striped table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
+                        <thead>
+                            <tr>
+                                <!-- <th>#</th> -->
+                                <th>Member Name</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<div id="updateTeamModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="updateTeamModelLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="updateTeamForm" class="form-horizontal form-label-left input_mask">
+                <div class="modal-body">
+                    <div class="row">
+                        <input type="hidden" name="teamid" id="teamid">
+                        <div class="col-md-12">
+                         <select name="member[]" class="form-control js-example-basic-multiple" id="memberListUpdate" multiple="multiple">
+                            <?php 
+                            foreach ($usersCollection->getResult() as $user){ ?>
+                                <option value="<?= $user->id ?>"><?= $user->firstname.' '.$user->lastname.' ('.$user->status.')' ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Save changes</button>
+            </div>
+        </form>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div>
+
+
+
+
+<!-- content -->
+<?php 
+// echo view('cpanel-layout/action_loader');
+echo view('cpanel-layout/footer');
+?>
+<script src="<?= base_url();?>/assets/js/select2.min.js"></script>
+<script type="text/javascript">
+    $('#memberListCreate').select2({
+        placeholder: 'Select Member',
+        allowClear: true
+    });
+    $('#memberListUpdate').select2({
+        placeholder: 'Select Member',
+        allowClear: true
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table1').DataTable();
+    } );
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#addNewCityForm").submit(function() {
+            $.ajax({
+                type: "POST",
+                url: '<?php echo base_url();?>/team/create_team',
+                data:$("#addNewCityForm").serialize(),
+                success: function (data) {
+                   toastr.success(data);
+                   location.reload(); 
+               },
+               error: function(jqXHR, text, error){
+                    // Displaying if there are any errors
+                toastr.error(error);
+            }
+        });
+            return false;
+        });
+    });
+</script>
+<script>
+    $(document).on('click','.delete',function(){
+        var val = $(this).attr('data-serial');
+//
+        if(confirm("Do you really want to delete this?")){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>/team/delete_team",
+                data:'id='+val,
+                success: function(data){
+                    toastr.success(data);
+                    setTimeout(function(){ 
+                        location.reload();
+                    }, 2000);  
+                },error: function(jqXHR, text, error){
+                    toastr.error(error);
+                }
+            });
+        }
+    });
+</script>
+
+<script type="text/javascript">
+   $(document).on('click','.assignBtn',function(){
+    $("#updUserForm").trigger('reset');
+    var dataname = $(this).attr('data-name');
+    $('#otherEquipment').val(dataname);
+    var dataid = $(this).attr('data-id');
+    $('#otherEquipmentId').val(dataid);
+        //
+    $('#assignModel').modal('show');
+        //
+});
+
+   // ///////////////////////////////////////////////////
+</script>
+<script>
+    $(document).on('click','.view',function(){
+        var val = $(this).attr('data-serial');
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>/team/team_member_list",
+            data:'id='+val,
+            dataType : 'json',
+            success: function(data){
+                //
+                $('#teamMemberModel tbody').html('');
+                var html = '';
+                jQuery.each(data.name, function(index, item) {
+                    html += '<tr><td>'+data.name[index]+'</td><td>'+data.status[index]+'</td></tr>';
+                });
+                //
+                $('#teamMemberModel tbody').html(html);  
+                $('#teamMemberModel').modal('show');  
+            },error: function(jqXHR, text, error){
+                toastr.error(error);
+            }
+        });
+    });
+</script>
+<script>
+    $(document).on('click','.edit',function(){
+        var val = $(this).attr('data-serial');
+        $.ajax({
+            type: "POST",
+            url: "<?php echo base_url();?>/team/team_member_list",
+            data:'id='+val,
+            dataType : 'json',
+            success: function(data){
+                //
+                $('#updateTeamModel #updateTeamModelLabel').html(data.teamName);
+                $('#updateTeamModel #teamid').val(data.team_id);
+                $("#memberListUpdate").val(data.id).select2();
+                //
+                $('#updateTeamModel').modal('show');
+            },error: function(jqXHR, text, error){
+                toastr.error(error);
+            }
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#updateTeamForm").submit(function() {
+            $.ajax({
+                type: "POST",
+                url: '<?php echo base_url();?>/team/update_team_action',
+                data:$("#updateTeamForm").serialize(),
+                success: function (data) {
+                   toastr.success(data);
+                   location.reload(); 
+               },
+               error: function(jqXHR, text, error){
+                    // Displaying if there are any errors
+                toastr.error(error);
+            }
+        });
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,110 @@
+ERROR - 2023-04-02 14:56:46 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:56:46 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-04-02 14:56:51 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:56:51 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-04-02 14:57:12 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:57:12 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-04-02 14:57:33 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:57:33 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-04-02 14:57:35 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:57:35 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-04-02 14:57:39 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:57:39 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-04-02 14:57:39 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:57:39 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2023-04-02 14:57:41 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+CRITICAL - 2023-04-02 14:57:41 --> Duplicate entry 'dq4mcqhou4p8h2l8rckv1spsb46togtp' for key 'bo_login_audit.session_id'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(318): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(120): App\Controllers\Login->login_audit()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#9 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-04-02 19:53:49 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::getResultArray()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Dashboard->index()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}

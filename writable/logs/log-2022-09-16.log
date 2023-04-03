@@ -1,0 +1,4 @@
+ERROR - 2022-09-16 16:07:06 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_area`, CONSTRAINT `bo_area_ibfk_1` FOREIGN KEY (`city`) REFERENCES `bo_city` (`city`))
+ERROR - 2022-09-16 16:07:20 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_area`, CONSTRAINT `bo_area_ibfk_1` FOREIGN KEY (`city`) REFERENCES `bo_city` (`city`))
+ERROR - 2022-09-16 16:10:27 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_project`, CONSTRAINT `bo_project_ibfk_3` FOREIGN KEY (`olt_id`) REFERENCES `bo_olt` (`id`))
+ERROR - 2022-09-16 16:10:39 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_project`, CONSTRAINT `bo_project_ibfk_2` FOREIGN KEY (`area`) REFERENCES `bo_area` (`area`))

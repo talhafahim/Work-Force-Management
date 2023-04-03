@@ -1,0 +1,531 @@
+CRITICAL - 2022-09-13 11:42:27 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:42:33 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:42:55 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:43:19 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:44:32 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:45:39 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:46:59 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:47:13 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:47:21 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:48:00 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:49:36 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:50:04 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:51:31 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:51:48 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:53:04 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:53:17 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:53:49 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:54:49 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:56:30 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 11:57:20 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:58:16 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:58:47 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 11:59:40 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 12:05:39 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 12:06:43 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(69): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:07:24 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(69): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:09:10 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(69): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:09:58 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(69): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:10:37 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(69): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:10:45 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(69): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:11:26 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(69): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:20:06 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 12:20:50 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 12:21:09 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 12:22:06 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 12:29:04 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(51): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:31:26 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 12:33:49 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(51): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:34:49 --> implode(): Invalid arguments passed
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Field.php(51): implode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Field->add_ndt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-13 12:38:45 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 12:38:47 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 12:39:35 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 12:55:33 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 13:09:34 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 13:12:04 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 13:12:37 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 13:12:46 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 13:13:07 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 13:14:03 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-09-13 13:22:04 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 13:23:07 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 13:23:36 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-13 13:23:51 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-13 13:23:54 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_ndt`, CONSTRAINT `bo_ndt_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `bo_project` (`id`))
+CRITICAL - 2022-09-13 13:23:54 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_ndt`, CONSTRAINT `bo_ndt_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `bo_project` (`id`))
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2881): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/my-blackoptic/app/Controllers/Project.php(177): CodeIgniter\Database\BaseBuilder->delete()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->delete()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-09-13 13:24:01 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_ndt`, CONSTRAINT `bo_ndt_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `bo_project` (`id`))
+CRITICAL - 2022-09-13 13:24:01 --> Cannot delete or update a parent row: a foreign key constraint fails (`bo-db`.`bo_ndt`, CONSTRAINT `bo_ndt_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `bo_project` (`id`))
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2881): CodeIgniter\Database\BaseConnection->query()
+#4 /var/www/html/my-blackoptic/app/Controllers/Project.php(177): CodeIgniter\Database\BaseBuilder->delete()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->delete()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

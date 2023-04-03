@@ -1,0 +1,381 @@
+CRITICAL - 2022-09-07 13:56:08 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 13:59:12 --> {0} : {1}
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(796): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(409): CodeIgniter\HTTP\CURLRequest->sendRequest()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(125): CodeIgniter\HTTP\CURLRequest->send()
+#3 /var/www/html/my-blackoptic/app/Controllers/Project.php(181): CodeIgniter\HTTP\CURLRequest->request()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-07 13:59:25 --> {0} : {1}
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(796): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(409): CodeIgniter\HTTP\CURLRequest->sendRequest()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(125): CodeIgniter\HTTP\CURLRequest->send()
+#3 /var/www/html/my-blackoptic/app/Controllers/Project.php(181): CodeIgniter\HTTP\CURLRequest->request()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-07 13:59:26 --> {0} : {1}
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(796): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(409): CodeIgniter\HTTP\CURLRequest->sendRequest()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/CURLRequest.php(125): CodeIgniter\HTTP\CURLRequest->send()
+#3 /var/www/html/my-blackoptic/app/Controllers/Project.php(181): CodeIgniter\HTTP\CURLRequest->request()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-09-07 13:59:34 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 14:02:16 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 14:02:27 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 14:03:29 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 14:04:37 --> syntax error, unexpected ']', expecting ')'
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Router/Router.php(169): CodeIgniter\Router\Router->autoRoute()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(812): CodeIgniter\Router\Router->handle()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(392): CodeIgniter\CodeIgniter->tryToRouteIt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 14:04:39 --> syntax error, unexpected ']', expecting ')'
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Router/Router.php(169): CodeIgniter\Router\Router->autoRoute()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(812): CodeIgniter\Router\Router->handle()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(392): CodeIgniter\CodeIgniter->tryToRouteIt()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 14:04:46 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 14:24:57 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 15:41:05 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 15:58:11 --> json_decode() expects parameter 1 to be string, object given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Project.php(177): json_decode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-07 16:26:23 --> Undefined variable: client
+#0 /var/www/html/my-blackoptic/app/Controllers/Project.php(179): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 16:26:37 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:27:40 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:28:09 --> Cannot use object of type CodeIgniter\HTTP\Response as array
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-07 16:28:10 --> Cannot use object of type CodeIgniter\HTTP\Response as array
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-07 16:28:11 --> Cannot use object of type CodeIgniter\HTTP\Response as array
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-09-07 16:30:19 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:31:02 --> json_decode() expects parameter 1 to be string, object given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Project.php(177): json_decode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-07 16:31:03 --> json_decode() expects parameter 1 to be string, object given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/app/Controllers/Project.php(177): json_decode()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-09-07 16:31:55 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:32:39 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:32:40 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:34:40 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:35:01 --> Undefined index: body
+#0 /var/www/html/my-blackoptic/app/Controllers/Project.php(179): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 16:36:39 --> Undefined index: body
+#0 /var/www/html/my-blackoptic/app/Controllers/Project.php(179): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 16:36:54 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:37:08 --> Undefined offset: 2
+#0 /var/www/html/my-blackoptic/app/Controllers/Project.php(179): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 16:37:14 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:39:17 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:39:34 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:40:04 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:40:37 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:40:44 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-09-07 16:42:27 --> Undefined variable: data
+#0 /var/www/html/my-blackoptic/app/Controllers/Project.php(178): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 16:42:28 --> Undefined variable: data
+#0 /var/www/html/my-blackoptic/app/Controllers/Project.php(178): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Project->test()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-09-07 16:42:41 --> unlink(/var/www/html/my-blackoptic/writable/debugbar/debugbar_1660721688.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /var/www/html/my-blackoptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

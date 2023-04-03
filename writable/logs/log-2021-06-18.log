@@ -1,0 +1,85 @@
+CRITICAL - 2021-06-18 07:08:18 --> Invalid file: userslist.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('userslist.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('userslist', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Users.php(14): view('userslist')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Users->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-18 07:08:39 --> Invalid file: userslist.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('userslist.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('userslist', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Users.php(14): view('userslist')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Users->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-18 07:08:39 --> Invalid file: userslist.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('userslist.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('userslist', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Users.php(14): view('userslist')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Users->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-18 07:08:40 --> Invalid file: userslist.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('userslist.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('userslist', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Users.php(14): view('userslist')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Users->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-18 07:08:40 --> Invalid file: userslist.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('userslist.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('userslist', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Users.php(14): view('userslist')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Users->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-18 07:08:40 --> Invalid file: userslist.php
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('userslist.php')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('userslist', Array, true)
+#2 /developers/developer-talha/blackOptic/app/Controllers/Users.php(14): view('userslist')
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Users->index()
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-06-18 07:10:32 --> Cannot declare class App\Controllers\Cpanel, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-06-18 07:53:41 --> Undefined property: stdClass::$access
+#0 /developers/developer-talha/blackOptic/app/Controllers/User.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 37, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\User->show_users()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-06-18 07:53:42 --> Undefined property: stdClass::$access
+#0 /developers/developer-talha/blackOptic/app/Controllers/User.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 37, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\User->show_users()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-06-18 07:53:56 --> Undefined property: stdClass::$access
+#0 /developers/developer-talha/blackOptic/app/Controllers/User.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 37, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\User->show_users()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-06-18 07:54:39 --> Undefined property: stdClass::$depart_id
+#0 /developers/developer-talha/blackOptic/app/Controllers/User.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', '/developers/dev...', 50, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\User->show_users()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

@@ -1,0 +1,11 @@
+CRITICAL - 2023-02-08 14:08:22 --> unlink(/www/wwwroot/talha_logon/bo_old/writable/debugbar/debugbar_1675324542.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format()
+#4 /www/wwwroot/talha_logon/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

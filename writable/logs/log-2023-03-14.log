@@ -1,0 +1,14 @@
+CRITICAL - 2023-03-14 12:47:25 --> Trying to get property 'reject_reason' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(352): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-03-14 12:50:58 --> Trying to get property 'reject_reason' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(352): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

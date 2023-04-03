@@ -1,0 +1,266 @@
+CRITICAL - 2022-01-17 20:53:33 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 20:56:09 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:01:20 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:02:16 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:06:49 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:12:14 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:36:19 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:36:42 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:36:51 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:49:48 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:50:43 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:51:38 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:53:42 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:58:56 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:59:07 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:59:44 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 21:59:47 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:00:38 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:25:36 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:30:24 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:36:35 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:36:38 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:36:42 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:41:21 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:41:25 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:47:26 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 22:54:13 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:02:46 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:02:49 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:08:14 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:16:40 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:20:00 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:28:57 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:36:10 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:38:37 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:47:09 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:49:19 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-01-17 23:53:54 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

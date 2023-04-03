@@ -1,0 +1,73 @@
+CRITICAL - 2023-03-19 11:33:33 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(54): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-19 11:48:46 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerView.php(155): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(355): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-19 12:05:23 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-19 12:28:01 --> Invalid file: cpanel/popup/view_customer.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerList.php(121): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#6 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(23): view()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->customer_list()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#9 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#10 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-03-19 12:28:05 --> Invalid file: cpanel/popup/view_customer.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerList.php(121): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#6 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(23): view()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->customer_list()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#9 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#10 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-03-19 19:32:53 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-19 19:33:04 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

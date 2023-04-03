@@ -1,0 +1,376 @@
+<title>Login</title>
+<?php
+echo view('cpanel-layout/header.php');
+?>
+<style>
+    #output,#loading,#forgotDiv,#floading{
+        display: none;
+    }
+    .right-text{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+/* verification wrapper */
+.shape-box {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.shape-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: -13px;
+  left: 0;
+  height: 36px;
+  width: 36px;
+  /* background-color: #eee; */
+  /* border-radius: 50%; */
+}
+
+.shape-box input:checked ~ .checkmark {
+  /* border: 1px solid #fff; */
+  transform: translateY(-5px);
+  border-bottom: 1px solid #f9bb04;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.shape-box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* .shape-box .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+    outline: 1px solid #fff;
+	border-radius: 50%;
+	background: white;
+} */
+.shape-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #facd01;
+    border-radius: 5px;
+    height: 40px;
+}
+.shape-wrapper img{
+    padding: 10px;
+    filter: brightness(1) invert(1);
+}
+.small-font{
+    font-size: 10px;
+}
+.account-page-full-height{
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+.account-page-full-height::-webkit-scrollbar { 
+    display: none;
+}
+</style>
+
+<div class="account-page-full-height bg-img">
+    <div class="overlay-bg"></div>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-4 "style="padding-left: 0;padding-right: 0">
+                <div class="account-page-full-height bg-login custom-width">
+                    <div class="p-3">
+                        <div>
+                            <div class="text-center py-3">
+                                <a href="<?= base_url();?>" class="logo"><img src="<?= base_url();?>/assets/images/logo.png?t=<?php echo time(); ?>" width="70%" alt="logo"></a>
+                                <h5><?= $appTitle->parameter;?></h5>
+                            </div>
+                            <div class="text-left p-3">
+                                <!-- <h4 class="font-18 text-center">Welcome !</h4> -->
+                                <!-- <p class="text-muted text-center">Sign in to continue Blackoptic</p> -->
+
+                                <form class="form-horizontal" id="loginForm">
+
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="output">
+                                        <!-- text here -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="small-font">Email ID</label>
+                                        <input type="email" class="form-control" name="username" id="username" placeholder="Enter email ID or Username" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="userpassword" class="small-font">Password</label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
+                                    </div>
+
+                                    <!-- <div class="form-group row" id="loginbtn"> -->
+                                        <div class="d-flex align-items-center justify-content-between mb-3" >
+                                            <div class="">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input checkbox_check" id="customControlInline">
+                                                    <label class="custom-control-label small-font" for="customControlInline" style="line-height:2.2"> Show password</label>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <!-- <div class="col-12 mt-3"> -->
+                                                    <!-- <a href="pages-recoverpw-2.html"><i class="mdi mdi-lock"></i> <span class="small-font">Forgot your password?</span></a> -->
+                                                    <!-- </div> -->
+                                                </div>
+                                        <!-- <div class="col-sm-6 text-right">
+                                            <button class="btn btn-primary w-md waves-effect waves-light"  type="submit">Log In</button>
+                                        </div> -->
+                                    </div>
+                                    
+                                    
+                                    <!-- <div class="verification-wrapper">
+                                        <input type="hidden" name="recaptchaQ" id="recaptchaQ">
+                                        <p class="text-center">Verify that you are human, please choose <span id="shapes" class="font-weight-bold"></span></p>
+                                        <div class="shape-wrapper">
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="circle">
+                                                <span class="checkmark circle"><img src="assets/images/shapes/new-moon.png" alt="" class="w-100"></span>
+                                            </label>
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="triangle">
+                                                <span class="checkmark triangle"><img src="assets/images/shapes/up-arrow.png" alt="" class="w-100"></span>
+                                            </label>
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="square">
+                                                <span class="checkmark square"><img src="assets/images/shapes/square.png" alt="" class="w-100"></span>
+                                            </label>
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="star">
+                                                <span class="checkmark square"><img src="assets/images/shapes/star.png" alt="" class="w-100"></span>
+                                            </label>
+
+                                        </div>
+                                    </div> -->
+                                    <center>
+                                        <div class="spinner-border text-primary" role="status" id="loading">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </center>
+                                    <div class="col-sm-12 text-right mt-4" id="loginbtn">
+                                        <button class="btn btn-primary w-md waves-effect waves-light btn-block"  type="submit">Log In</button>
+                                    </div>
+                                    <!-- <div class="form-group mt-2 mb-0 row">
+                                        <div class="col-12 mt-3">
+                                            <a href="pages-recoverpw-2.html"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                                        </div>
+                                    </div> -->
+
+
+                                </form>
+                            </div>
+                            <div class="mt-5 text-center">
+                                <!-- <p>Don't have BlackOptic connection? <a href="pages-register-2.html" class="font-500 text-primary"> Apply Now </a> </p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <footer style="width: 100%;margin-top: 100px;">
+                        <p class="text-center mb-0">© 2021 Blackoptic</p>
+                        <p class="text-center">Powered by <i class="mdi mdi-heart text-danger"></i> Logon Broadband Private Ltd</p>
+                    </footer> -->  
+                </div>
+                
+            </div>
+            <div class="col-xl-9 col-lg-8 d-xl-block d-lg-block d-none" style="padding-top: 100px">
+                <div class="container">
+                    <div class="text-white pt--b__100">
+
+                       <!--  <div class="row">
+                            <div class="right-text mb-4" style="width: 75%; margin: auto;height: 120px" >
+                                <h1 id="our-moto"></h1>
+                            </div>
+                        </div> -->
+<!-- 
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="mb-4 text-center p-4">
+                                            <div class="img-1">
+                                                <img src="/assets/images/logo/internet.png" width="80">
+                                            </div>
+                                            <h5>Internet</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4 text-center p-4">
+                                            <div class="img-2">
+                                                <img src="/assets/images/logo/tv-logo.png" width="80">
+                                            </div>
+                                            <h5>TV</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="mb-4 text-center p-4">
+                                            <div class="img-3">
+                                                <img src="/assets/images/logo/phone.png" width="80">
+                                            </div>
+                                            <h5>Phone</h5>
+
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container-fluid -->
+        </div>
+        
+        <?php
+        echo view('cpanel-layout/login_footer.php'); ?>
+        <script src="<?= base_url();?>/assets/js/typeit.min.js"></script>
+
+
+        <!-- <script type="text/javascript">
+            new TypeIt("#our-moto", {
+                strings: "BEST INTERNET SOLUTION INDUSTRY",
+                speed: 60,
+                loop: true
+            })
+            .move(-18)
+            .delete(8)
+            .type('TV', {delay: 500})
+            .pause(300)
+            .delete(2)
+            .type('PHONE', {delay: 500})
+            .pause(300)
+            .delete(5)
+            .type('INTERNET', {delay: 500})
+            .pause(300)
+            .go();
+        </script> -->
+        <script type="text/javascript">
+            $('.checkbox_check').click(function(){
+                var x = document.getElementById("password");
+                if ($($(this)).prop('checked')) {   
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            });
+        </script>
+        <script>
+            // $(function () {
+            //     var parent = $(".shape-wrapper");
+            //     var divs = parent.children();
+            //     while (divs.length) {
+            //         parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+            //     }
+            // });
+            // $(".shape-wrapper").shuffleChildren();
+
+            // $(document).ready(function() {
+
+            //     $.fn.shuffleChildren = function() {
+            //         $.each(this.get(), function(index, el) {
+            //             var $el = $(el);
+            //             var $find = $el.children();
+
+            //             $find.sort(function() {
+            //             return 0.5 - Math.random();
+            //             });
+
+            //             $el.empty();
+            //             $find.appendTo($el);
+            //         });
+            //     };
+            // })
+            
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                // var shapes = ['square', 'circle', 'triangle', 'star']
+                // var generate = shapes[Math.random()*shapes.length | 0]
+                // document.getElementById('shapes').innerHTML = generate;
+                // $('#recaptchaQ').val(generate);
+
+                $("#loginForm").submit(function() {
+                    // var value = $('input[name="radio"]:checked').val();
+                    // var result = generate.localeCompare(value);
+                    // if(result == 0){
+                        // alert('true');
+                        $("#loginbtn").hide();
+                        $("#loading").show();
+                        $('#output').hide();
+                        $.ajax({
+                            type: "POST",
+                            url: '<?php echo base_url();?>/login/loginCheck',
+                            data:$("#loginForm").serialize(),
+                            success: function (data) {
+
+                                if(data == 'OTP'){
+                                    setTimeout(function(){
+                                        window.location.href = "<?= base_url();?>/login/generate_otp";
+                                    }, 2000);
+                                }else{
+                                    $('#loading').show();
+                                    setTimeout(function(){
+                                        window.location.href = "<?= base_url();?>/dashboard";
+                                    }, 3000);
+                                }
+
+
+
+
+
+        //                     if (data == 'success'){
+        //                         setTimeout(function(){ window.location = "<?php echo base_url();?>/login"; }, 1000);
+        //                     }else if(data == 'user' || data == 'admin'){
+        //                         setTimeout(function(){ window.location = "<?php echo base_url();?>/login/generate_otp"; }, 1000);
+        //                     }else if(data == 'customer'){
+        //                         setTimeout(function(){ window.location = "<?php echo base_url();?>/login/activation"; }, 1000);
+        //                     }else{
+        //                         $("#loginbtn").show();
+        //                         $("#loading").hide();
+        //                             // snack('#d3514d',data,'times');
+        //                             $('#output').show();
+        //                             $('#output').html(data);
+        //                         }
+        // // Inserting html into the result div on success
+        // $('#output').html(data);
+        // setTimeout(function(){ $('#output').fadeOut(); }, 2000);
+    },
+    error: function(jqXHR, text, error){
+        // Displaying if there are any errors
+        $('#output').show();
+        $('#output').html(error);
+        $("#loginbtn").show();
+        $("#loading").hide();
+    }
+});
+                        return false;
+                    // }else{
+                    //     alert('Shape not matched');
+                    //     return
+                    // }
+                    
+                });
+            });
+        </script>

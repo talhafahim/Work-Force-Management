@@ -1,0 +1,36 @@
+CRITICAL - 2021-06-24 01:41:41 --> Object of class stdClass could not be converted to string
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Dashboard_menu->update_menu_content()
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard_menu))
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-06-24 01:41:45 --> Object of class stdClass could not be converted to string
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\Dashboard_menu->update_menu_content()
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard_menu))
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-06-24 05:46:20 --> Undefined variable: request
+#0 /developers/developer-talha/blackOptic/app/Controllers/User.php(434): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/developers/dev...', 434, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\User->update_profile()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-06-24 05:46:25 --> Undefined variable: request
+#0 /developers/developer-talha/blackOptic/app/Controllers/User.php(434): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/developers/dev...', 434, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\User->update_profile()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-06-24 05:53:55 --> Call to undefined function ucword()
+#0 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(230): include()
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render('cpanel/user_pro...', Array, true)
+#3 /developers/developer-talha/blackOptic/app/Controllers/User.php(426): view('cpanel/user_pro...', Array)
+#4 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(928): App\Controllers\User->user_profile()
+#5 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

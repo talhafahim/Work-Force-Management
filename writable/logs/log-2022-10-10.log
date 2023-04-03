@@ -1,0 +1,121 @@
+ERROR - 2022-10-10 17:56:09 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 17:56:09 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 17:56:23 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 17:56:23 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 18:05:35 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 18:05:35 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 18:05:42 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 18:05:42 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 18:05:45 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 18:05:45 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 19:26:50 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 19:26:50 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 19:27:38 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 19:27:38 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 19:27:49 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 19:27:49 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 19:28:54 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 19:28:54 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 19:37:07 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 19:37:07 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-10-10 20:01:47 --> Error connecting to the database: No route to host
+CRITICAL - 2022-10-10 20:01:47 --> Unable to connect to the database.
+Main connection [MySQLi]: No route to host
+#0 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query()
+#2 /var/www/html/my-blackoptic/app/Filters/MaintenanceFilter.php(17): CodeIgniter\Database\BaseBuilder->get()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/Filters/Filters.php(181): App\Filters\MaintenanceFilter->before()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\Filters\Filters->run()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

@@ -1,0 +1,88 @@
+CRITICAL - 2023-01-28 13:07:23 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893242, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-28 13:07:33 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893252, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-28 13:07:36 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893256, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-28 13:10:55 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893454, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-28 13:11:03 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893462, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-28 13:11:21 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893480, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-28 13:13:34 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893613, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-01-28 13:13:53 --> unlink(/developers/developer-talha/bo_old/writable/debugbar/debugbar_1671088181.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1674893633, 20)
+#3 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/bo_old/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -1,0 +1,35 @@
+CRITICAL - 2023-02-27 12:08:33 --> Undefined variable: id
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(127): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->show_update_modal_content()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-02-27 12:08:36 --> Undefined variable: id
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(127): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->show_update_modal_content()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-02-27 12:10:14 --> Undefined variable: id
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(127): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->show_update_modal_content()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-02-27 13:50:24 --> Too few arguments to function create_action_log(), 0 passed in /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php on line 711 and exactly 1 expected
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(711): create_action_log()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->upload_csv_action()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-02-27 13:50:56 --> Too few arguments to function create_action_log(), 0 passed in /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php on line 711 and exactly 1 expected
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(711): create_action_log()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->upload_csv_action()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

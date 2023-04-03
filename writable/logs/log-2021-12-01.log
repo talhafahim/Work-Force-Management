@@ -1,0 +1,7 @@
+CRITICAL - 2021-12-01 05:17:16 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

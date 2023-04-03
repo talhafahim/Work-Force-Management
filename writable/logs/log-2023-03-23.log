@@ -1,0 +1,28 @@
+CRITICAL - 2023-03-23 20:10:30 --> Undefined variable: return_reason
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/devices_n_tools.php(74): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(288): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->devices_n_tools()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-23 20:16:34 --> syntax error, unexpected ')', expecting variable (T_VARIABLE)
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(273): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(247): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(286): spl_autoload_call()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->devices_n_tools()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-23 22:27:13 --> Invalid argument supplied for foreach()
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(191): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}

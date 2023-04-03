@@ -1,0 +1,180 @@
+CRITICAL - 2023-03-27 10:03:57 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::getResult()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->notification()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+ERROR - 2023-03-27 10:15:47 --> Table 'blackoptic_test.inv_reminder' doesn't exist
+CRITICAL - 2023-03-27 10:15:47 --> Table 'blackoptic_test.inv_reminder' doesn't exist
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(76): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->set_reminder()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2023-03-27 10:16:48 --> Table 'blackoptic_test.inv_remind_read' doesn't exist
+CRITICAL - 2023-03-27 10:16:48 --> Table 'blackoptic_test.inv_remind_read' doesn't exist
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2277): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(87): CodeIgniter\Database\BaseBuilder->insert()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->set_reminder()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-27 10:17:11 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 10:21:50 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 10:26:46 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 10:48:57 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 10:54:03 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 10:55:16 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 11:04:09 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 11:13:12 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 11:16:48 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 11:17:58 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 11:51:19 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 11:52:23 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 11:56:19 --> Invalid file: all_reminder.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-27 12:00:11 --> Invalid file: header.php
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#2 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/all_reminder.php(1): view()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#6 /www/wwwroot/talha_logon/bo_old/app/Controllers/Tools.php(35): view()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Tools->all_reminders()
+#8 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#9 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#10 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2023-03-27 23:27:48 --> Trying to get property 'task_id' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(127): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-27 23:28:32 --> Trying to get property 'task_id' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(127): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -1,0 +1,102 @@
+ERROR - 2023-04-03 03:20:20 --> Cannot delete or update a parent row: a foreign key constraint fails (`blackoptic_test`.`team_member`, CONSTRAINT `team_member_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`id`))
+CRITICAL - 2023-04-03 03:20:20 --> Cannot delete or update a parent row: a foreign key constraint fails (`blackoptic_test`.`team_member`, CONSTRAINT `team_member_ibfk_1` FOREIGN KEY (`team_id`) REFERENCES `team` (`id`))
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(329): mysqli->query()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(2881): CodeIgniter\Database\BaseConnection->query()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Team.php(81): CodeIgniter\Database\BaseBuilder->delete()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Team->delete_team()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-04-03 10:26:54 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:26:58 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:26:59 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:27:04 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:27:05 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:27:06 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:27:06 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:27:07 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:28:00 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-04-03 10:28:04 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(56): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

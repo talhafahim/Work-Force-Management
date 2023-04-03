@@ -1,0 +1,9 @@
+CRITICAL - 2022-09-17 02:35:02 --> Header may not contain more than a single header, new line detected
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(494): header()
+#2 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/HTTP/ResponseTrait.php(466): CodeIgniter\HTTP\Response->sendHeaders()
+#3 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(1117): CodeIgniter\HTTP\Response->send()
+#4 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(483): CodeIgniter\CodeIgniter->sendResponse()
+#5 /var/www/html/my-blackoptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /var/www/html/my-blackoptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

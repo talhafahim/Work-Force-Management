@@ -1,0 +1,98 @@
+CRITICAL - 2023-03-02 05:25:07 --> Undefined index: file
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(661): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->upload_csv_action()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-03-02 06:27:20 --> Undefined index: file
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(805): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->assign_by_meter()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-03-02 17:48:29 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultObject()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->test()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-02 17:48:37 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultObject()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->test()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-02 17:50:13 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultArray()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->test()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-02 17:50:15 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultArray()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->test()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-02 20:39:42 --> Object of class mysqli could not be converted to string
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(21): view()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->my_task()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-02 20:39:57 --> Object of class stdClass could not be converted to string
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(21): view()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->my_task()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-02 20:40:31 --> Object of class stdClass could not be converted to string
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(21): view()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->my_task()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-02 20:40:32 --> Object of class stdClass could not be converted to string
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(21): view()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->my_task()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-02 20:40:32 --> Object of class stdClass could not be converted to string
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(21): view()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->my_task()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-02 20:40:32 --> Object of class stdClass could not be converted to string
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(21): view()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->my_task()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

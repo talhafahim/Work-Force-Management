@@ -1,0 +1,227 @@
+CRITICAL - 2022-03-08 18:25:22 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646745919, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:26:11 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646745968, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:26:18 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646745977, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:26:34 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646745986, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:26:46 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:00 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:01 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:02 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:02 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:03 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:03 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:03 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:03 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:03 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:03 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:04 --> Too few arguments to function App\Models\Model_SMSnEmail::sendEmail(), 2 passed in /developers/developer-talha/blackOptic/app/Controllers/Home.php on line 12 and exactly 3 expected
+#0 /developers/developer-talha/blackOptic/app/Controllers/Home.php(12): App\Models\Model_SMSnEmail->sendEmail('m.talha@lbi.net...', 'final test')
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Home->index()
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-03-08 18:29:24 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746163, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:24 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746164, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:24 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746164, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:24 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746164, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:25 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746165, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:25 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746165, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:25 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746165, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:31 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746170, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-03-08 18:29:41 --> unlink(/developers/developer-talha/blackOptic/writable/debugbar/debugbar_1634991869.json): Operation not permitted
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/develop...', '/developers/dev...', 78, Array)
+#1 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/History.php(78): unlink('/developers/dev...')
+#2 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(480): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1646746180, 20)
+#3 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Debug/Toolbar.php(452): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /developers/developer-talha/blackOptic/app/Config/Events.php(52): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/Events/Events.php(166): call_user_func(Object(Closure))
+#7 /developers/developer-talha/blackOptic/vendor/codeigniter4/framework/system/CodeIgniter.php(319): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /developers/developer-talha/blackOptic/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

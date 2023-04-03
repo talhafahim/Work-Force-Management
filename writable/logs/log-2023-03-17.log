@@ -1,0 +1,58 @@
+CRITICAL - 2023-03-17 00:13:05 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(54): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-17 00:13:21 --> You must set the database table to be used with your query.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(602): CodeIgniter\Database\BaseConnection->table()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Model.php(798): CodeIgniter\Model->builder()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/Login.php(54): CodeIgniter\Model->__call()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Login->loginCheck()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-17 00:17:18 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-17 00:17:23 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-17 00:17:34 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-17 00:17:34 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

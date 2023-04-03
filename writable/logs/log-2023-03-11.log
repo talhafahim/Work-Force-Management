@@ -1,0 +1,234 @@
+CRITICAL - 2023-03-11 12:24:16 --> syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ')'
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(273): CodeIgniter\Autoloader\Autoloader->includeFile()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Autoloader/Autoloader.php(247): CodeIgniter\Autoloader\Autoloader->loadInNamespace()
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass()
+#3 [internal function]: spl_autoload_call()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(888): class_exists()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(424): CodeIgniter\CodeIgniter->startController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 13:09:33 --> Cannot redeclare App\Controllers\Task::test()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2023-03-11 13:09:50 --> Cannot redeclare App\Controllers\Task::test()
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2023-03-11 13:10:02 --> Call to undefined method CodeIgniter\Database\MySQLi\Builder::first()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->test2()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-11 13:15:06 --> Trying to get property 'reject_reason' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerView.php(171): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(682): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-11 13:15:53 --> Trying to get property 'reject_reason' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerView.php(171): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(682): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-11 14:06:55 --> Undefined variable: returnReason
+#0 /www/wwwroot/talha_logon/bo_old/app/Views/cpanel/customerView.php(171): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(230): include('/www/wwwroot/ta...')
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/View/View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/Common.php(1271): CodeIgniter\View\View->render()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/Customer.php(687): view()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-11 14:07:30 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::get()
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Customer->view_detail()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-11 19:06:28 --> Undefined variable: modelUsers
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:06:36 --> Undefined variable: modelUsers
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:06:45 --> Undefined variable: modelUsers
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:07:40 --> Too few arguments to function App\Controllers\General::App\Controllers\{closure}(), 2 passed in /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php on line 195 and exactly 3 expected
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(195): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(185): Hermawan\DataTables\DataTableQuery->queryFilter()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch()
+#3 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-11 19:08:43 --> Too few arguments to function App\Controllers\General::App\Controllers\{closure}(), 1 passed in /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php on line 91 and exactly 2 expected
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-11 19:09:08 --> Too few arguments to function App\Controllers\General::App\Controllers\{closure}(), 2 passed in /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php on line 195 and exactly 3 expected
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(195): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(185): Hermawan\DataTables\DataTableQuery->queryFilter()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch()
+#3 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+#4 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#7 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#8 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-03-11 19:09:55 --> Undefined variable: request
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(104): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-03-11 19:10:24 --> Undefined variable: modelUsers
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:10:46 --> Too few arguments to function App\Controllers\General::App\Controllers\{closure}(), 1 passed in /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php on line 91 and exactly 2 expected
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-11 19:11:26 --> Too few arguments to function App\Controllers\General::App\Controllers\{closure}(), 1 passed in /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php on line 91 and exactly 2 expected
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-11 19:11:45 --> Undefined variable: modelUsers
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:29:37 --> Undefined variable: modelUsers
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(121): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(125): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:32:00 --> Trying to get property 'username' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(122): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(126): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:36:32 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(127): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 19:36:43 --> Trying to get property 'firstname' of non-object
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(123): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#2 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#3 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(127): Hermawan\DataTables\DataTable->toJson()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#6 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#7 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-03-11 23:46:22 --> Class 'App\Models\Model_Gateway' not found
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-11 23:50:50 --> Class 'App\Models\Model_Gateway' not found
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-03-11 23:51:57 --> Class 'App\Models\Model_Gateway' not found
+#0 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTableQuery.php(91): App\Controllers\General->App\Controllers\{closure}()
+#1 /www/wwwroot/talha_logon/bo_old/app/ThirdParty/codeigniter4-datatables/src/DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#2 /www/wwwroot/talha_logon/bo_old/app/Controllers/General.php(131): Hermawan\DataTables\DataTable->toJson()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\General->get_getway_list()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#5 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#6 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}

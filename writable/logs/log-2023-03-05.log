@@ -1,0 +1,92 @@
+CRITICAL - 2023-03-05 12:00:17 --> unlink(./picture/9-1.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(207): unlink()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 12:04:26 --> unlink(./picture/9-1.jpg): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(207): unlink()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 12:25:05 --> Undefined variable: un
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(241): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-03-05 12:25:16 --> Undefined variable: un
+#0 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(241): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#4 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2023-03-05 15:10:42 --> The uploaded file has already been moved.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(240): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 15:11:12 --> The uploaded file has already been moved.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(240): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 15:11:26 --> The uploaded file has already been moved.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(240): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 15:24:01 --> Call to a member function move() on string
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#1 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#3 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2023-03-05 15:33:42 --> The uploaded file has already been moved.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(248): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 15:35:22 --> The uploaded file has already been moved.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(248): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 15:36:10 --> The uploaded file has already been moved.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(248): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2023-03-05 15:39:49 --> The uploaded file has already been moved.
+#0 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/HTTP/Files/UploadedFile.php(138): CodeIgniter\HTTP\Exceptions\HTTPException::forAlreadyMoved()
+#1 /www/wwwroot/talha_logon/bo_old/app/Controllers/Task.php(248): CodeIgniter\HTTP\Files\UploadedFile->move()
+#2 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(931): App\Controllers\Task->update_task()
+#3 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController()
+#4 /www/wwwroot/talha_logon/bo_old/vendor/codeigniter4/framework/system/CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest()
+#5 /www/wwwroot/talha_logon/bo_old/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}

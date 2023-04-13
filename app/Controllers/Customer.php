@@ -38,19 +38,19 @@ class Customer extends BaseController
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//
-	public function view()
-	{
-		$custID = $this->input->getPost('custID');
-		$customerModel = new Model_Customer();
-		$modelpkg = new Model_Package();
-		//
-		$data['info'] = $customerModel->get_customer($custID)->get()->getRow();
-		$data['cont'] = $customerModel->get_customer_contract(null,$custID,'Active')->get()->getRow();
-		if($data['cont']){
-			$data['pkg'] = $modelpkg->get_package($data['cont']->pkg_id)->get()->getRow();
-		}
-		return json_encode($data);
-	}
+	// public function view()
+	// {
+	// 	$custID = $this->input->getPost('custID');
+	// 	$customerModel = new Model_Customer();
+	// 	$modelpkg = new Model_Package();
+	// 	//
+	// 	$data['info'] = $customerModel->get_customer($custID)->get()->getRow();
+	// 	$data['cont'] = $customerModel->get_customer_contract(null,$custID,'Active')->get()->getRow();
+	// 	if($data['cont']){
+	// 		$data['pkg'] = $modelpkg->get_package($data['cont']->pkg_id)->get()->getRow();
+	// 	}
+	// 	return json_encode($data);
+	// }
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public function show_list(){
 		if(isLoggedIn()){
@@ -77,7 +77,7 @@ class Customer extends BaseController
 				if($row->status == 'unallocated' || $row->status == 'commission' || $row->status == 'reject'){
 					$actionHtml .= '<button type="button" id="assignBtn" assign-id="'.$row->assign_to.'" data-id="'.$row->id.'" class="btn btn-primary btn-sm" title="Assign Now"><i class="fa fa-tasks"></i></button>';
 				}
-				$actionHtml .= '<a href="'.base_url().'/customer/view_detail/'.$row->id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a>';
+				$actionHtml .= '<a href="'.base_url().'/task/view-detail/'.$row->id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a>';
 				$actionHtml .= '</div>';
 
 				return $actionHtml;

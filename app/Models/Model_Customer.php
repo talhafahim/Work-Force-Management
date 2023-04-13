@@ -4,7 +4,7 @@ use CodeIgniter\Model;
 
 class Model_Customer extends Model {
 	/////////////////////////////////////////
-	function get_customer_info($id = null,$un=null,$assign_to=null,$status=null,$assign_on=null){
+	function get_customer_info($id = null,$un=null,$assign_to=null,$status=null,$from=null,$to=null){
 		$db = \Config\Database::connect();
 		//
 		$builder = $db->table('bo_customer_info');
@@ -16,9 +16,10 @@ class Model_Customer extends Model {
 			$builder->where('assign_to',$assign_to);
 		}if(!empty($status)){
 			$builder->where('status',$status);
-		}if(!empty($assign_on)){
-			$builder->where('assign_on >=',$assign_on.' 00:00:00');
-			$builder->where('assign_on <=',$assign_on.' 23:59:59');
+		}if(!empty($from)){
+			$builder->where('assign_on >=',$from.' 00:00:00');
+		}if(!empty($to)){
+			$builder->where('assign_on <=',$to.' 23:59:59');
 		}
 		return $builder;
 	}

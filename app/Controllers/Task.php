@@ -6,6 +6,7 @@ use App\Models\Model_Customer;
 use App\Models\Model_Task;
 use App\Models\Model_General;
 use App\Models\Model_Users;
+use App\Models\Model_Team;
 
 class Task extends BaseController
 {
@@ -63,7 +64,7 @@ class Task extends BaseController
 					$actionHtml .= '<button type="button" id="updateUN"  class="btn btn-primary btn-sm" data-un="'. 				$row->un_number.'" task-id="'.$row->id.'"><i class="fa fa-tasks"></i></button>';
 				}
 				$actionHtml .= '	
-				<a href="'.base_url().'/customer/view_detail/'.$row->id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a>
+				<a href="'.base_url().'/task/view-detail/'.$row->id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a>
 				</div>';
 				return $actionHtml;
 			})
@@ -227,7 +228,7 @@ class Task extends BaseController
 				//
 					if($status == 'complete' || $status == 'commission'){
 					//
-						$modelGeneral->task_detail_insert($task_id, $status, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
+						$modelGeneral->task_detail_insert($task_id, $status, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
 						$task_detail_id = $this->db->insertID();
 						//
 						if($gateway){
@@ -240,18 +241,32 @@ class Task extends BaseController
 						//
 						foreach($otherEquipment as $key => $equipOther){
 							if(!empty($otherEquipment[$key]) && $equipQty[$key] > 0){
-								$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key], 'task_detail_id' => $task_detail_id ]);
+								//
+								$equipInfo = $modelGeneral->get_users_misc_equipment($otherEquipment[$key],$user_id)->get()->getRow();
+								//
+								$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key], 'task_detail_id' => $task_detail_id, 'rate' => $equipInfo->rate, 'total' => $equipQty[$key]*$equipInfo->rate ]);
 								//
 								$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `user_id` =  '$user_id' and `equip_id` = '$otherEquipment[$key]'");
 
 							}
 						}
+						/////////////////
+						$modelTeam = new Model_Team();
+						$team_id = $modelTeam->get_team_member(null,$user_id)->get()->getRow();
+						if($team_id){
+							$teamMember = $modelTeam->get_team_member($team_id->team_id);
+							foreach($teamMember->get()->getResult() as $memberValue){
+								$this->db->table('task_team_member')->insert(['task_id' => $task_id, 'team_id' => $team_id->team_id, 'user_id' => $memberValue->user_id, 'status' => $status]);
+							}
+						}
+						/////////////////
 					//
 					}else if($status == 'reject'){
 					//
-						$modelGeneral->task_detail_insert($task_id, $status, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
+						$modelGeneral->task_detail_insert($task_id, $status, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
 					//
 					}
+					//
 					//
 					if(!empty($_FILES['pic1']['name'])){
 						if(file_exists('./picture/'.$imgname.'1.jpg')){
@@ -295,7 +310,7 @@ class Task extends BaseController
 						//
 						if($status == 'complete' || $status == 'commission'){
 							//
-							$modelGeneral->task_detail_insert($task_id, $status, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
+							$modelGeneral->task_detail_insert($task_id, $status, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
 							$task_detail_id = $this->db->insertID();
 							//
 							if($gateway){
@@ -308,15 +323,28 @@ class Task extends BaseController
 							//
 							foreach($otherEquipment as $key => $equipOther){
 								if(!empty($otherEquipment[$key]) && $equipQty[$key] > 0){
-									$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key], 'task_detail_id' => $task_detail_id ]);
+									//
+									$equipInfo = $modelGeneral->get_users_misc_equipment($otherEquipment[$key],$user_id)->get()->getRow();
+									//
+									$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key], 'task_detail_id' => $task_detail_id, 'rate' => $equipInfo->rate, 'total' => $equipQty[$key]*$equipInfo->rate ]);
 									//
 									$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `user_id` =  '$user_id' and `equip_id` = '$otherEquipment[$key]' ");
 								}
 							}
+							/////////////////
+							$modelTeam = new Model_Team();
+							$team_id = $modelTeam->get_team_member(null,$user_id)->get()->getRow();
+							if($team_id){
+								$teamMember = $modelTeam->get_team_member($team_id->team_id);
+								foreach($teamMember->get()->getResult() as $memberValue){
+									$this->db->table('task_team_member')->insert(['task_id' => $task_id, 'team_id' => $team_id->team_id, 'user_id' => $memberValue->user_id, 'status' => $status]);
+								}
+							}
+							/////////////////
 							
 						}else if($status == 'reject'){
 							//
-							$modelGeneral->task_detail_insert($task_id, $status, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
+							$modelGeneral->task_detail_insert($task_id, $status, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
 						}
 						//
 						create_action_log('task id '.$task_id);

@@ -67,7 +67,9 @@ echo view('cpanel-layout/navbar');
 															$user='user'.$value->id;
 															$id = $value->id;
 															$num=0;
-
+															//
+															$data2 = $modelUser->submenu_list();
+															//
 															foreach($data2->get()->getResult() as $value){
 																$module=$value->id;
 																$modelUser->get_main_menu($value->menu_id)->get()->getRow()->menu;

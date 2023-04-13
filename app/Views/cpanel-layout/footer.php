@@ -2,6 +2,8 @@
 echo view('cpanel-layout/action_loader');
 echo view('cpanel/popup/popup_gateway_report');
 echo view('cpanel/popup/popup_equipment_report');
+echo view('cpanel/popup/popup_device_tools_report');
+echo view('cpanel/popup/popup_task_report');
 ?>
 <style>
   .call-wrapper{
@@ -195,6 +197,20 @@ echo view('cpanel/popup/popup_equipment_report');
       }
     });
     //////////////////////////////////
+    $.ajax({
+      type: "POST",
+      url: "<?php echo base_url();?>/general/global_deviceTools_list",
+      // data:'id='+val,
+      dataType : 'json',
+      success: function(data){
+        jQuery.each(data, function(index, item) {
+          $('.globalDeviceList').append('<option value="'+item.id+'">'+item.name+'</option>');
+                });
+                //
+      },error: function(jqXHR, text, error){
+        toastr.error(error);
+      }
+    });
   })
   /////////////////////////////////////////
   $(document).on('click','.switchBtn',function(){

@@ -14,14 +14,14 @@ echo view('cpanel-layout/navbar');
 			<div class="page-title-box">
 				<div class="row align-items-center">
 					<div class="col-sm-6">
-						<h4 class="page-title">Welcome to BlackOptic</h4>
+						<h4 class="page-title">Welcome!</h4>
 					</div>
 				</div>
 			</div>
 			<!-- end row -->
 			<div class="row">
 				<div class="col-md-12">
-					<p>Page content here with seprate rows</p>
+					<!-- <p>Page content here with seprate rows</p> -->
 				</div>
 			</div>
 			<!-- end row -->

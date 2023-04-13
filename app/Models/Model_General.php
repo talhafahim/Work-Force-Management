@@ -41,7 +41,7 @@ class Model_General extends Model {
 		return $builder;
 	}
 	//
-	function task_detail_insert($task_id, $status=null, $reject_reason=null, $picture1=null, $picture2=null, $picture3=null, $picture4=null, $picture5=null){
+	function task_detail_insert($task_id, $status=null, $reject_reason=null, $picture1=null, $picture2=null, $picture3=null, $picture4=null, $picture5=null,$user_id){
 		$db = \Config\Database::connect();
 		//
 		$data = array(
@@ -52,7 +52,8 @@ class Model_General extends Model {
 			'picture2' => $picture2, 
 			'picture3' => $picture3,
 			'picture4' => $picture4,
-			'picture5' => $picture5
+			'picture5' => $picture5,
+			'user_id' => $user_id
 		);
 		//
 		$builder = $db->table('task_detail');

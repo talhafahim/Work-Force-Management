@@ -20,10 +20,10 @@ class Team extends BaseController
 	public function index()
 	{
 		if(isLoggedIn() && access_crud('Team','view')){
-			$modelTeam = new Model_Team();
-			$modelUsers = new Model_Users();
-			$data['users'] = $modelUsers->get_users(null,null,null,['engineer','driver','technician']);
-			$data['teamList'] = $modelTeam->get_team();
+			$data['modelTeam'] = new Model_Team();
+			$data['modelUsers'] = new Model_Users();
+			$data['users'] = $data['modelUsers']->get_users(null,null,null,['engineer','driver','technician','trainee']);
+			$data['teamList'] = $data['modelTeam']->get_team();
 			//
 			return view('cpanel/team',$data);
 		}else{
@@ -49,6 +49,16 @@ class Team extends BaseController
 			$teamalready = $modelTeam->get_team(null,$name)->countAllResults();
 			if($teamalready > 0){
 				$error = 'Error : Team name already exist';
+			}
+			//
+			$modelUsers = new Model_Users();
+			foreach ($member as $value) {
+				$alreadyMember = $modelTeam->get_team_member(null,$value)->countAllResults();
+				if($alreadyMember > 0){
+					$userInfo = $modelUsers->get_users($value)->get()->getRow();
+					$error = $userInfo->firstname.' '.$userInfo->lastname.' is already a member of a team';
+					break;
+				}
 			}
 			//
 			if(empty($error)){
@@ -115,22 +125,90 @@ class Team extends BaseController
 		$member = $this->input->getPost('member');
 		if(!isLoggedIn() || !access_crud('Team','update')){
 			$error = 'Access Denied';
-		}if(empty($error)){
-			//
-			$this->db->table('team_member')->where('team_id',$team_id)->delete();
-			//
-			if(!empty($member)){
-				foreach ($member as $value) {
-					$this->db->table('team_member')->insert(['team_id' => $team_id, 'user_id' => $value]);
+		}
+		//
+		$modelUsers = new Model_Users();
+		if(!empty($member)){
+			foreach ($member as $value) {
+				$alreadyMember = $this->db->table('team_member')->where('user_id',$value)->where('team_id !=',$team_id)->countAllResults();
+				if($alreadyMember > 0){
+					$userInfo = $modelUsers->get_users($value)->get()->getRow();
+					$error = $userInfo->firstname.' '.$userInfo->lastname.' is already a member of a team';
+					break;
 				}
+			}}
+		//
+			if(empty($error)){
+			//
+				$this->db->table('team_member')->where('team_id',$team_id)->delete();
+			//
+				if(!empty($member)){
+					foreach ($member as $value) {
+						$this->db->table('team_member')->insert(['team_id' => $team_id, 'user_id' => $value]);
+					}
+				}
+				create_action_log($team_id);
+				return $this->response->setStatusCode(200)->setBody('Updated Successfully');
+			}else{
+				return $this->response->setStatusCode(401,$error);
 			}
-			create_action_log($team_id);
-			return $this->response->setStatusCode(200)->setBody('Updated Successfully');
-		}else{
-			return $this->response->setStatusCode(401,$error);
+		}
+	////////////////////////////////////////////////////
+		public function detial_sheet(){
+			if(isLoggedIn() && access_crud('Team','view')){
+			//
+				return view('cpanel/team_detail_sheet');
+			}else{
+				return redirect()->to(base_url('login'));
+			}
+		}
+	///////////////////////////////////////////////////
+		public function show_team_detail_content(){
+			$data['modelTeam'] = new Model_Team();
+			$data['modelUsers'] = new Model_Users();
+			//
+			$data['teamList'] = $data['modelTeam']->get_team()->orderBy('id','DESC');
+		//
+			foreach($data['teamList']->get()->getResult() as $key => $value){ ?>
+				<tr>
+					<td><?= $value->name;?></td>
+					<td>
+						<?php 
+						$engineerList = $data['modelTeam']->get_team_member_byJoin($value->id,'engineer');
+						foreach ($engineerList->get()->getResult() as $eValue) {
+							echo $eValue->firstname.' '.$eValue->lastname.'<br>';
+						}?>
+					</td>
+					<td>
+						<?php 
+						$engineerList = $data['modelTeam']->get_team_member_byJoin($value->id,'technician');
+						foreach ($engineerList->get()->getResult() as $eValue) {
+							echo $eValue->firstname.' '.$eValue->lastname.'<br>';
+						}?>
+					</td>
+					<td>
+						<?php 
+						$engineerList = $data['modelTeam']->get_team_member_byJoin($value->id,'trainee');
+						foreach ($engineerList->get()->getResult() as $eValue) {
+							echo $eValue->firstname.' '.$eValue->lastname.'<br>';
+						}?>
+					</td>
+					<td>
+						<?php 
+						$engineerList = $data['modelTeam']->get_team_member_byJoin($value->id,'driver');
+						foreach ($engineerList->get()->getResult() as $eValue) {
+							echo $eValue->firstname.' '.$eValue->lastname.'<br>';
+						}?>
+					</td>
+					<td>
+						<a href="javascript:void(0);" class="text-info edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-serial="<?php echo $value->id;?>"><i class="fa fa-edit"></i></a>
+						&nbsp;&nbsp;&nbsp;
+						<a href="javascript:void(0);" class="text-danger delete" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" data-serial="<?php echo $value->id;?>"><i class="fa fa-trash-alt"></i></a>
+					</td>
+				</tr>
+			<?php }
+		//
 		}
 
+
 	}
-
-
-}

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
-    <title>Login</title>
+    <title>Login | <?= get_setting_value('App Title');?></title>
     <meta content="Admin Dashboard" name="description">
     <meta content="Themesbrand" name="author">
     
@@ -140,7 +140,7 @@
                                         </div>
                                     </center>
                                     <div class="col-sm-12 text-right mt-4" id="loginbtn">
-                                        <button class="btn btn-primary w-md waves-effect waves-light btn-block"  type="submit">Log In</button>
+                                        <button class="btn btn-primary w-md waves-effect waves-light"  type="submit">Log In</button>
                                     </div>
                                     <!-- <div class="form-group mt-2 mb-0 row">
                                         <div class="col-12 mt-3">

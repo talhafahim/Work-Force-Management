@@ -74,7 +74,7 @@ echo view('cpanel-layout/navbar');
                                     <th>Vendor</th>
                                     <th>Model</th>
                                     <th>Scenario</th>
-                                    <th>Cost</th>
+                                    <th>Revenue (<?= get_setting_value('Currency');?>)</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>

@@ -71,7 +71,7 @@ echo view('cpanel-layout/navbar');
                         <label class="col-sm-2 col-form-label">Application Logo</label>
                         <div class="col-sm-10">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <input type="file" class="form-control" name="appLogo">
                                 </div>
                                 <div class="col-md-4">
@@ -84,7 +84,7 @@ echo view('cpanel-layout/navbar');
                         <label class="col-sm-2 col-form-label">Small Logo & Favicon</label>
                         <div class="col-sm-10">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <input type="file" class="form-control" name="smLogo">
                                 </div>
                                 <div class="col-md-4">
@@ -97,11 +97,26 @@ echo view('cpanel-layout/navbar');
                         <label class="col-sm-2 col-form-label">Login Page Background Image</label>
                         <div class="col-sm-10">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <input type="file" class="form-control" name="backImage">
                                 </div>
                                 <div class="col-md-4">
                                     <img src="<?= base_url();?>/assets/images/bank/loginBackground.jpg?t=<?php echo time(); ?>" style="width:100px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Currency</label>
+                        <div class="col-sm-10">
+                            <div class="row">
+                                <div class="col-md-4">
+                                   <select class="form-control" name="currency">
+                                       <option <?= ($currency->parameter == 'USD') ? 'selected' : '';?> >USD</option>
+                                       <option <?= ($currency->parameter == 'AED') ? 'selected' : '';?> >AED</option>
+                                       <option <?= ($currency->parameter == 'PKR') ? 'selected' : '';?> >PKR</option>
+                                       <option <?= ($currency->parameter == 'EUR') ? 'selected' : '';?> >EUR</option>
+                                   </select>
                                 </div>
                             </div>
                         </div>

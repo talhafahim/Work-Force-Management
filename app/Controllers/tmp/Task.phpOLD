@@ -5,6 +5,7 @@ use \Hermawan\DataTables\DataTable;
 use App\Models\Model_Customer;
 use App\Models\Model_Task;
 use App\Models\Model_General;
+use App\Models\Model_Users;
 
 class Task extends BaseController
 {
@@ -51,11 +52,14 @@ class Task extends BaseController
 			})
 			//
 			->add('taskStatus', function($row){
-				return '<span class="badge badge-soft-info" style="font-size:15px;">'.ucfirst($row->status).'</span>';
+				//
+				$status = ($row->status == 'complete') ? 'installed' : ( ($row->status == 'reject') ? 'return' : ($row->status) );
+				//
+				return '<span class="badge badge-soft-info" style="font-size:15px;">'.ucfirst($status).'</span>';
 			})
 			->add('action', function($row){
 				$actionHtml = '<div class="btn-group">';
-				if($row->status != 'complete' && $row->status != 'reject'){
+				if($row->status != 'commission' && $row->status != 'reject'){
 					$actionHtml .= '<button type="button" id="updateUN"  class="btn btn-primary btn-sm" data-un="'. 				$row->un_number.'" task-id="'.$row->id.'"><i class="fa fa-tasks"></i></button>';
 				}
 				$actionHtml .= '	
@@ -104,6 +108,7 @@ class Task extends BaseController
 			$modelCustomer = new Model_Customer();
 			$modelGeneral = new Model_General();
 			$modelTask = new Model_Task();
+			$modelUsers = new Model_Users();
 			$imgname = mt_rand(100000,999999).date('Hms');
 			//
 			$error = null;
@@ -119,6 +124,8 @@ class Task extends BaseController
 			$pic1 = $this->input->getFile('pic1');
 			$pic2 = $this->input->getFile('pic2');
 			$pic3 = $this->input->getFile('pic3');
+			$pic4 = $this->input->getFile('pic4');
+			$pic5 = $this->input->getFile('pic5');
 			//
 			$validation =  \Config\Services::validation();
 			$validate = $this->validate([
@@ -139,57 +146,107 @@ class Task extends BaseController
 				$error = 'Please put gateway & other equipment';
 			}
 			//
-			if(!empty($gateway) && $status == 'complete'){
-				$checkGateway = $modelGeneral->get_gateway(null,$gateway,$user_id,'assigned')->countAllResults();
-				if($checkGateway <= 0){
-					$error = 'Error : Inavlid Gateway Serial';
+			if(!empty($gateway) && ($status == 'complete' || $status == 'commission') ){
+				foreach ($gateway as $gatewayValue) {
+					$checkGateway = $modelGeneral->get_gateway(null,$gatewayValue,$user_id,'assigned')->countAllResults();
+					if($checkGateway <= 0){
+						$error = 'Error : Inavlid Gateway Serial#'.$gatewayValue;
+						break;
+					}
 				}	
 			}
 			//
-			if($status == 'reject' && empty($_FILES['pic1']['name']) && empty($_FILES['pic2']['name']) && empty($_FILES['pic3']['name']) ){
+			if($status == 'reject' && empty($_FILES['pic1']['name']) && empty($_FILES['pic2']['name']) && empty($_FILES['pic3']['name']) && empty($_FILES['pic4']['name']) && empty($_FILES['pic5']['name']) ){
 				$checkPicRequire = $modelGeneral->get_return_reason($returnReason)->get()->getRow();
 				if($checkPicRequire->pic_require == 1){
 					$error = 'Provide atleast one picture';
 				}
 			}
 			//
-			if($status == 'complete'){
+			if(empty($error) && ($status == 'complete' || $status == 'commission')){
+				//
 				foreach($otherEquipment as $key => $eqValue){
-					$equipdata = $modelGeneral->get_misc_equipment($eqValue)->get()->getRow();
-					if($equipdata->stock < $equipQty[$key]){
-						$error = 'Error : '.$equipdata->name.' out of stock';
-						break;
+					$inventoryExist = $modelGeneral->get_users_misc_equipment($eqValue,$user_id)->countAllResults();
+					if($equipQty[$key] > 0){
+						if($inventoryExist <= 0){
+							$equipInfo = $modelGeneral->get_misc_equipment($eqValue)->get()->getRow();
+							$error = 'Error : '.$equipInfo->name.' has not been assigned to you.';
+							break;
+						}
+					}
+				}	
+				//
+				if(empty($error)){
+					foreach($otherEquipment as $key => $eqValue){
+						$equipdata = $modelGeneral->get_users_misc_equipment($eqValue,$user_id)->get()->getRow();
+						if($equipQty[$key] > 0){
+							if($equipdata->stock < $equipQty[$key]){
+								$equipInfo = $modelGeneral->get_misc_equipment($equipdata->equip_id)->get()->getRow();
+								$error = 'Error : '.$equipInfo->name.' out of stock';
+								break;
+							}
+						}
 					}
 				}
 				//
 				if(count($otherEquipment) != count(array_unique($otherEquipment)) ){
 					$error = 'Error : Equipment can not be repeated';
 				}
+				//
+				if(empty($error) && empty($_FILES['pic1']['name']) && empty($_FILES['pic2']['name']) && empty($_FILES['pic3']['name']) && empty($_FILES['pic4']['name']) && empty($_FILES['pic5']['name'])){
+					$error = 'Provide atleast one picture';
+				}
 			}
 			//
+			if(empty($error)){
+				$countOtherUn = $this->db->table('bo_customer_info')->whereIn('status',['travelling','on site'])->where('assign_to',$user_id)->where('un_number !=',$un_number)->countAllResults();
+				if($countOtherUn > 0){
+					$error = 'Error : Finish you previous task first';
+				}
+			}
+			//
+			if(empty($error)){
+				$data['day_start'] = $modelUsers->get_day_routine($user_id,'start',date('Y-m-d'))->countAllResults();
+				$data['break'] = $modelUsers->get_day_routine($user_id,'break',date('Y-m-d'))->countAllResults();
+				$data['resume'] = $modelUsers->get_day_routine($user_id,'resume',date('Y-m-d'))->countAllResults();
+				$data['day_end'] = $modelUsers->get_day_routine($user_id,'end',date('Y-m-d'))->countAllResults();
+				//
+				if(($data['day_start'] <= 0) || ($data['break'] > 0 && $data['resume'] <= 0) || ($data['day_end'] > 0)){
+					$error = 'Please check you day routine';
+				}
+			}
+			/////////////////////////////////////////////////////////////////////////////////////
+			/////////////////////////////////////////////////////////////////////////////////////
 			if(empty($error)){
 				$this->db->transStart();
 			//
 				if($options == 'single'){
 					$this->db->table('bo_customer_info')->where('id',$task_id)->where('assign_to',$user_id)->update(['status' => $status]);
 				//
-					if($status == 'complete'){
+					if($status == 'complete' || $status == 'commission'){
 					//
-						$modelGeneral->task_detail_insert($task_id, $gateway, null, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg');
+						$modelGeneral->task_detail_insert($task_id, null, null, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
+						//
+						if($gateway){
+							foreach ($gateway as $gatewayValue) {
+								$this->db->table('task_gateway')->insert(['task_id' => $task_id, 'gateway_serial' => $gatewayValue]);
+							//
+								$this->db->table('gateway')->where('serial',$gatewayValue)->where('status','assigned')->update(['status' => 'used']);
+							}
+						}
 						//
 						foreach($otherEquipment as $key => $equipOther){
-							if(!empty($otherEquipment[$key])){
+							if(!empty($otherEquipment[$key]) && $equipQty[$key] > 0){
 								$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key] ]);
 								//
-								$this->db->query("UPDATE `miscellaneous_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `id` =  '$otherEquipment[$key]' ");
+								$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `user_id` =  '$user_id' and `equip_id` = '$otherEquipment[$key]'");
+
 							}
 						}
 					//
-						$this->db->table('gateway')->where('serial',$gateway)->where('status','assigned')->update(['status' => 'used']);
-					//
 					}else if($status == 'reject'){
 					//
-						$modelGeneral->task_detail_insert($task_id, null, null, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg');
+						$modelGeneral->task_detail_insert($task_id, null, null, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
 					//
 					}
 					//
@@ -208,7 +265,18 @@ class Task extends BaseController
 							unlink('./picture/'.$imgname.'3.jpg');
 						}
 						$pic3->move('./picture',$imgname.'3.jpg');
+					}if(!empty($_FILES['pic4']['name'])){
+						if(file_exists('./picture/'.$imgname.'4.jpg')){
+							unlink('./picture/'.$imgname.'4.jpg');
+						}
+						$pic4->move('./picture',$imgname.'4.jpg');
+					}if(!empty($_FILES['pic5']['name'])){
+						if(file_exists('./picture/'.$imgname.'5.jpg')){
+							unlink('./picture/'.$imgname.'5.jpg');
+						}
+						$pic5->move('./picture',$imgname.'5.jpg');
 					}
+					
 					//
 					create_action_log('task id '.$task_id);
 
@@ -220,23 +288,29 @@ class Task extends BaseController
 					foreach($taskarry->get()->getResult() as $value){
 						$task_id = $value->id;
 						//
-						if($status == 'complete'){
+						if($status == 'complete' || $status == 'commission'){
 							//
-							$modelGeneral->task_detail_insert($task_id, $gateway, null, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg');
+							$modelGeneral->task_detail_insert($task_id, null, null, null, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
 							//
-							foreach($otherEquipment as $key => $equipOther){
-								if(!empty($otherEquipment[$key])){
-									$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key] ]);
-									//
-									$this->db->query("UPDATE `miscellaneous_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `id` =  '$otherEquipment[$key]' ");
+							if($gateway){
+								foreach ($gateway as $gatewayValue) {
+									$this->db->table('task_gateway')->insert(['task_id' => $task_id, 'gateway_serial' => $gatewayValue]);
+								//
+									$this->db->table('gateway')->where('serial',$gatewayValue)->where('status','assigned')->update(['status' => 'used']);
 								}
 							}
 							//
-							$this->db->table('gateway')->where('serial',$gateway)->where('status','assigned')->update(['status' => 'used']);
-
+							foreach($otherEquipment as $key => $equipOther){
+								if(!empty($otherEquipment[$key]) && $equipQty[$key] > 0){
+									$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key] ]);
+									//
+									$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `user_id` =  '$user_id' and `equip_id` = '$otherEquipment[$key]' ");
+								}
+							}
+							
 						}else if($status == 'reject'){
 							//
-							$modelGeneral->task_detail_insert($task_id, null, null, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg');
+							$modelGeneral->task_detail_insert($task_id, null, null, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg');
 						}
 						//
 						create_action_log('task id '.$task_id);
@@ -257,6 +331,16 @@ class Task extends BaseController
 							unlink('./picture/'.$imgname.'3.jpg');
 						}
 						$pic3->move('./picture',$imgname.'3.jpg');
+					}if(!empty($_FILES['pic4']['name'])){
+						if(file_exists('./picture/'.$imgname.'4.jpg')){
+							unlink('./picture/'.$imgname.'4.jpg');
+						}
+						$pic4->move('./picture',$imgname.'4.jpg');
+					}if(!empty($_FILES['pic5']['name'])){
+						if(file_exists('./picture/'.$imgname.'5.jpg')){
+							unlink('./picture/'.$imgname.'5.jpg');
+						}
+						$pic5->move('./picture',$imgname.'5.jpg');
 					}
 					//
 					$this->db->table('bo_customer_info')->where('un_number',$currTask->un_number)->where('assign_to',$user_id)->where('status',$currTask->status)->update(['status' => $status]);
@@ -266,19 +350,17 @@ class Task extends BaseController
 			}else{
 				return $this->response->setStatusCode(401,$error);
 			}
+			/////////////////////////////////////////////////////////////////////////////////////
+			/////////////////////////////////////////////////////////////////////////////////////
 		}else{
 			return $this->response->setStatusCode(401,'Session Timeout');
 		}
 	}
 	//
 
+
 	public function test(){
-		$modelTask = new Model_Task();
-		$taskarry = $modelTask->get_task();
-		foreach($taskarry->get()->getResult() as $value){
-			echo $value->id;
-			echo '<br>';
-		}
+		echo $this->db->table('bo_customer_info')->whereIn('status',['travelling','on site','complete'])->where('assign_to',$user_id)->where('un_number !=',$un_number)->countAllResults();
 	}
 
 }

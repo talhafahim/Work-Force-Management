@@ -98,10 +98,20 @@ function submenu($menu_id){
 }
 //
 function call_API($url){
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $url); 
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		$result = curl_exec($ch);
-		return $result;
-	}
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $url); 
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$result = curl_exec($ch);
+	return $result;
+}
+//
+function get_setting_value($attr){
+	$db = \Config\Database::connect();
+	//
+	$builder = $db->table('bo_settings');
+	$builder->where('attribute',$attr);
+	$query = $builder->get()->getRow();
+	return $query->parameter;
+}
+//
 ?>

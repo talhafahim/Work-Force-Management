@@ -20,6 +20,7 @@ class Settings extends BaseController
 			$data['mMode'] = $modelSetting->setting('Maintenance Mode')->get()->getRow();
 			$data['appTitle'] = $modelSetting->setting('App Title')->get()->getRow();
 			$data['footerText'] = $modelSetting->setting('Footer Text')->get()->getRow();
+			$data['currency'] = $modelSetting->setting('Currency')->get()->getRow();
 			return view('cpanel/settings',$data);
 		}else{
 			return redirect()->to(base_url('403'));
@@ -56,6 +57,7 @@ class Settings extends BaseController
 		$appLogo = $this->input->getFile('appLogo');
 		$backImage = $this->input->getFile('backImage');
 		$smLogo = $this->input->getFile('smLogo');
+		$currency = $this->input->getPost('currency');
 		//
 		$error = null;
 		if(!isLoggedIn()){
@@ -68,6 +70,7 @@ class Settings extends BaseController
 			$modelSetting->settingUpdate('Maintenance Mode',$mMode,$mModeIPs);
 			$modelSetting->settingUpdate('App Title',null,$appTitle);
 			$modelSetting->settingUpdate('Footer Text',null,$footerText);
+			$modelSetting->settingUpdate('Currency',null,$currency);
 			//
 			if(!empty($_FILES['appLogo']['name'])){
 				unlink('./assets/images/logo.png');// delete old if exist

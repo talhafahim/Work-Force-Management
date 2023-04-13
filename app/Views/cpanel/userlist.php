@@ -6,7 +6,6 @@ echo view('cpanel-layout/topbar');
 echo view('cpanel-layout/navbar');
 // Left Sidebar End
 ?>
-<link href="<?= base_url();?>/assets/css/select2.min.css" rel="stylesheet" type="text/css">
 <!--  -->
 <div class="content-page">
 	<!-- Start content -->
@@ -96,7 +95,6 @@ echo view('cpanel-layout/navbar');
 echo view('cpanel-layout/footer');
 echo view('cpanel/popup/add_user');
 ?>
-<script src="<?= base_url();?>/assets/js/select2.min.js"></script>
 <script>
 
    $(document).ready(function() {

@@ -66,6 +66,7 @@ echo view('cpanel-layout/navbar');
                                     <th>Name</th>
                                     <th>Stock</th>
                                     <th>UOM</th>
+                                    <th>Rate (<?= get_setting_value('Currency');?>)</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody1">
@@ -77,6 +78,7 @@ echo view('cpanel-layout/navbar');
                                         <td><?= $equipInfo->name;?></td>
                                         <td><?= $value->stock;?></td>
                                         <td><?= $equipInfo->uom;?></td>
+                                        <td><?= $value->rate;?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -130,5 +132,10 @@ echo view('cpanel-layout/navbar');
 // echo view('cpanel-layout/action_loader');
 echo view('cpanel-layout/footer');
 ?>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table1').DataTable();
+    } );
+</script>
 
 

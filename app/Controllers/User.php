@@ -28,7 +28,7 @@ class User extends BaseController
 		if(isLoggedIn() && $sess_status == 'admin'){
 
 			$userModel = new Model_Users();
-			$query=$userModel->get_users(null,null,null,['admin','controller','technician','engineer','driver','technician','back office','trainee']);
+			$query=$userModel->get_users(null,null,null,['admin','manager','controller','technician','engineer','driver','technician','back office','trainee']);
 		//
 			$ser=0;
 			foreach ($query->get()->getResult() as $value) {
@@ -73,10 +73,6 @@ class User extends BaseController
 		// 
 		$userModel = new Model_Users();
 		$value=$userModel->get_users($userid)->get()->getRow();
-		//
-		$modelGeneral = new Model_General();
-		$user_tools = $modelGeneral->get_users_devices_n_tools($userid)->get()->getResultArray();
-		$user_tools =  array_column($user_tools, 'tool_id');
 		// 
 		$fnames= $value->firstname;
 		$lnames=$value->lastname;
@@ -163,15 +159,8 @@ class User extends BaseController
 			<div class="row">
 				<div class="col-md-6">
 					<div class="form-group"> 
-						<label>Devices & Tools</label>
-						<select class="form-control" id="deviceList" name="deviceList[]" multiple="multiple">
-							<option value="">select device</option>
-							<?php  
-							$devices_n_tools = $modelGeneral->get_devices_n_tools(); 
-							foreach($devices_n_tools->get()->getResult() as $key => $value){ ?>
-								<option value="<?= $value->id;?>" <?= (in_array($value->id,$user_tools)) ? 'selected' : '';?>  ><?= $value->name;?></option>
-							<?php } ?>
-						</select>
+						<label>Staff Cost</label>
+						<input type="number" name="staffCost" class="form-control" value="<?= $value->staff_cost;?>">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -234,7 +223,7 @@ class User extends BaseController
 					$nic= $request->getPost('nic');
 					$access = $request->getPost('block');
 					$extension = $request->getPost('extension');
-					$deviceList = $request->getPost('deviceList');	
+					$staffCost = $request->getPost('staffCost');	
 		// 
 					$new_pass= $request->getPost('password');
 					if(!empty($new_pass)){
@@ -257,7 +246,8 @@ class User extends BaseController
 							'mobilephone'=>$mobile,
 							'address'=>$address,
 							'block' => $access,
-							'extension'=> $extension
+							'extension'=> $extension,
+							'staff_cost' => $staffCost
 						];
 					}else{
 						$data= [
@@ -269,7 +259,8 @@ class User extends BaseController
 							'mobilephone'=>$mobile,
 							'address'=>$address,
 							'block' => $access,
-							'extension'=> $extension
+							'extension'=> $extension,
+							'staff_cost' => $staffCost
 						];
 					}
 					$db = \Config\Database::connect();
@@ -278,11 +269,6 @@ class User extends BaseController
 					$builder->where('id',$userid);
 					$builder->update($data);
 					//
-					// $this->db->table('users_devices_and_tools')->where('user_id',$userid)->delete();
-					// if($deviceList){
-					// foreach ($deviceList as $tool) {
-					// 	$this->db->table('users_devices_and_tools')->insert(['user_id' => $userid, 'tool_id' => $tool]);
-					// }}
 					// from helper
 					create_action_log('user id '.$userid); 
 					echo 'Success : User Updated Successfuly';
@@ -312,7 +298,7 @@ class User extends BaseController
 				$username= $request->getPost('username');
 				$address= $request->getPost('address');
 				$status= $request->getPost('status');
-				// $extension= $request->getPost('extension');
+				$staffCost= $request->getPost('staffCost');
 				$extension= NULL;
 		//
 				$validation =  \Config\Services::validation();
@@ -356,7 +342,8 @@ class User extends BaseController
 						'mobilephone'=>$mobile,
 						'address'=> NULL,
 						'status'=> $status,
-						'extension' => $extension
+						'extension' => $extension,
+						'staff_cost' => $staffCost
 					);
 		//
 					$builder = $db->table('bo_users');
@@ -427,10 +414,10 @@ class User extends BaseController
 			$sess_status = session()->get('status');
 			if(isLoggedIn() && $sess_status == 'admin' && access_crud('User Access','view')){
 				$data['modelUser'] = new Model_Users();
-				$query=$data['modelUser']->get_users(null,null,null,['admin','controller','technician','engineer']);
+				$query=$data['modelUser']->get_users(null,null,null,['admin','manager','controller','technician','engineer','back office','trainee']);
 				$data['data1']=$query;
 				//
-				$data['data2']=$data['modelUser']->submenu_list();
+				// $data['data2']=$data['modelUser']->submenu_list();
 				//
 				return view('cpanel/user_access',$data);
 			}else {

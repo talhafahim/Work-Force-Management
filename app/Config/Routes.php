@@ -48,6 +48,7 @@ $routes->group('/',['filter' => 'AuthFilter'], static function ($routes) {
     $routes->get('/', 'Dashboard::index');
     $routes->get('/cpanel', 'Dashboard::index');
     $routes->get('/dashboard', 'Dashboard::index');
+    $routes->get('/welcome', 'Dashboard::welcome');
     //
     $routes->get('/403', 'Settings::page_403');
     //
@@ -58,19 +59,23 @@ $routes->group('/',['filter' => 'AuthFilter'], static function ($routes) {
     $routes->get('/user/user-access-control', 'User::user_access');
     $routes->get('/user/user-profile', 'User::user_profile');
     //
-    $routes->get('/return-reason', 'General::return_reason');
     $routes->get('/task/my-tasks', 'Task::my_task');
     $routes->get('/task/detail/(:segment)', 'Task::task_detail/$1');
-    $routes->get('/gateway', 'General::gateway');
-    $routes->get('/task/upload', 'Customer::upload');
-    $routes->get('/miscellaneous_equipment', 'General::miscellaneous_equipment');
     $routes->get('/task/task-list', 'Customer::customer_list');
     $routes->get('/task/bulk-assign', 'Customer::bulk_assign');
+    $routes->get('/task/upload', 'Customer::upload');
+    $routes->get('/task/view-detail/(:segment)', 'Customer::view_detail/$1');
+    //
+    $routes->get('/gateway', 'General::gateway');
+    $routes->get('/miscellaneous_equipment', 'General::miscellaneous_equipment');
     $routes->get('/devices-n-tools', 'General::devices_n_tools');
+    $routes->get('/return-reason', 'General::return_reason');
+    //
     $routes->get('/message', 'Tools::all_reminders');
     $routes->get('/message/create', 'Tools::notification');
     //
     $routes->get('/team', 'Team::index');
+    $routes->get('/team/detail', 'Team::detial_sheet');
     //
 });
 

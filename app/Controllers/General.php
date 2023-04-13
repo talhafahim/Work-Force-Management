@@ -253,11 +253,13 @@ class General extends BaseController
 			$name = $this->input->getPost('name');
 			$stock = $this->input->getPost('stock');
 			$uom = $this->input->getPost('uom');
+			$rate = $this->input->getPost('rate');
 			$validation =  \Config\Services::validation();
 			$validate = $this->validate([
 				'name' => ['label' => 'Equipment Name', 'rules' => 'required|trim'],
 				'stock' => ['label' => 'Stock', 'rules' => 'required|trim'],
 				'uom' => ['label' => 'UOM', 'rules' => 'required|trim'],
+				'rate' => ['label' => 'Rate', 'rules' => 'required|trim'],
 			]);
 			if(!$validate){
 				$error = $validation->listErrors();
@@ -270,7 +272,7 @@ class General extends BaseController
 			//
 			if(empty($error)){
 				$this->db->transStart();
-				$this->db->table('miscellaneous_equipment')->insert(['name' => $name, 'stock' => $stock, 'uom' => $uom]);
+				$this->db->table('miscellaneous_equipment')->insert(['name' => $name, 'stock' => $stock, 'uom' => $uom, 'rate' => $rate]);
 				create_action_log($name); 
 				$this->db->transComplete();
 				return $this->response->setStatusCode(200)->setBody('Equipment Added Successfully');
@@ -316,10 +318,12 @@ class General extends BaseController
 		$id = $this->input->getPost('id');
 		$stock = $this->input->getPost('stock');
 		$uom = $this->input->getPost('uom');
+		$rate = $this->input->getPost('rate');
+		//
 		if(access_crud('Equipment','update')){
 			//
 			if(!empty($id) &&  !empty($stock)){
-				$this->db->table('miscellaneous_equipment')->where('id',$id)->update(['stock' => $stock,'uom' => $uom]);
+				$this->db->table('miscellaneous_equipment')->where('id',$id)->update(['stock' => $stock,'uom' => $uom, 'rate' => $rate]);
 				create_action_log('id# '.$id);
 				return $this->response->setStatusCode(200)->setBody('Update Successfully');
 			}else{
@@ -398,10 +402,10 @@ class General extends BaseController
 			$count = $modelGeneral->get_users_misc_equipment($otherEquipmentId,$technician_id)->countAllResults();
 			if($count > 0){
 					//
-				$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` + '$equipQty'  where `user_id` =  '$technician_id' and `equip_id` = '$otherEquipmentId' ");
+				$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` + '$equipQty', `rate` = '$equipdata->rate'  where `user_id` =  '$technician_id' and `equip_id` = '$otherEquipmentId' ");
 					//
 			}else{
-				$this->db->table('users_misc_equipment')->insert(['user_id' => $technician_id, 'equip_id' => $otherEquipmentId, 'stock' => $equipQty]);
+				$this->db->table('users_misc_equipment')->insert(['user_id' => $technician_id, 'equip_id' => $otherEquipmentId, 'stock' => $equipQty, 'rate' => $equipdata->rate]);
 			}
 				//
 			$this->db->query("UPDATE `miscellaneous_equipment` set `stock` = `stock` - '$equipQty'  where `id` =  '$otherEquipmentId' ");
@@ -455,6 +459,12 @@ class General extends BaseController
 	public function global_equipment_list(){
 		$modelGeneral = new Model_General();
 		$query = $modelGeneral->get_misc_equipment();
+		return (json_encode($query->get()->getResult()));
+	}
+	////////////////////
+	public function global_deviceTools_list(){
+		$modelGeneral = new Model_General();
+		$query = $modelGeneral->get_devices_n_tools();
 		return (json_encode($query->get()->getResult()));
 	}
 	

@@ -213,6 +213,13 @@ echo view('cpanel-layout/navbar');
 																<?php } ?>
 															</td>
 														</tr>
+														<tr>
+															<td><?= ucfirst($status);?> By</td>
+															<td><?php
+															$userInfo = $modelUser->get_users($value->user_id)->get()->getRow();
+															echo $userInfo->firstname.' '.$userInfo->lastname;
+														?></td>
+														</tr>
 													</table>
 												</div>
 											</div>

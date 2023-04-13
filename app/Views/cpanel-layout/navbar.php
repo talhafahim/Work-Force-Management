@@ -7,7 +7,7 @@
 			<ul class="metismenu" id="side-menu">
 				<li class="menu-title"><center><?= session()->get('fname')?> | <?= session()->get('status')?> </center></li>
 				
-				<li><a href="<?= base_url();?>/dashboard" class="waves-effect"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+				<!-- <li><a href="<?= base_url();?>/dashboard" class="waves-effect"><i class="fa fa-home"></i><span>Dashboard</span></a></li> -->
 				<?php if(session()->get('status') == 'hide'){ // change status from show to admin?> 
 					<li><a href="<?= base_url();?>/dashboard-menu-management" class="waves-effect"><i class="fa fa-bars"></i><span>Menu Management</span></a></li>
 				<?php } ?>

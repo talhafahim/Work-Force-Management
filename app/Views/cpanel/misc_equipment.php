@@ -39,13 +39,13 @@ echo view('cpanel-layout/navbar');
             <div class="card-body">
                 <form id="addNewCityForm">
                     <div class="row">
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-4 mb-4 form-group">
                            <input type="text" class="form-control" placeholder="Equipment Name" name="name" required>
                        </div>
-                       <div class="col-md-3 mb-3">
+                       <div class="col-md-2 mb-2 form-group">
                            <input type="number" step="0.1" class="form-control" placeholder="Stock" name="stock" required>
                        </div>
-                       <div class="col-md-3 mb-3">
+                       <div class="col-md-2 mb-2 form-group">
                            <select class="form-control" name="uom" required>
                                <option>piece</option>
                                <option>meter</option>
@@ -54,7 +54,10 @@ echo view('cpanel-layout/navbar');
                                <option>carton</option>
                            </select>
                        </div>
-                       <div class="col-md-2 mb-2">
+                       <div class="col-md-2 mb-2 form-group">
+                           <input type="number" step="0.1" class="form-control" placeholder="Rate (<?= get_setting_value('Currency');?>)" name="rate" required>
+                       </div>
+                       <div class="col-md-2 mb-2 form-group">
                         <button class="btn btn-primary" type="submit">Add</button>
                     </div>
                 </div>
@@ -77,6 +80,7 @@ echo view('cpanel-layout/navbar');
                                 <th>Name</th>
                                 <th>Stock</th>
                                 <th>UOM</th>
+                                <th>Rate (<?= get_setting_value('Currency');?>)</th>
                                 <th>Action</th>
                                 <th>Assign</th>
                             </tr>
@@ -90,6 +94,7 @@ echo view('cpanel-layout/navbar');
                                     <td><?= $value->name;?></td>
                                     <td><?= $value->stock;?></td>
                                     <td><?= $value->uom;?></td>
+                                    <td><?= $value->rate;?></td>
                                     <td>
 
                                         <a href="javascript:void(0);" class="text-info edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-serial="<?php echo $value->id;?>"><i class="fa fa-edit"></i></a>
@@ -129,13 +134,13 @@ echo view('cpanel-layout/navbar');
                 <div class="modal-body">
                     <div class="row">
                         <input type="hidden" name="id" id="id">
-                        <div class="col-md-4">
+                        <div class="col-md-12 form-group">
                             <input type="text" class="form-control" id="name" readonly>
                         </div>
-                        <div class="col-md-4">
-                            <input type="number" class="form-control" id="stock" step="0.1" min="0" name="stock" required>
+                        <div class="col-md-4 form-group">
+                            <input type="number" class="form-control" id="stock" step="0.01" min="0" name="stock" required>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 form-group">
                            <select class="form-control" name="uom" id="uom" required>
                                <option>piece</option>
                                <option>meter</option>
@@ -143,6 +148,9 @@ echo view('cpanel-layout/navbar');
                                <option>gallon</option>
                                <option>carton</option>
                            </select>
+                       </div>
+                       <div class="col-md-4 mb-4 form-group">
+                           <input type="number" step="0.01" class="form-control" placeholder="Rate (<?= get_setting_value('Currency');?>)" name="rate" id="rate" required>
                        </div>
                     </div>
                 </div>
@@ -278,6 +286,7 @@ echo view('cpanel-layout/footer');
                 $('#updateModel #name').val(data.name);
                 $('#updateModel #stock').val(data.stock);
                 $('#updateModel #uom').val(data.uom);
+                $('#updateModel #rate').val(data.rate);
                 $('#updateModel').modal('show'); 
             },error: function(jqXHR, text, error){
                 toastr.error(error);

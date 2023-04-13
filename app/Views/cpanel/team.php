@@ -18,14 +18,20 @@ echo view('cpanel-layout/navbar');
 					</div>
                     <div class="col-sm-6">
                         <div class="float-right">
-                          <a class="btn btn-primary mb-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            <i class="fa fa-plus"></i> Create New
-                        </a>
+
+                            <!-- <a class="btn btn-success mb-3" href="<?= base_url()?>/team/detail">
+                                <i class="fa fa-table"></i> Team Detail
+                            </a> -->
+
+                            <a class="btn btn-primary mb-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fa fa-plus"></i> Create New
+                            </a>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- end row -->
+            <!-- end row -->
         <!-- <div class="d-flex justify-content-end">
             
         </div> -->
@@ -40,7 +46,7 @@ echo view('cpanel-layout/navbar');
                                 <input type="text" class="form-control" placeholder="Team Name" name="name" required>
                             </div>
                             <div class="col-md-6 mb-6">
-                               <div class="form-group" id="reminder_for_group">
+                             <div class="form-group" id="reminder_for_group">
                                 <label for="remind_for">Team Member</label>
                                 <select name="member[]" class="form-control js-example-basic-multiple" id="memberListCreate" multiple="multiple" required>
                                     <?php 
@@ -68,27 +74,18 @@ echo view('cpanel-layout/navbar');
                     <div style="overflow-x:scroll;">
                         <table id="table1" class="table table-striped table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
                             <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Team Name</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbody1">
-                                <?php foreach($teamList->get()->getResult() as $key => $value){ ?>
                                     <tr>
-                                        <td><?= $key+1;?></td>
-                                        <td><?= $value->name;?></td>
-                                        <td>
-                                            <a href="javascript:void(0);" class="text-primary view" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" data-serial="<?php echo $value->id;?>"><i class="fa fa-list"></i></a>
-                                            &nbsp;&nbsp;&nbsp;
-                                            <a href="javascript:void(0);" class="text-info edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-serial="<?php echo $value->id;?>"><i class="fa fa-edit"></i></a>
-                                            &nbsp;&nbsp;&nbsp;
-                                            <a href="javascript:void(0);" class="text-danger delete" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" data-serial="<?php echo $value->id;?>"><i class="fa fa-trash-alt"></i></a>
-                                        </td>
+                                        <th>Team Name</th>
+                                        <th>Engineer</th>
+                                        <th>Technician</th>
+                                        <th>Trainee</th>
+                                        <th>Driver</th>
+                                        <th>Action</th>
                                     </tr>
-                                <?php } ?>
-                            </tbody>
+                                </thead>
+                                <tbody id="tbody1">
+                                    <!--  -->
+                                </tbody>
                         </table>
                     </div>
                 </div>
@@ -145,7 +142,7 @@ echo view('cpanel-layout/navbar');
                     <div class="row">
                         <input type="hidden" name="teamid" id="teamid">
                         <div class="col-md-12">
-                         <select name="member[]" class="form-control js-example-basic-multiple" id="memberListUpdate" multiple="multiple">
+                           <select name="member[]" class="form-control js-example-basic-multiple" id="memberListUpdate" multiple="multiple">
                             <?php 
                             foreach ($usersCollection->getResult() as $user){ ?>
                                 <option value="<?= $user->id ?>"><?= $user->firstname.' '.$user->lastname.' ('.$user->status.')' ?></option>
@@ -172,6 +169,26 @@ echo view('cpanel-layout/navbar');
 echo view('cpanel-layout/footer');
 ?>
 <script src="<?= base_url();?>/assets/js/select2.min.js"></script>
+<script>
+    //
+   $(document).ready(function(){
+    user_fetchdata();
+});
+  //
+   function user_fetchdata(){
+    var loader = `<tr><td colspan="10" class="text-center"><div class="spinner-border text-primary" role="status" id="loading"></div></td></tr>`;
+    $('#table1').dataTable().fnDestroy();
+    $('#tbody1').html(loader);
+    $.ajax({
+        method: 'POST',
+        url: '<?php echo base_url();?>/team/show_team_detail_content',
+        success: function(data){
+            $('#tbody1').html(data);
+            $('#table1').DataTable();
+        }
+    })
+}
+</script>
 <script type="text/javascript">
     $('#memberListCreate').select2({
         placeholder: 'Select Member',
@@ -195,10 +212,10 @@ echo view('cpanel-layout/footer');
                 url: '<?php echo base_url();?>/team/create_team',
                 data:$("#addNewCityForm").serialize(),
                 success: function (data) {
-                   toastr.success(data);
-                   location.reload(); 
-               },
-               error: function(jqXHR, text, error){
+                 toastr.success(data);
+                 location.reload(); 
+             },
+             error: function(jqXHR, text, error){
                     // Displaying if there are any errors
                 toastr.error(error);
             }
@@ -230,7 +247,7 @@ echo view('cpanel-layout/footer');
 </script>
 
 <script type="text/javascript">
-   $(document).on('click','.assignBtn',function(){
+ $(document).on('click','.assignBtn',function(){
     $("#updUserForm").trigger('reset');
     var dataname = $(this).attr('data-name');
     $('#otherEquipment').val(dataname);
@@ -296,10 +313,10 @@ echo view('cpanel-layout/footer');
                 url: '<?php echo base_url();?>/team/update_team_action',
                 data:$("#updateTeamForm").serialize(),
                 success: function (data) {
-                   toastr.success(data);
-                   location.reload(); 
-               },
-               error: function(jqXHR, text, error){
+                 toastr.success(data);
+                 location.reload(); 
+             },
+             error: function(jqXHR, text, error){
                     // Displaying if there are any errors
                 toastr.error(error);
             }

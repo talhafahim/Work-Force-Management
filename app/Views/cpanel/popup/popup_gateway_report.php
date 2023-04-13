@@ -14,13 +14,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Assign From</label>
-                                <input type="date" class="form-control" name="from">
+                                <input type="date" class="form-control" name="from" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Assign To</label>
-                                <input type="date" class="form-control" name="to">
+                                <input type="date" class="form-control" name="to" required>
                             </div>
                         </div>
                     </div>

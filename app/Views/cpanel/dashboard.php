@@ -5,7 +5,6 @@ echo view('cpanel-layout/topbar');
 // Top Bar End
 echo view('cpanel-layout/navbar');
 // Left Sidebar End
-
 ?>
 <div class="content-page">
 	<!-- Start content -->
@@ -23,26 +22,40 @@ echo view('cpanel-layout/navbar');
 				<div class="col-md-12">
 					<div class="card">
 						<div class="card-body">
-							<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+							<div id="profitChartContainer" style="height: 370px; width: 100%;"></div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<?php if(access_crud('All work Orders','view')){ ?>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-body">
+								<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
 			<div class="row">
-				<div class="col-md-4">
-					<div class="card">
-						<div class="card-body">
-							<div id="gatewaychartContainer" style="height: 370px; width: 100%;"></div>
+				<?php if(access_crud('Gateway','view')){ ?>
+					<div class="col-md-4">
+						<div class="card">
+							<div class="card-body">
+								<div id="gatewaychartContainer" style="height: 370px; width: 100%;"></div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-8">
-					<div class="card">
-						<div class="card-body">
-							<div id="equipmentchartContainer" style="height: 370px; width: 100%;"></div>
+				<?php } if(access_crud('Equipment','view')){ ?>
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-body">
+								<div id="equipmentchartContainer" style="height: 370px; width: 100%;"></div>
+							</div>
 						</div>
 					</div>
-				</div>
+				<?php } ?>
 			</div>
 			<!-- end row -->
 		</div>
@@ -224,9 +237,9 @@ echo view('cpanel-layout/navbar');
 		///////////////////////////////////////////////////////////////////////
 
 // window.onload = function () {
-	
-var chart3 = new CanvasJS.Chart("equipmentchartContainer", {
-	animationEnabled: true,
+
+			var chart3 = new CanvasJS.Chart("equipmentchartContainer", {
+				animationEnabled: true,
 	theme: "dark2", // "light1", "light2", "dark1", "dark2"
 	
 	title:{
@@ -252,12 +265,50 @@ var chart3 = new CanvasJS.Chart("equipmentchartContainer", {
 				echo '{ y: '.$value['stock'].', label: "'.$value['name'].'"},';
 			}
 			?>
+			]
+	}]
+});
+			chart3.render();
+
+
+
+			//////////////////////////////////////////
+
+
+			var chart4 = new CanvasJS.Chart("profitChartContainer", {
+	animationEnabled: true,
+	theme: "dark2", // "light1", "light2", "dark1", "dark2"
+	
+	title:{
+		text:"Profit & Loss"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		interlacedColor: "rgba(1,77,101,.2)",
+		gridColor: "rgba(1,77,101,.1)",
+		title: ""
+	},
+	data: [{
+		type: "bar",
+		name: "companies",
+		axisYType: "secondary",
+		color: "#014D65",
+		dataPoints: [
+			// { y: 3, label: "Sweden" },
+			<?php
+			foreach ($profit as $key => $value) {
+				echo '{ y: '.$profit[$key]['profit'].', label: "'.$profit[$key]['date'].'"},';
+			}
+			?>
+
 		]
 	}]
 });
-chart3.render();
+chart4.render();
 
-}
+		}
 
 	</script>
 

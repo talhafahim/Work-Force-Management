@@ -28,8 +28,9 @@ class Model_Users extends Model {
 		$builder = $db->table('bo_sub_menus');
 		$builder->select('bo_sub_menus.*,bo_menus.menu as menu');
 		$builder->join('bo_menus','bo_sub_menus.menu_id = bo_menus.id','left');
-		$query = $builder->orderBy('bo_sub_menus.menu_id','ASC');
-		return $query;
+		$builder->orderBy('bo_menus.order_menu','ASC');
+		$builder->orderBy('bo_sub_menus.menu_id','ASC');
+		return $builder;
 	}
 	//
 	function crud_detail($sub_menu_id,$id){

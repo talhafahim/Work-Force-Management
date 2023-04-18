@@ -107,6 +107,30 @@ class Report extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 	}
+	//-----------------------------------------------------------------
+	public function users_report(){
+		$from = $this->input->getPost('from');
+		$to = $this->input->getPost('to');
+		$id = $this->input->getPost('user');
+		$status = $this->input->getPost('status');
+		$format = $this->input->getPost('format');
+		//
+		if(isLoggedIn() && access_crud('Users Detail Report','view')){
+			//
+			$array = (empty($status)) ? null : array($status);
+			//
+			$data['modelUsers'] = new Model_Users();
+			$data['data'] = $data['modelUsers']->get_users($id,null,null,$array,$from,$to);
+			//
+			if($format == 'pdf'){
+				return view('cpanel/reports/pdf/users_report_pdf',$data);
+			}else{
+				return view('cpanel/reports/excel/users_report_excel',$data);
+			}
+		}else {
+			return redirect()->to(base_url('login'));
+		}
+	}
 
 
 }

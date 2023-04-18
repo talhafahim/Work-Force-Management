@@ -7,6 +7,7 @@ use App\Models\Model_Tools;
 use App\Models\Model_Users;
 use App\Models\Model_Task;
 use App\Models\Model_General;
+use App\Models\Model_Team;
 
 class Customer extends BaseController
 {
@@ -464,6 +465,14 @@ class Customer extends BaseController
 		}
 		//
 		if(empty($error)){
+			$modelTeam = new Model_Team();
+			$checkTeamMember = $modelTeam->get_team_member(null,$technician_id)->countAllResults();
+			if($checkTeamMember <= 0){
+				$error = 'Error : Engineer is not a team member';
+			}
+		}
+		//
+		if(empty($error)){
 			if($options == 'single'){
 				//
 				$this->db->table('bo_customer_info')->where('id',$dataid)->update(['assign_to' => $technician_id, 'status' => 'schedule' , 'assign_on' => date("Y-m-d H:i:s") ]);
@@ -514,6 +523,14 @@ class Customer extends BaseController
 			}
 			//
 			if(empty($error)){
+				$modelTeam = new Model_Team();
+				$checkTeamMember = $modelTeam->get_team_member(null,$technician_id)->countAllResults();
+				if($checkTeamMember <= 0){
+					$error = 'Error : Engineer is not a team member';
+				}
+			}
+			//
+			if(empty($error)){
 				//
 				$this->db->table('bo_customer_info')->where('un_number',$un_number)->update(['assign_to' => $technician_id, 'status' => 'schedule' , 'assign_on' => date("Y-m-d H:i:s")]);
 				//
@@ -544,6 +561,14 @@ class Customer extends BaseController
 				$error = 'Error : Invalid file structure';
 			}if($ext != 'csv'){
 				$error = 'Error : Invalid file format';
+			}
+		}
+		//
+		if(empty($error)){
+			$modelTeam = new Model_Team();
+			$checkTeamMember = $modelTeam->get_team_member(null,$technician_id)->countAllResults();
+			if($checkTeamMember <= 0){
+				$error = 'Error : Engineer is not a team member';
 			}
 		}
 		//////////

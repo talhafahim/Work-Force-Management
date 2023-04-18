@@ -144,17 +144,7 @@ class User extends BaseController
 				</div>
 			</div>
 		</div>
-		<div class="col-md-12">
-			<div class="row">
-				
-				<!-- <div class="col-md-6 col-xs-12">
-					<div class="form-group">
-						<label for="exampleFormControlInput1">Address</label>
-						<input type="text" class="form-control" name="address" id="exampleFormControlInput1" required="" value="<?= $address;?>">
-					</div>
-				</div> -->
-			</div>
-		</div>
+		
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-6">
@@ -181,6 +171,16 @@ class User extends BaseController
 
 				</div>
 			</div>
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-6 col-xs-12">
+						<div class="form-group">
+							<label for="exampleFormControlInput1">Unique ID</label>
+							<input type="text" class="form-control" name="uniq_id" id="exampleFormControlInput1" required="" value="<?= $value->unique_id;?>">
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<?php
 
@@ -201,7 +201,7 @@ class User extends BaseController
 					// 'nic' => 'trim|required',
 					'username' => 'trim|required',
 					'mobile' => 'trim|required|integer|min_length[10]|max_length[10]',
-					// 'address' => 'trim|required'
+					'uniq_id' => 'trim|required'
 				]);
 				$extension = $request->getPost('extension');
 				if(!empty($extension)){
@@ -212,7 +212,17 @@ class User extends BaseController
 				if(!$validate){
 					$error = $validation->listErrors();
 				}
-		//
+				//
+				$userdata = $this->db->table('bo_users')->where('username',$request->getPost('username'))->where('id !=',$request->getPost('userid'))->get()->getRow();
+				if(!empty($userdata)){
+					$error = "Error : Username already exist";
+				}
+				//
+				$uniqIdExist = $this->db->table('bo_users')->where('unique_id',$request->getPost('uniq_id'))->where('id !=',$request->getPost('userid'))->get()->getRow();
+				if(!empty($uniqIdExist)){
+					$error = "Error : Unique ID already exist";
+				}
+				//
 				if(empty($error)){
 					$this->db->transStart();
 					//
@@ -224,7 +234,8 @@ class User extends BaseController
 					$access = $request->getPost('block');
 					$extension = $request->getPost('extension');
 					$staffCost = $request->getPost('staffCost');	
-		// 
+					$uniq_id = $request->getPost('uniq_id');	
+					// 
 					$new_pass= $request->getPost('password');
 					if(!empty($new_pass)){
 						$pass_md5=md5($new_pass);
@@ -247,7 +258,8 @@ class User extends BaseController
 							'address'=>$address,
 							'block' => $access,
 							'extension'=> $extension,
-							'staff_cost' => $staffCost
+							'staff_cost' => $staffCost,
+							'unique_id' => $uniq_id
 						];
 					}else{
 						$data= [
@@ -260,7 +272,8 @@ class User extends BaseController
 							'address'=>$address,
 							'block' => $access,
 							'extension'=> $extension,
-							'staff_cost' => $staffCost
+							'staff_cost' => $staffCost,
+							'unique_id' => $uniq_id
 						];
 					}
 					$db = \Config\Database::connect();
@@ -299,6 +312,7 @@ class User extends BaseController
 				$address= $request->getPost('address');
 				$status= $request->getPost('status');
 				$staffCost= $request->getPost('staffCost');
+				$uniq_id= $request->getPost('uniq_id');
 				$extension= NULL;
 		//
 				$validation =  \Config\Services::validation();
@@ -311,7 +325,7 @@ class User extends BaseController
 					'password' => 'trim|required|min_length[5]',
 					'mobile' => 'trim|required|min_length[10]|max_length[10]',
 					'username' => 'trim|required',
-					// 'address' => 'trim|required',
+					'uniq_id' => 'trim|required',
 					'status' => 'trim|required',
 				]);
 				if(!empty($extension)){
@@ -328,7 +342,12 @@ class User extends BaseController
 				if(!empty($userdata)){
 					$error = "Error : Username already exist";
 				}
-		//
+				//
+				$uniqIdExist = $userModel->get_users(null,null,null,null,null,null,$uniq_id)->get()->getRow();
+				if(!empty($uniqIdExist)){
+					$error = "Error : Unique ID already exist";
+				}
+				//
 				if(empty($error)){
 					$this->db->transStart();
 					$data= array(
@@ -343,7 +362,8 @@ class User extends BaseController
 						'address'=> NULL,
 						'status'=> $status,
 						'extension' => $extension,
-						'staff_cost' => $staffCost
+						'staff_cost' => $staffCost,
+						'unique_id' => $uniq_id,
 					);
 		//
 					$builder = $db->table('bo_users');
@@ -469,35 +489,35 @@ class User extends BaseController
 		//
 		public function update_profile(){
 				//
-				$error = null;
-				$id= $this->input->getPost('id');
-				$mobile= $this->input->getPost('mobile');
-				$address= $this->input->getPost('address');
+			$error = null;
+			$id= $this->input->getPost('id');
+			$mobile= $this->input->getPost('mobile');
+			$address= $this->input->getPost('address');
 		//
-				$validation =  \Config\Services::validation();
+			$validation =  \Config\Services::validation();
 			//
-				$validate = $this->validate([
-					'mobile' => 'trim|required|min_length[10]|max_length[11]',
-					'address' => 'trim|required',
-				]);
-				if(!$validate){
-					$error = $validation->listErrors();
-					$error = str_replace(array("\n", "\r"), '', $error);
-					$error =  nl2br($error);
-				}
-				if(!isLoggedIn()){
-					$error = 'Session Timeout';
-				}
+			$validate = $this->validate([
+				'mobile' => 'trim|required|min_length[10]|max_length[11]',
+				'address' => 'trim|required',
+			]);
+			if(!$validate){
+				$error = $validation->listErrors();
+				$error = str_replace(array("\n", "\r"), '', $error);
+				$error =  nl2br($error);
+			}
+			if(!isLoggedIn()){
+				$error = 'Session Timeout';
+			}
 				//
-				if(empty($error)){
-					$this->db->transStart();
-					$this->db->table('bo_users')->where('id',$id)->update(['mobilephone' => $mobile, 'address' => $address]);
-					return $this->response->setStatusCode(200)->setBody('Update Successfully');
-					create_action_log('id '.$id);  
-					$this->db->transComplete();
-				}else{
-					return $this->response->setStatusCode(401,$error);
-				}
+			if(empty($error)){
+				$this->db->transStart();
+				$this->db->table('bo_users')->where('id',$id)->update(['mobilephone' => $mobile, 'address' => $address]);
+				return $this->response->setStatusCode(200)->setBody('Update Successfully');
+				create_action_log('id '.$id);  
+				$this->db->transComplete();
+			}else{
+				return $this->response->setStatusCode(401,$error);
+			}
 		}
 		//
 		public function change_password(){
@@ -545,6 +565,105 @@ class User extends BaseController
 			$userModel = new Model_Users();
 			$query = $userModel->get_users(null,null,null,['admin','controller','technician','engineer','driver']);
 			return (json_encode($query->get()->getResult()));
+		}
+		//////////////////////
+		public function user_upload_csv_action(){
+			$error = null;
+			$userModel = new Model_Users();
+			$status = $this->input->getPost('status');
+			$csv = $_FILES['file']['tmp_name'];
+			if(!isLoggedIn()){
+				$error = 'Error : Session expired';
+			}
+			if(isset($_FILES['file'])){
+				$file_name = $_FILES['file']['name'];
+				$handle = fopen($_FILES['file']['tmp_name'],"r");
+				$ext = pathinfo($file_name, PATHINFO_EXTENSION);
+			//
+				if(count(fgetcsv($handle)) != "8"){
+					$error = 'Error : Invalid file structure';
+				}if($ext != 'csv'){
+					$error = 'Error : Invalid file format';
+				}if(empty($status)){
+					$error = 'Please select status first';
+				}
+			}
+		//
+			if(empty($error)){
+				$handle = fopen($csv,"r");
+				$num = 0;
+				while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+				{
+					if($num > 0){
+						//
+						$userdata = $userModel->get_users(null,$row[0])->get()->getRow();
+						if(!empty($userdata)){
+							$error = "Error : Username already exist at line#".$num;
+							break;
+						}
+						//
+						$uniqIdExist = $userModel->get_users(null,null,null,null,null,null,$row[7])->get()->getRow();
+						if(!empty($uniqIdExist)){
+							$error = "Error : Unique ID already exist at line#".$num;
+							break;
+						}
+						//
+						if(empty($row[0]) || empty($row[1]) || empty($row[2]) || empty($row[3]) || empty($row[4]) || empty($row[5]) || empty($row[6]) || empty($row[7]) ){
+							$error = "Error : Cell can not be empty at line#".$num;
+							break;
+						}
+					//
+					}
+					$num++;
+				}
+			}
+		//////////
+			if(empty($error)){
+				$remove = array("'","`","(",")",",",'"');
+				$handle = fopen($csv,"r");
+				$num = 0;
+				while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+				{
+					if($num > 0){
+					//
+						$this->db->transStart();
+						$data= array(
+							'firstname'=> str_replace($remove,'',$row[2]),
+							'lastname'=> str_replace($remove,'',$row[3]),
+							'username'=> str_replace($remove,'',$row[0]),
+							'password'=> md5($row[1]),
+							'pass_string'=> $row[1],
+							'email'=> str_replace($remove,'',$row[4]),
+							'mobilephone'=> str_replace($remove,'',$row[5]),
+							'status'=> $status,
+							'staff_cost' => str_replace($remove,'',$row[6]),
+							'unique_id' => str_replace($remove,'',$row[7]),
+						);
+					//
+						$builder = $this->db->table('bo_users');
+						$builder->insert($data);
+					//
+						$insert_id = $this->db->insertID();
+					//
+						$submenu_list = $userModel->submenu_list();
+					//
+						foreach ($submenu_list->get()->getResult() as $key => $value) {
+							$data=['id' => $insert_id , 'menu_id' => $value->menu_id, 'sub_menu_id' => $value->id];
+							$builder = $this->db->table('bo_crud_access');
+							$builder->insert($data);
+						}
+					//
+						create_action_log('user id '.$insert_id);
+						$this->db->transComplete();
+					//
+					}
+					$num++;
+				}
+
+				return $this->response->setStatusCode(200)->setBody('Upload Successfully');
+			}else{
+				return $this->response->setStatusCode(401,$error);
+			}
 		}
 
 

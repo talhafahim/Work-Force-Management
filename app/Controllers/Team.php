@@ -200,6 +200,9 @@ class Team extends BaseController
 							echo $eValue->firstname.' '.$eValue->lastname.'<br>';
 						}?>
 					</td>
+					<td style="text-align:right;">
+						<?= $teamCost = $data['modelTeam']->get_team_cost($value->id)->get()->getRow()->total_sum;?>
+					</td>
 					<td>
 						<a href="javascript:void(0);" class="text-info edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-serial="<?php echo $value->id;?>"><i class="fa fa-edit"></i></a>
 						&nbsp;&nbsp;&nbsp;
@@ -211,4 +214,8 @@ class Team extends BaseController
 		}
 
 
+public function test(){
+		$modelTeam = new Model_Team();
+		echo $teamCost = $modelTeam->get_team_cost(5)->get()->getRow()->total_sum;
 	}
+}

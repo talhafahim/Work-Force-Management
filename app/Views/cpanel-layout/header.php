@@ -53,6 +53,9 @@
 		::-webkit-scrollbar-thumb {
 			background: #9ea5ab; 
 		}
+		.canvasjs-chart-credit,.canvasjs-chart-toolbar{
+      display: none;
+    }
 	</style>
 </head>
 <body>

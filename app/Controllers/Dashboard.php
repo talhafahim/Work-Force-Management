@@ -25,6 +25,8 @@ class Dashboard extends BaseController
 			$modelGeneral = new Model_General();
 			$id = session()->get('id');
 			$today = date('Y-m-d');
+			//
+			$data['taskPieGraph'] = $data['taskStatusWise'] = $data['equipmentReport'] = $data['gatewayReport'] = $data['dailyStaffWise'] = null;
 		//
 			if($status == 'engineer'){	
 			////////////////////////////////////////////////////////
@@ -59,34 +61,45 @@ class Dashboard extends BaseController
 				return view('customer/dashboard',$data);	
 			}else{
 			////////////////////////////////////////////////////////
-				$data['dailyStaffWise'] = array();
-				$statusArray = array('schedule','travelling','on site','complete','reject','commission');
-				$engineerList = $modelUsers->get_users(null,null,null,['engineer'])->get();
+				if(access_crud('All work Orders','view')){
+					$data['dailyStaffWise'] = array();
+					$statusArray = array('schedule','travelling','on site','complete','reject','commission');
+					$engineerList = $modelUsers->get_users(null,null,null,['engineer'])->get();
 			//
-				foreach($statusArray as $taskstatus){
+					foreach($statusArray as $taskstatus){
 			//
-					foreach($engineerList->getResult() as $key => $value){
-						$count = $modelCustomer->get_customer_info(null,null,$value->id,$taskstatus,date('Y-m-d'),date('Y-m-d'))->countAllResults();
-						$data['dailyStaffWise'][$taskstatus][$key]['username'] = $value->username; 
-						$data['dailyStaffWise'][$taskstatus][$key]['count'] = $count; 	
+						foreach($engineerList->getResult() as $key => $value){
+							$count = $modelCustomer->get_customer_info(null,null,$value->id,$taskstatus,date('Y-m-d'),date('Y-m-d'))->countAllResults();
+							$data['dailyStaffWise'][$taskstatus][$key]['username'] = $value->username; 
+							$data['dailyStaffWise'][$taskstatus][$key]['count'] = $count; 	
+						}
+			//
 					}
-			//
+				////////////////////////////////////////////////////////
+					$data['taskPieGraph'] = $this->task_pie_graph_data();
 				}
-			////////////////////////////////////////////////////////
-				$data['gatewayReport'] = array();
-				$statusArray = array('free','assigned','used');
+				////////////////////////////////////////////////////////
+				if(access_crud('Gateway','view')){ 
+					$data['gatewayReport'] = array();
+					$statusArray = array('free','assigned','used');
 			//
-				foreach($statusArray as $key => $taskstatus){
-					$gatewayCount = $modelGeneral->get_gateway(null,null,null,$taskstatus)->countAllResults();
-					$newtaskstatus = ($taskstatus == 'free') ? 'In Stock' : (($taskstatus == 'assigned') ? 'Assigned' : 'Utilized' );
-					$data['gatewayReport'][$key]['status'] = $newtaskstatus;
-					$data['gatewayReport'][$key]['count'] = $gatewayCount;
+					foreach($statusArray as $key => $taskstatus){
+						$gatewayCount = $modelGeneral->get_gateway(null,null,null,$taskstatus)->countAllResults();
+						$newtaskstatus = ($taskstatus == 'free') ? 'In Stock' : (($taskstatus == 'assigned') ? 'Assigned' : 'Utilized' );
+						$data['gatewayReport'][$key]['status'] = $newtaskstatus;
+						$data['gatewayReport'][$key]['count'] = $gatewayCount;
+					}
+					/////////////////////////////////////////////////
+					$data['taskStatusWise'] = $this->gateway_taskStatusWise();
 				}
-			///////////////////////////////////////////////////////
-				$data['equipmentReport'] = $modelGeneral->get_misc_equipment()->get()->getResultArray();
+				///////////////////////////////////////////////////////
+				if(access_crud('Equipment','view')){
+					$data['equipmentReport'] = $modelGeneral->get_misc_equipment()->get()->getResultArray();
+				}
+				////////////////////////////////////////////////////
 				//
-				$data['profit'] = $this->profit_graph_data();
-			///////////////////////////////////////////////////////
+				$data['profit'] = $this->profit_graph_data();	
+				///////////////////////////////////////////////////////
 				return view('cpanel/dashboard',$data);
 			}
 		}else{
@@ -190,6 +203,45 @@ class Dashboard extends BaseController
 		}
 		//
 		return ($data['profit']);
+	}
+	////////////////////////////////////////////////
+	public function task_pie_graph_data(){
+		$data['dailyTaskStatusWise'] = array();
+		$statusArray = array('schedule','travelling','on site','complete','reject','commission');
+		$modelCustomer = new Model_Customer();
+			//
+		foreach($statusArray as $key => $taskstatus){
+				//
+			$count = $modelCustomer->get_customer_info(null,null,null,$taskstatus,date('Y-m-d'),date('Y-m-d'))->countAllResults();
+				//
+			$status = ($taskstatus == 'complete') ? 'installed' : ( ($taskstatus == 'reject') ? 'return' : ($taskstatus) );
+				//
+			$data['dailyTaskStatusWise'][$key]['status'] = ucfirst($status); 
+			$data['dailyTaskStatusWise'][$key]['count'] = $count; 	
+			//
+		}
+		//
+		return $data['dailyTaskStatusWise'];
+	}
+	////////////////////////////////////////////////
+	public function gateway_taskStatusWise(){
+		$modelGeneral = new Model_General();
+		$modelUsers = new Model_Users();
+		$data['taskStatusWise'] = array();
+		$statusArray = array('complete','commission');
+		$engineerList = $modelUsers->get_users(null,null,null,['engineer'])->get();
+		//
+		foreach($statusArray as $taskstatus){
+			//
+			foreach($engineerList->getResult() as $key => $value){
+				$count = $modelGeneral->get_gateway_taskStatusWise($value->id,$taskstatus,date('Y-m-d'))->get()->getRow()->gatewayCount;
+				$data['taskStatusWise'][$taskstatus][$key]['username'] = $value->username; 
+				$data['taskStatusWise'][$taskstatus][$key]['count'] = $count; 	
+			}
+			//
+		}
+		//
+		return $data['taskStatusWise'];
 	}
 
 

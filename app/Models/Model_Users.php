@@ -5,7 +5,7 @@ use CodeIgniter\Model;
 class Model_Users extends Model {
 	
 
-	function get_users($id=null,$username=null,$email=null,$status=null){
+	function get_users($id=null,$username=null,$email=null,$status=null,$createDateFrom=null,$createDateTo=null,$uniq_id=null){
 		$db = \Config\Database::connect();
 		//
 		$builder = $db->table('bo_users');
@@ -18,6 +18,12 @@ class Model_Users extends Model {
 			$builder->where('email',$email);
 		} if(!empty($status)){
 			$builder->whereIn('status',$status);
+		} if(!empty($createDateFrom)){
+			$builder->where('created_at >=',$createDateFrom);
+		} if(!empty($createDateTo)){
+			$builder->where('created_at <=',$createDateTo);
+		} if(!empty($uniq_id)){
+			$builder->where('unique_id',$uniq_id);
 		}
 		return $builder;
 	}

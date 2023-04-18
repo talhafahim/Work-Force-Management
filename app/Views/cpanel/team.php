@@ -80,6 +80,7 @@ echo view('cpanel-layout/navbar');
                                         <th>Technician</th>
                                         <th>Trainee</th>
                                         <th>Driver</th>
+                                        <th>Team Cost (<?= get_setting_value('Currency');?>)</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>

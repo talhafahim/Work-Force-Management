@@ -65,18 +65,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-12">
-						<div class="row">
-							
-							<!-- <div class="col-md-6 col-xs-12">
-								<div class="form-group">
-									<label for="exampleFormControlInput1">Address</label>
-									<input type="text" class="form-control" name="address" id="exampleFormControlInput1" required="">
-								</div>
-							</div> -->
-
-						</div>
-					</div>
+					
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-6 col-xs-12">
@@ -101,6 +90,18 @@
 									</select>
 								</div>
 							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="row">
+							
+							<div class="col-md-6 col-xs-12">
+								<div class="form-group">
+									<label for="exampleFormControlInput1">Unique ID</label>
+									<input type="text" class="form-control" name="uniq_id" id="exampleFormControlInput1" required="">
+								</div>
+							</div>
+
 						</div>
 					</div>
 

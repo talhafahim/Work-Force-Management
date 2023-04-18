@@ -41,5 +41,14 @@ class Model_Team extends Model {
 		}
 		return $builder;
 	}
+	//////////////////////////
+	function get_team_cost($team_id){
+		$builder = $this->db->table('team_member as team')
+		->join('bo_users as user','user.id = team.user_id')
+		->where('team.team_id',$team_id)
+		->select('sum(staff_cost) as total_sum');
+		return $builder;
+	}
+
 
 }

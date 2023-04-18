@@ -4,6 +4,7 @@ echo view('cpanel/popup/popup_gateway_report');
 echo view('cpanel/popup/popup_equipment_report');
 echo view('cpanel/popup/popup_device_tools_report');
 echo view('cpanel/popup/popup_task_report');
+echo view('cpanel/popup/popup_users_report');
 ?>
 <style>
   .call-wrapper{

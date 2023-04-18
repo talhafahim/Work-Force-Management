@@ -41,7 +41,7 @@ class Model_General extends Model {
 		return $builder;
 	}
 	//
-	function task_detail_insert($task_id, $status=null, $reject_reason=null, $picture1=null, $picture2=null, $picture3=null, $picture4=null, $picture5=null,$user_id){
+	function task_detail_insert($task_id=null, $status=null, $reject_reason=null, $picture1=null, $picture2=null, $picture3=null, $picture4=null, $picture5=null,$user_id=null){
 		$db = \Config\Database::connect();
 		//
 		$data = array(
@@ -135,6 +135,21 @@ class Model_General extends Model {
 		}if(!empty($user_id)){
 			$builder->where('user_id',$user_id);
 		}
+		return $builder;
+	}
+	//
+	function get_gateway_taskStatusWise($user_id=null,$status=null,$date=null){
+		$builder = $this->db->table('task_detail as detail');
+		$builder->join('task_gateway as gateway','detail.id = gateway.task_detail_id');
+		if(!empty($user_id)){
+			$builder->where('detail.user_id',$user_id);
+		}if(!empty($status)){
+			$builder->where('detail.status',$status);
+		}if(!empty($date)){
+			$builder->where('detail.created_on >=',$date.' 00:00:00');
+			$builder->where('detail.created_on <=',$date.' 23:59:59');
+		}
+		$builder->select('count(gateway.id) as gatewayCount');
 		return $builder;
 	}
 

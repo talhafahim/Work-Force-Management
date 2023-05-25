@@ -52,15 +52,19 @@ class User extends BaseController
 				<tr>
 					<td><?php echo $ser;?></td>
 					<td><?php echo $user;?></td>
-					<td><?php echo $fname;?></td>
-					<td><?php echo $lname;?></td>
+					<td><?php echo $fname.' '.$lname;?></td>
+					<!-- <td><?php echo $lname;?></td> -->
 					<td><?php echo $email;?></td>
 					<td><?php echo $mobilephone;?></td>
-					<td><span class="badge badge-soft-primary"><?php echo $status;?></span></td>
+					<td><?php echo $value->unique_id;?></td>
+					<td><span class="badge badge-soft-warning"><?php echo $status;?></span></td>
 					<td><span class="badge badge-soft-<?php echo $class;?>"><?php echo $activetxt;?></span></td>
 					<td>
-						<a href="javascript:void(0);" class="mr-3 text-primary updUserBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-userid="<?php echo $id;?>"><i class="fa fa-edit"></i></a>
-						<a href="javascript:void(0);" class="text-danger delUserBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" data-userid="<?php echo $id;?>"><i class="fa fa-trash-alt"></i></a>
+						<div class="btn-group">
+							<a type="button" class="btn btn-primary btn-sm updUserBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-userid="<?php echo $id;?>"><i class="fa fa-edit"></i></a>
+							<a type="button" class="btn btn-danger btn-sm delUserBtn" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" data-userid="<?php echo $id;?>"><i class="fa fa-trash-alt"></i></a>
+							<a href="<?= base_url();?>/user/allow-access/<?= $id;?>" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Allow Access"><i class="fa fa-lock"></i></a>
+						</div>
 					</td>
 				</tr>
 			<?php } 
@@ -94,14 +98,20 @@ class User extends BaseController
 			<div class="row">
 				<div class="col-md-6 col-xs-12">
 					<div class="form-group">
-						<label for="exampleFormControlInput1">Firstname</label>
+						<label for="exampleFormControlInput1">Full Name</label>
 						<input type="text" class="form-control" name="f_name" id="exampleFormControlInput1" required="" value="<?= $fnames;?>" >
 					</div>
 				</div>
-				<div class="col-md-6 col-xs-12">
+				<!-- <div class="col-md-6 col-xs-12">
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Lastname</label>
 						<input type="text" class="form-control" name="l_name" id="exampleFormControlInput1" required="" value="<?= $lnames;?>">
+					</div>
+				</div> -->
+				<div class="col-md-6 col-xs-12">
+					<div class="form-group">
+						<label for="exampleFormControlInput1">Unique ID</label>
+						<input type="text" class="form-control" name="uniq_id" id="exampleFormControlInput1" required="" value="<?= $value->unique_id;?>">
 					</div>
 				</div>
 			</div>
@@ -171,7 +181,7 @@ class User extends BaseController
 
 				</div>
 			</div>
-			<div class="col-md-12">
+			<!-- <div class="col-md-12">
 				<div class="row">
 					<div class="col-md-6 col-xs-12">
 						<div class="form-group">
@@ -180,7 +190,7 @@ class User extends BaseController
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<?php
 
@@ -196,7 +206,7 @@ class User extends BaseController
 
 				$validate = $this->validate([
 					'f_name' => 'trim|required',
-					'l_name' => 'trim|required',
+					// 'l_name' => 'trim|required',
 					'email' => 'trim|required|valid_email',
 					// 'nic' => 'trim|required',
 					'username' => 'trim|required',
@@ -319,7 +329,7 @@ class User extends BaseController
 			//
 				$validate = $this->validate([
 					'f_name' => 'trim|required',
-					'l_name' => 'trim|required',
+					// 'l_name' => 'trim|required',
 					'email' => 'trim|required|valid_email',
 					// 'nic' => 'trim|required',
 					'password' => 'trim|required|min_length[5]',
@@ -445,6 +455,26 @@ class User extends BaseController
 			}
 
 		}
+		//
+		public function user_allow_access(){
+			//
+			$sess_status = session()->get('status');
+			$uri = new \CodeIgniter\HTTP\URI(current_url());
+			$data['id'] = $uri->getSegment(3);
+			$data['modelUser'] = new Model_Users();
+			$userExist = $data['modelUser']->get_users($data['id'])->countAllResults();
+			//
+			if(isLoggedIn() && $sess_status == 'admin' && access_crud('User Access','view') && $userExist > 0){
+				$data['userInfo'] = $data['modelUser']->get_users($data['id'])->get()->getRow();
+				//
+				$data['data2']=$data['modelUser']->submenu_list();
+				//
+				return view('cpanel/user_allow_access',$data);
+			}else {
+				return redirect()->to(base_url('login'));
+			}
+
+		}
 	//
 		public function crud_flip(){
 			$request = \Config\Services::request();
@@ -498,7 +528,7 @@ class User extends BaseController
 			//
 			$validate = $this->validate([
 				'mobile' => 'trim|required|min_length[10]|max_length[11]',
-				'address' => 'trim|required',
+				// 'address' => 'trim|required',
 			]);
 			if(!$validate){
 				$error = $validation->listErrors();
@@ -580,7 +610,7 @@ class User extends BaseController
 				$handle = fopen($_FILES['file']['tmp_name'],"r");
 				$ext = pathinfo($file_name, PATHINFO_EXTENSION);
 			//
-				if(count(fgetcsv($handle)) != "8"){
+				if(count(fgetcsv($handle)) != "7"){
 					$error = 'Error : Invalid file structure';
 				}if($ext != 'csv'){
 					$error = 'Error : Invalid file format';
@@ -602,13 +632,13 @@ class User extends BaseController
 							break;
 						}
 						//
-						$uniqIdExist = $userModel->get_users(null,null,null,null,null,null,$row[7])->get()->getRow();
+						$uniqIdExist = $userModel->get_users(null,null,null,null,null,null,$row[6])->get()->getRow();
 						if(!empty($uniqIdExist)){
 							$error = "Error : Unique ID already exist at line#".$num;
 							break;
 						}
 						//
-						if(empty($row[0]) || empty($row[1]) || empty($row[2]) || empty($row[3]) || empty($row[4]) || empty($row[5]) || empty($row[6]) || empty($row[7]) ){
+						if(empty($row[0]) || empty($row[1]) || empty($row[2]) || empty($row[3]) || empty($row[4]) || empty($row[5]) || empty($row[6])  ){
 							$error = "Error : Cell can not be empty at line#".$num;
 							break;
 						}
@@ -629,15 +659,15 @@ class User extends BaseController
 						$this->db->transStart();
 						$data= array(
 							'firstname'=> str_replace($remove,'',$row[2]),
-							'lastname'=> str_replace($remove,'',$row[3]),
+							// 'lastname'=> str_replace($remove,'',$row[3]),
 							'username'=> str_replace($remove,'',$row[0]),
 							'password'=> md5($row[1]),
 							'pass_string'=> $row[1],
-							'email'=> str_replace($remove,'',$row[4]),
-							'mobilephone'=> str_replace($remove,'',$row[5]),
+							'email'=> str_replace($remove,'',$row[3]),
+							'mobilephone'=> str_replace($remove,'',$row[4]),
 							'status'=> $status,
-							'staff_cost' => str_replace($remove,'',$row[6]),
-							'unique_id' => str_replace($remove,'',$row[7]),
+							'staff_cost' => str_replace($remove,'',$row[5]),
+							'unique_id' => str_replace($remove,'',$row[6]),
 						);
 					//
 						$builder = $this->db->table('bo_users');

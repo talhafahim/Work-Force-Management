@@ -72,6 +72,15 @@ class Customer extends BaseController
 				return '<span class="badge badge-soft-info" style="font-size:15px;">'.ucfirst($status).'</span>';
 			})
 			//
+			->add('assign_to', function($row){
+				//
+				if(!empty($row->assign_to)){
+					$modelUsers = new Model_Users();
+					$userInfo = $modelUsers->get_users($row->assign_to)->get()->getRow();
+					return $userInfo->firstname.' '.$userInfo->lastname;
+				}
+			})
+			//
 			->add('action', function($row){
 				//
 				$actionHtml = '<div class="btn-group">';
@@ -79,6 +88,11 @@ class Customer extends BaseController
 					$actionHtml .= '<button type="button" id="assignBtn" assign-id="'.$row->assign_to.'" data-id="'.$row->id.'" class="btn btn-primary btn-sm" title="Assign Now"><i class="fa fa-tasks"></i></button>';
 				}
 				$actionHtml .= '<a href="'.base_url().'/task/view-detail/'.$row->id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a>';
+
+				if($row->status == 'unallocated'){
+					$actionHtml .= '<a type="button" class="btn btn-danger btn-sm delete" data-serial="'.$row->id.'" title="Delete"><i class="fa fa-trash"></i></a>';
+				}
+				
 				$actionHtml .= '</div>';
 
 				return $actionHtml;
@@ -599,6 +613,30 @@ class Customer extends BaseController
 		$data['waterMeterCount'] = $this->db->table('bo_customer_info')->where('un_number',$un)->where(' 	meter_type','Water')->countAllResults();
 		$data['electricMeterCount'] = $this->db->table('bo_customer_info')->where('un_number',$un)->where(' 	meter_type','Electric')->countAllResults();
 		return json_encode($data);
+	}
+	////////////////////////////////////
+	public function delete_task_action(){
+		$error = null;
+		$task_id = $this->input->getPost('id');
+		if(!isLoggedIn() || !access_crud('All work Orders','delete')){
+			$error = 'Access denied';
+		}
+		//
+		$modelCustomer = new Model_Customer();
+		$checkStatus = $modelCustomer->get_customer_info($task_id,null,null,'unallocated')->countAllResults();
+		if($checkStatus <= 0){
+			$error = 'Error : This can not be deleted';		
+		}
+		//
+		if(empty($error)){
+			//
+			$this->db->table('bo_customer_info')->where('id',$task_id)->where('status','unallocated')->delete();
+			//
+			create_action_log('id#'.$task_id);
+			return $this->response->setStatusCode(200)->setBody('Delete Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
 	}
 
 

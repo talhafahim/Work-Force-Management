@@ -6,7 +6,7 @@ echo view('cpanel-layout/topbar');
 echo view('cpanel-layout/navbar');
 // Left Sidebar End
 ?>
-<link href="<?= base_url();?>/assets/css/select2.min.css" rel="stylesheet" type="text/css">
+
 <div class="content-page">
 	<!-- Start content -->
 	<div class="content">
@@ -26,6 +26,10 @@ echo view('cpanel-layout/navbar');
                             <a class="btn btn-primary mb-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                 <i class="fa fa-plus"></i> Create New
                             </a>
+                            <a class="btn btn-primary mb-3" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fa fa-arrow-up"></i> Upload Team
+                            </a>
+
 
                         </div>
                     </div>
@@ -35,7 +39,27 @@ echo view('cpanel-layout/navbar');
         <!-- <div class="d-flex justify-content-end">
             
         </div> -->
-        
+        <div class="collapse" id="collapseExample2">
+            <div class="card">
+                <div class="card-body">
+                    <form id="teamUploadForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <input type="file" name="file" required>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <button class="btn btn-primary btn-sm" type="submit">Upload</button>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <a href="<?= base_url();?>/csv_sample_files/team.csv" type="button" class="btn btn-info btn-sm" style="color:white;">Download Sample File</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
         <div class="collapse" id="collapseExample">
             <div class="card">
                 <div class="card-body">
@@ -48,7 +72,7 @@ echo view('cpanel-layout/navbar');
                             <div class="col-md-6 mb-6">
                              <div class="form-group" id="reminder_for_group">
                                 <label for="remind_for">Team Member</label>
-                                <select name="member[]" class="form-control js-example-basic-multiple" id="memberListCreate" multiple="multiple" required>
+                                <select name="member[]" class="form-control js-example-basic-multiple" id="memberListCreate" multiple="multiple">
                                     <?php 
                                     $usersCollection = $users->get();
                                     foreach ($usersCollection->getResult() as $user){ ?>
@@ -111,7 +135,7 @@ echo view('cpanel-layout/navbar');
             </div>
             <div class="modal-body">
                 <div style="overflow-x:scroll;">
-                    <table id="table1" class="table table-striped table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
+                    <table id="table2" class="table table-striped table-bordered" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
                         <thead>
                             <tr>
                                 <!-- <th>#</th> -->
@@ -169,7 +193,7 @@ echo view('cpanel-layout/navbar');
 // echo view('cpanel-layout/action_loader');
 echo view('cpanel-layout/footer');
 ?>
-<script src="<?= base_url();?>/assets/js/select2.min.js"></script>
+
 <script>
     //
    $(document).ready(function(){
@@ -200,11 +224,7 @@ echo view('cpanel-layout/footer');
         allowClear: true
     });
 </script>
-<script type="text/javascript">
-    $(document).ready( function () {
-        $('#table1').DataTable();
-    } );
-</script>
+
 <script type="text/javascript">
     $(document).ready(function() {
         $("#addNewCityForm").submit(function() {
@@ -322,6 +342,37 @@ echo view('cpanel-layout/footer');
                 toastr.error(error);
             }
         });
+            return false;
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#teamUploadForm").submit(function() {
+            $('#action_loader').modal('show');
+            $.ajax({
+                type: "POST",
+                url: '<?php echo base_url();?>/team/team_upload_csv_action',
+                data:  new FormData(this),
+                contentType: false,
+                cache: false,
+                processData:false,
+                success: function (data) {
+                    setTimeout(function(){ 
+                        $('#action_loader').modal('hide');
+                        toastr.success(data);
+                        user_fetchdata(); 
+                    }, 2000); 
+
+                },
+                error: function(jqXHR, text, error){
+                    setTimeout(function(){ 
+                        $('#action_loader').modal('hide');
+                        toastr.error(error);
+                    }, 500);
+                }
+            });
             return false;
         });
     });

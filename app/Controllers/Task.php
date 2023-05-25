@@ -99,7 +99,10 @@ class Task extends BaseController
 		$modelGeneral = new Model_General();
 		$gateway = $modelGeneral->get_gateway(null,null,$user_id,'assigned')->get()->getResult();
 		$data['gateway'] = array_column($gateway, 'serial');
-			//
+		//
+		$sim = $modelGeneral->get_sim(null,null,$user_id,'assigned')->get()->getResult();
+		$data['sim'] = array_column($sim, 'icc_id');
+		//
 		$data['currentStatus'] =  $taskDetail->status;
 		return json_encode($data);
 	}
@@ -119,6 +122,7 @@ class Task extends BaseController
 			$options = $this->input->getPost('options');
 			$status = $this->input->getPost('status');
 			$gateway = $this->input->getPost('gateway');
+			$sim = $this->input->getPost('sim');
 			$otherEquipment = $this->input->getPost('otherEquipment');
 			$equipQty = $this->input->getPost('equipQty');
 			$returnReason = $this->input->getPost('returnReason');
@@ -143,8 +147,8 @@ class Task extends BaseController
 				$error = 'Please select reject reason';
 			}
 			//
-			if($status == 'complete' && (empty($gateway) || empty($otherEquipment) )){
-				$error = 'Please put gateway & other equipment';
+			if($status == 'complete' && (empty($gateway) || empty($sim) || empty($otherEquipment) )){
+				$error = 'Please put gateway,SIM & other equipment';
 			}
 			//
 			if(!empty($gateway) && ($status == 'complete' || $status == 'commission') ){
@@ -155,6 +159,17 @@ class Task extends BaseController
 						break;
 					}
 				}	
+				//
+			}
+			//
+			if(!empty($sim) && ($status == 'complete' || $status == 'commission') ){
+				foreach ($sim as $simValue) {
+					$checkSIM = $modelGeneral->get_sim(null,$simValue,$user_id,'assigned')->countAllResults();
+					if($checkSIM <= 0){
+						$error = 'Error : Inavlid SIM ICC ID'.$simValue;
+						break;
+					}
+				}
 			}
 			//
 			if($status == 'reject' && empty($_FILES['pic1']['name']) && empty($_FILES['pic2']['name']) && empty($_FILES['pic3']['name']) && empty($_FILES['pic4']['name']) && empty($_FILES['pic5']['name']) ){
@@ -239,6 +254,14 @@ class Task extends BaseController
 							}
 						}
 						//
+						if($sim){
+							foreach ($sim as $simValue) {
+								$this->db->table('task_sim')->insert(['sim_icc_id' => $simValue, 'task_detail_id' => $task_detail_id]);
+							//
+								$this->db->table('sim')->where('icc_id',$simValue)->where('status','assigned')->update(['status' => 'utilized']);
+							}
+						}
+						//
 						foreach($otherEquipment as $key => $equipOther){
 							if(!empty($otherEquipment[$key]) && $equipQty[$key] > 0){
 								//
@@ -318,6 +341,14 @@ class Task extends BaseController
 									$this->db->table('task_gateway')->insert(['task_id' => $task_id, 'gateway_serial' => $gatewayValue, 'task_detail_id' => $task_detail_id]);
 								//
 									$this->db->table('gateway')->where('serial',$gatewayValue)->where('status','assigned')->update(['status' => 'used']);
+								}
+							}
+							//
+							if($sim){
+								foreach ($sim as $simValue) {
+									$this->db->table('task_sim')->insert(['sim_icc_id' => $simValue, 'task_detail_id' => $task_detail_id]);
+							//
+									$this->db->table('sim')->where('icc_id',$simValue)->where('status','assigned')->update(['status' => 'utilized']);
 								}
 							}
 							//

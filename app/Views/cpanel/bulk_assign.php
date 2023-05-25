@@ -68,7 +68,7 @@ echo view('cpanel-layout/navbar');
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="exampleFormControlInput1">Assign To</label>
-											<select class="form-control" required name="technician_id" placeholder="select technician">
+											<select class="form-control js-select2" required name="technician_id" placeholder="select technician">
 												<option value="">select technician</option>
 												<?php foreach ($technicianList->get()->getResult() as $value) { ?>
 													<option value="<?= $value->id;?>"><?= $value->firstname.' '.$value->lastname;?></option>
@@ -104,7 +104,7 @@ echo view('cpanel-layout/navbar');
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="exampleFormControlInput1">Assign To</label>
-											<select class="form-control" required name="technician_id" placeholder="select technician">
+											<select class="form-control js-select2" required name="technician_id" placeholder="select technician">
 												<option value="">select technician</option>
 												<?php foreach ($technicianList->get()->getResult() as $value) { ?>
 													<option value="<?= $value->id;?>"><?= $value->firstname.' '.$value->lastname;?></option>
@@ -115,7 +115,7 @@ echo view('cpanel-layout/navbar');
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="exampleFormControlInput1">CSV File Sample</label><br>
-											<a href="<?= base_url();?>/meter_sample_file.csv" class="btn btn-info">Download Sample File</a>
+											<a href="<?= base_url();?>/csv_sample_files/assign_by_meter.csv" class="btn btn-info">Download Sample File</a>
 										</div>
 									</div>
 									<div class="col-md-12">

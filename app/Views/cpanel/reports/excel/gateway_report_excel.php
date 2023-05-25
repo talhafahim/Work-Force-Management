@@ -10,8 +10,11 @@ fputcsv($f, $lineData, $delimiter);
 //
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
-	$assignTo = $modelUsers->get_users($value->assign_to)->get()->getRow()->username;
-	$status = ($value->status == 'used') ? 'Utilized' : ( ($value->status == 'free') ? 'In Stock' : 'Assigned');
+	$assignTo = null;
+	if(!empty($value->assign_to)){
+		$assignTo = $modelUsers->get_users($value->assign_to)->get()->getRow()->username;
+	}
+	$status = ($value->status == 'used') ? 'Utilized' : ( ($value->status == 'free') ? 'In Stock' : ucfirst($value->status));
 	//
 	$un = null;
 	if($status == 'Utilized'){

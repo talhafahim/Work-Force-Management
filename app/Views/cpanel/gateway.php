@@ -23,6 +23,8 @@ echo view('cpanel-layout/navbar');
                                 <option value="free">In Stock</option>
                                 <option value="assigned">Assigned</option>
                                 <option value="used">Utilized</option>
+                                <option value="return">Return</option>
+                                <option value="faulty">Faulty</option>
                             </select>
 
                         <!-- <a class="btn btn-primary mb-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -32,6 +34,7 @@ echo view('cpanel-layout/navbar');
                             <span class="btn-icon-label"><i class="fa fa-arrow-up"></i></span> Upload Gateway
                         </a>
                         <button class="btn btn-info" id="bulkAssign" style="display:none;">Assign To</button>
+                        <button class="btn btn-info" id="changeStatus" style="display:none;">Change Status</button>
                     </div>
                 </div>
 
@@ -51,7 +54,7 @@ echo view('cpanel-layout/navbar');
                             <button class="btn btn-primary btn-sm" type="submit">Upload</button>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <a href="<?= base_url();?>/gateway_sample_file.csv" type="button" class="btn btn-info btn-sm" style="color:white;">Download Sample File</a>
+                            <a href="<?= base_url();?>/csv_sample_files/gateway.csv" type="button" class="btn btn-info btn-sm" style="color:white;">Download Sample File</a>
                         </div>
                     </div>
                 </form>
@@ -73,8 +76,11 @@ echo view('cpanel-layout/navbar');
                                     <th>Serial</th>
                                     <th>Vendor</th>
                                     <th>Model</th>
-                                    <th>Scenario</th>
+                                    <th>CTN/Box#</th>
+                                    <th>Received Date</th>
+                                    <th>DN#</th>
                                     <th>Revenue (<?= get_setting_value('Currency');?>)</th>
+                                    <th>Assigned To</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -132,6 +138,29 @@ echo view('cpanel-layout/navbar');
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary waves-effect waves-light">Assign Now</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!-- sample modal content -->
+<div id="changeStatusModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form id="changeStatusForm" class="form-horizontal form-label-left input_mask">
+                <div class="modal-body">
+                    <label for="exampleFormControlInput1">Status</label>
+                    <select class="form-control" required="" name="status" id="status">
+                        <option value="">select</option>
+                        <option value="free">In Stock</option>
+                        <option value="faulty">Faulty</option>   
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light">Change Now</button>
                 </div>
             </form>
         </div><!-- /.modal-content -->
@@ -197,13 +226,17 @@ echo view('cpanel-layout/footer');
                 {data: 'serial'},
                 {data: 'vendor'},
                 {data: 'model'},
-                {data: 'scenario'},
+                {data: 'ctn'},
+                {data: 'received_date'},
+                {data: 'dn'},
                 {data: 'cost'},
+                {data: 'assign_to'},
                 {data: 'action', orderable: false, searchable: false},
                 ]  
         });
         $('#status').change(function(event) {
             table.ajax.reload();
+            enableDisable_assignBtn();
         });
     }
 
@@ -273,14 +306,18 @@ echo view('cpanel-layout/footer');
         }).get();
         //
         if(gatewayIDList1.length > 0){
-            $('#bulkAssign').show();
+            $('#bulkAssign,#changeStatus').show();
         }else{
-            $('#bulkAssign').hide();
+            $('#bulkAssign,#changeStatus').hide();
         }
     }
     //
     $(document).on('click','#bulkAssign',function(){
         $('#bulkassignModel').modal('show');
+    });
+    //
+    $(document).on('click','#changeStatus',function(){
+        $('#changeStatusModel').modal('show');
     });
     //
     $(document).ready(function() {
@@ -309,6 +346,57 @@ echo view('cpanel-layout/footer');
             });
             return false;
         });
+        //
+        //
+        //
+        $("#changeStatusForm").submit(function() {
+            //
+            var gatewayIDList = new Array();
+            $('#table1 tbody input:checkbox:checked').map(function() {
+                gatewayIDList.push(this.value);
+            }).get();
+            //
+            var status = $("#changeStatusForm #status").val();
+            //
+            $.ajax({
+                type: "POST",
+                url: '<?php echo base_url();?>/general/bulk_gateway_changeStatus',
+                data: 'status='+status+'&gatewayIDList='+gatewayIDList,
+                success: function (data) {
+                    toastr.success(data);
+                    $('#changeStatusModel').modal('hide');
+                    user_fetchdata();
+                     enableDisable_assignBtn();
+                },
+                error: function(jqXHR, text, error){
+                    toastr.error(error);
+                }
+            });
+            return false;
+        });
+
+
+
+    });
+</script>
+
+<script>
+    $(document).on('click','.delete',function(){
+        var val = $(this).attr('data-serial');
+//
+        if(confirm("Do you really want to delete this?")){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>/general/delete_gateway_action",
+                data:'id='+val,
+                success: function(data){
+                    toastr.success(data);
+                    table.ajax.reload();  
+                },error: function(jqXHR, text, error){
+                    toastr.error(error);
+                }
+            });
+        }
     });
 </script>
 

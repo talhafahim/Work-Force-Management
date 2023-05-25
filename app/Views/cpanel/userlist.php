@@ -56,7 +56,7 @@ echo view('cpanel-layout/navbar');
                             <button class="btn btn-primary btn-sm" type="submit">Upload</button>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <a href="<?= base_url();?>/user_upload_sample.csv" type="button" class="btn btn-info btn-sm" style="color:white;">Download Sample File</a>
+                            <a href="<?= base_url();?>/csv_sample_files/user.csv" type="button" class="btn btn-info btn-sm" style="color:white;">Download Sample File</a>
                         </div>
                     </div>
                 </form>
@@ -77,10 +77,11 @@ echo view('cpanel-layout/navbar');
                                 <tr>
                                     <th>#</th>
                                     <th>Username</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
+                                    <th>Full Name</th>
+                                    <!-- <th>Last Name</th> -->
                                     <th>Email</th>
                                     <th>Mobile</th>
+                                    <th>Unique ID</th>
                                     <th>Status</th>
                                     <th>Active|Block</th>
                                     <th>Action</th>

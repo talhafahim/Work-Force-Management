@@ -5,15 +5,19 @@ $f = fopen('php://memory', 'w');
 //
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
-$lineData = array('Device','User','Serial#','Assign On');
+$lineData = array('Device','Serial','Model','Status','User');
 fputcsv($f, $lineData, $delimiter);
 //
 foreach($data->get()->getResult() as $key => $value){
-	$key = $key+1;
-	$deviceInfo = $modelGeneral->get_devices_n_tools($value->tool_id)->get()->getRow();
+	$username = null;
+	$deviceInfo = $modelGeneral->get_devices_n_tools($value->device_id)->get()->getRow();
 	$userInfo = $modelUsers->get_users($value->user_id)->get()->getRow();
+
+	if(!empty($value->user_id)){
+		$username = $userInfo->firstname.' '.$userInfo->lastname;
+	}
 // 
-	$lineData = array($deviceInfo->name,$userInfo->firstname.' '.$userInfo->lastname,$value->serial,$value->updated_on);
+	$lineData = array($deviceInfo->name,$value->serial,$value->model,$value->status,$username);
 	fputcsv($f, $lineData, $delimiter);
 }				
 /////////////////////////////////////////////////////

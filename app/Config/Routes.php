@@ -36,7 +36,7 @@ $routes->get('/503', 'Settings::page_503');
 //
 $routes->group('/',['filter' => 'MaintenanceFilter'], static function ($routes) { 
     
-    $routes->get('', 'Login::error');
+    $routes->get('', 'Login::index');
     
     $routes->get('/login', 'Login::index');
     $routes->get('/login/verify-otp', 'Login::otp_verification');
@@ -57,6 +57,7 @@ $routes->group('/',['filter' => 'AuthFilter'], static function ($routes) {
     // user
     $routes->get('/user/user-list', 'User::index');
     $routes->get('/user/user-access-control', 'User::user_access');
+    $routes->get('/user/allow-access/(:segment)', 'User::user_allow_access/$1');
     $routes->get('/user/user-profile', 'User::user_profile');
     //
     $routes->get('/task/my-tasks', 'Task::my_task');
@@ -77,6 +78,7 @@ $routes->group('/',['filter' => 'AuthFilter'], static function ($routes) {
     $routes->get('/team', 'Team::index');
     $routes->get('/team/detail', 'Team::detial_sheet');
     //
+    $routes->get('/sim', 'General::sim');
 });
 
 /*

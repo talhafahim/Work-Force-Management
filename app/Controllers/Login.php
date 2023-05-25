@@ -53,7 +53,7 @@ class Login extends BaseController {
 			$modelCustomer = new Model_Customer();
 			$userData = $modelUsers->get_users(null,null,$username)->get()->getRow();
 			if(empty($userData)){
-				$userData = $modelCustomer->get_customer(null,null,null,$username)->get()->getRow();
+				$userData = $modelUsers->get_users(null,$username)->get()->getRow();
 			}
 //
 			if(empty($userData)){

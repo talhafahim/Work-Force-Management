@@ -143,6 +143,12 @@ echo view('cpanel-layout/navbar');
         </select>
     </div>
     <div class="form-group"> 
+        <label>SIM</label>
+        <select class="form-control multi-select" name="sim[]"  id="sim" multiple="multiple">
+            <!-- <option value="">select equipment</option> -->
+        </select>
+    </div>
+    <div class="form-group"> 
         <label>Other Equipment</label>
         <table id="equipTable">
             <?php 
@@ -224,7 +230,7 @@ echo view('cpanel-layout/footer');
 <script>
     $(document).ready(function() {
         $('.multi-select').select2({
-            placeholder: 'select equipment',
+            placeholder: 'select',
             allowClear: true,
         });
     });
@@ -301,12 +307,17 @@ echo view('cpanel-layout/footer');
                 }else if(data.currentStatus == 'complete'){
                     $('#status-commission').show();
                 }
-//
+                //
                 $('#gateway').html('');
                 jQuery.each(data.gateway, function(index, item) {
                     $('#gateway').append('<option>'+item+'</option>');
                 });
-//
+                //
+                $('#sim').html('');
+                jQuery.each(data.sim, function(index, item) {
+                    $('#sim').append('<option>'+item+'</option>');
+                });
+                //
                 $('#updateTaskModel').modal('show');
 
             }
@@ -324,6 +335,7 @@ echo view('cpanel-layout/footer');
         }if(status == 'complete'){
          $('#equipDiv').show(); 
          $('#gateway').prop('required',true);
+         $('#sim').prop('required',true);
      }if(status == 'reject'){
         $('#returnDiv').show(); 
         $('#returnDiv select').prop('required',true);  

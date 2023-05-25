@@ -38,6 +38,7 @@
 	<link href="<?= base_url();?>/assets/css/responsive.css" rel="stylesheet" type="text/css" />   
 	<link href="<?= base_url();?>/assets/css/notification_style.css" rel="stylesheet" type="text/css" />   
 	<!--  -->
+	<link href="<?= base_url();?>/assets/css/select2.min.css" rel="stylesheet" type="text/css">
 	<style>
 		::-webkit-scrollbar {
 			height: 4px;
@@ -54,8 +55,8 @@
 			background: #9ea5ab; 
 		}
 		.canvasjs-chart-credit,.canvasjs-chart-toolbar{
-      display: none;
-    }
+      		display: none;
+   		 }
 	</style>
 </head>
 <body>

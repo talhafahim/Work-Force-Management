@@ -5,6 +5,8 @@ echo view('cpanel/popup/popup_equipment_report');
 echo view('cpanel/popup/popup_device_tools_report');
 echo view('cpanel/popup/popup_task_report');
 echo view('cpanel/popup/popup_users_report');
+echo view('cpanel/popup/popup_sim_report');
+echo view('cpanel/popup/popup_profie_loss_report');
 ?>
 <style>
   .call-wrapper{
@@ -165,6 +167,7 @@ echo view('cpanel/popup/popup_users_report');
 <script src="<?= base_url();?>/assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
 <!-- input mask -->
 <script src="<?= base_url();?>/assets/js/jquery.inputmask.bundle.min.js"></script>
+<script src="<?= base_url();?>/assets/js/select2.min.js"></script>
 <script>
   $(function(){
     //////////////////////////////////
@@ -443,6 +446,10 @@ echo view('cpanel/popup/popup_users_report');
 
   });
 
+///////////////////
+$(document).ready(function() {
+    $('.js-select2').select2();
+});
 </script>
 </body>
 

@@ -41,8 +41,10 @@ class Report extends BaseController
 	}
 	//--------------------------------------------------------------------
 	public function equipment_report(){
-		$equipment = $this->input->getPost('equipment');
-		$assignto = $this->input->getPost('assignto');
+		$from = $this->input->getPost('from');
+		$to = $this->input->getPost('to');
+		$equip_id = $this->input->getPost('equipment');
+		$user_id = $this->input->getPost('assignto');
 		$format = $this->input->getPost('format');
 		//
 		if(isLoggedIn() && access_crud('Equipment Report','view')){
@@ -50,7 +52,7 @@ class Report extends BaseController
 			$data['modelCustomer'] = new Model_Customer();
 			$data['modelGeneral'] = new Model_General();
 			$data['modelUsers'] = new Model_Users();
-			$data['data'] = $data['modelGeneral']->get_users_misc_equipment($equipment,$assignto);
+			$data['data'] = $data['modelGeneral']->get_task_equip_count($from,$to,$user_id,null,$equip_id);
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/equipment_report_pdf',$data);
@@ -66,13 +68,14 @@ class Report extends BaseController
 		$device = $this->input->getPost('device');
 		$assignto = $this->input->getPost('assignto');
 		$serial = $this->input->getPost('serial');
+		$status = $this->input->getPost('status');
 		$format = $this->input->getPost('format');
 		//
 		if(isLoggedIn() && access_crud('Devices & Tools Report','view')){
 			//
 			$data['modelGeneral'] = new Model_General();
 			$data['modelUsers'] = new Model_Users();
-			$data['data'] = $data['modelGeneral']->get_users_devices_n_tools($assignto,$device,$serial);
+			$data['data'] = $data['modelGeneral']->get_devices_detail($device,$serial,$status,$assignto);
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/device_tools_report_pdf',$data);
@@ -88,15 +91,17 @@ class Report extends BaseController
 		$from = $this->input->getPost('from');
 		$to = $this->input->getPost('to');
 		$un = $this->input->getPost('un');
-		$assignto = $this->input->getPost('assignto');
+		$user_id = $this->input->getPost('assignto');
 		$status = $this->input->getPost('status');
 		$format = $this->input->getPost('format');
 		//
 		if(isLoggedIn() && access_crud('Task Report','view')){
 			//
-			$data['modelCustomer'] = new Model_Customer();
+			$data['modelTask'] = new Model_Task();
 			$data['modelUsers'] = new Model_Users();
-			$data['data'] = $data['modelCustomer']->get_customer_info(null,$un,$assignto,$status,$from,$to);
+			$data['modelGeneral'] = new Model_General();
+			// $data['data'] = $data['modelTask']->get_task_detail_report($user_id,$status,$un,$from,$to);
+			$data['data'] = $data['modelTask']->get_task(null,$un,$user_id,$status,$from,$to);
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/task_report_pdf',$data);
@@ -131,6 +136,92 @@ class Report extends BaseController
 			return redirect()->to(base_url('login'));
 		}
 	}
+	//--------------------------------------------------------------------
+	public function sim_report(){
+		$from = $this->input->getPost('from');
+		$to = $this->input->getPost('to');
+		$serial = $this->input->getPost('serial');
+		$assignto = $this->input->getPost('assignto');
+		$status = $this->input->getPost('status');
+		$format = $this->input->getPost('format');
+		//
+		if(isLoggedIn() && access_crud('SIM Report','view')){
+			//
+			$data['modelCustomer'] = new Model_Customer();
+			$data['modelGeneral'] = new Model_General();
+			$data['modelUsers'] = new Model_Users();
+			$data['data'] = $data['modelGeneral']->get_sim(null,$serial,$assignto,$status,$from,$to);
+			//
+			if($format == 'pdf'){
+				return view('cpanel/reports/pdf/sim_report_pdf',$data);
+			}else{
+				return view('cpanel/reports/excel/sim_report_excel',$data);
+			}
+		}else {
+			return redirect()->to(base_url('login'));
+		}
+	}
+	//--------------------------------------------------------------------
+	public function profit_loss_report(){
+		
+		$start_date = $this->input->getPost('from');
+		$end_date = $this->input->getPost('to');
+		$user_id = $this->input->getPost('user_id');
+		$format = $this->input->getPost('format');
+		//
+		if(empty($user_id)){
+			$user_id = null;
+		}
+		//
+		$data['modelTask'] = new Model_Task();
+		//
+		if(isLoggedIn() && access_crud('Profit & Loss Report','view')){
+			//
+			$current_date = strtotime($start_date);
+			$i = 0;
+			while ($current_date <= strtotime($end_date)) {
+				// echo date('Y-m-d', $current_date) . "<br>";
+				$date =  date('Y-m-d', $current_date);
+				//
+				$equipCost = $data['modelTask']->get_total_equip_cost($date,$user_id)->get()->getRow()->total_sum;
+				$staffCost = $data['modelTask']->get_total_team_cost($date,$user_id)->get()->getRow()->total_sum;
+				$gatewayRev = $data['modelTask']->get_total_gateway_revenue($date,$user_id)->get()->getRow()->total_sum;
+				$commissionCount = $data['modelTask']->get_total_commission($date,$user_id)->countAllResults();
+				$commissionRev = $commissionCount*18.62;
+				//
+				$totalRev = $gatewayRev + $commissionRev;
+				$totalExp = $staffCost + $equipCost;
+				//	
+				// Staff cost + Equipment cost - (commissioning revenue + Gateway revenue)
+				$profitLoss = $totalRev - $totalExp;
+				//
+				$profit = $loss = 0;
+				if($profitLoss > 0){
+					$profit = $profitLoss;
+				}else{
+					$loss = $profitLoss;
+				}
+				//
+				$data['profit'][$i]['date'] = $date;
+				$data['profit'][$i]['profit'] = $profit;
+				$data['profit'][$i]['loss'] = $loss;
+				//
+				$current_date = strtotime('+1 day', $current_date);
+				$i++;
+			}
+			//
+			if($format == 'pdf'){
+				return view('cpanel/reports/pdf/profit_loss_report_pdf',$data);
+			}else{
+				return view('cpanel/reports/excel/profit_loss_report_excel',$data);
+			}
+		}else {
+			return redirect()->to(base_url('login'));
+		}
+	
+	}
+
+	
 
 
 }

@@ -32,10 +32,10 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'localhost',
-		'username' => 'sql_talha_logon_',
-		'password' => 'Logon.com.pk',
-		'database' => 'blackoptic_test',
+		'hostname' => '127.0.0.1',
+		'username' => 'root',
+		'password' => '',
+		'database' => 'erp',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,

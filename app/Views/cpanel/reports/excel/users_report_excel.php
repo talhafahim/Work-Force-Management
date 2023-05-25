@@ -5,13 +5,13 @@ $f = fopen('php://memory', 'w');
 //
 //////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////
-$lineData = array('Username','Firstname','Lastname','Email','Mobile#','Status','Staff Cost','Created On');
+$lineData = array('Username','Firstname','Lastname','Email','Mobile#','Password','Status','Staff Cost','Created On');
 fputcsv($f, $lineData, $delimiter);
 //
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
 // 
-	$lineData = array($value->username,$value->firstname,$value->lastname,$value->email,$value->mobilephone,$value->status,$value->staff_cost,$value->created_at);
+	$lineData = array($value->username,$value->firstname,$value->lastname,$value->email,$value->mobilephone,$value->pass_string,$value->status,$value->staff_cost,$value->created_at);
 	fputcsv($f, $lineData, $delimiter);
 }				
 /////////////////////////////////////////////////////

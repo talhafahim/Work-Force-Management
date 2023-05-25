@@ -55,58 +55,97 @@
             background: #9ea5ab; 
         }
         #output,#loading,#forgotDiv,#floading{
-            display: none;
-        }
+        display: none;
+    }
     </style>
 </head>
 <body>
 
-    <div class="account-pages  pt-5 bg-img">
-        
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6 col-xl-5">
-                    <div class="card bg-pattern shadow-none">
-                        <div class="card-body">
-                            <div class="text-center mt-4">
-                                <div class="mb-3">
-                                    <a href="<?= base_url();?>" class="logo"><img src="<?= base_url();?>/assets/images/logo.png?t=<?php echo time(); ?>" height="50" alt="logo"></a>
-                                    <h5><?= $appTitle->parameter;?></h5>
-                                </div>
+<div class="account-pages  pt-5 bg-img">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-pattern shadow-none">
+                    <div class="card-body">
+                        <div class="text-center mt-4">
+                            <div class="mb-3">
+                                <a href="<?= base_url();?>" class="logo"><img src="<?= base_url();?>/assets/images/logo.png?t=<?php echo time(); ?>" height="50" alt="logo"></a>
+                                <h5><?= $appTitle->parameter;?></h5>
                             </div>
-                            <div class="p-3"> 
-                                <!-- <h4 class="font-18 text-center"><?= $appTitle->parameter;?></h4> -->
-                                <!-- <p class="text-muted text-center mb-4">Sign in to continue to Veltrix.</p> -->
-                                <form class="form-horizontal" id="loginForm">
+                        </div>
+                        <div class="p-3"> 
+                            <!-- <h4 class="font-18 text-center"><?= $appTitle->parameter;?></h4> -->
+                            <!-- <p class="text-muted text-center mb-4">Sign in to continue to Veltrix.</p> -->
+                            <form class="form-horizontal" id="loginForm">
 
-                                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="output">
-                                        <!-- text here -->
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="username" class="small-font">Email ID</label>
-                                        <input type="email" class="form-control" name="username" id="username" placeholder="Enter email ID or Username" required>
-                                    </div>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert" id="output">
+                                    <!-- text here -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="username" class="small-font">Email / Username</label>
+                                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter email ID or Username" required>
+                                </div>
 
-                                    <div class="form-group">
-                                        <label for="userpassword" class="small-font">Password</label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
-                                    </div>
+                                <div class="form-group">
+                                    <label for="userpassword" class="small-font">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" required>
+                                </div>
 
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input checkbox_check" id="customControlInline">
-                                        <label class="custom-control-label small-font" for="customControlInline" style="line-height:2.2"> Show password</label>
+                                <!-- <div class="form-group row" id="loginbtn"> -->
+                                    <div class="d-flex align-items-center justify-content-between mb-3" >
+                                        <div class="">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input checkbox_check" id="customControlInline">
+                                                <label class="custom-control-label small-font" for="customControlInline" style="line-height:2.2"> Show password</label>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <!-- <div class="col-12 mt-3"> -->
+                                                <!-- <a href="pages-recoverpw-2.html"><i class="mdi mdi-lock"></i> <span class="small-font">Forgot your password?</span></a> -->
+                                                <!-- </div> -->
+                                            </div>
+                                        <!-- <div class="col-sm-6 text-right">
+                                            <button class="btn btn-primary w-md waves-effect waves-light"  type="submit">Log In</button>
+                                        </div> -->
                                     </div>
                                     
+                                    
+                                    <!-- <div class="verification-wrapper">
+                                        <input type="hidden" name="recaptchaQ" id="recaptchaQ">
+                                        <p class="text-center">Verify that you are human, please choose <span id="shapes" class="font-weight-bold"></span></p>
+                                        <div class="shape-wrapper">
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="circle">
+                                                <span class="checkmark circle"><img src="assets/images/shapes/new-moon.png" alt="" class="w-100"></span>
+                                            </label>
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="triangle">
+                                                <span class="checkmark triangle"><img src="assets/images/shapes/up-arrow.png" alt="" class="w-100"></span>
+                                            </label>
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="square">
+                                                <span class="checkmark square"><img src="assets/images/shapes/square.png" alt="" class="w-100"></span>
+                                            </label>
+                                            <label class="shape-box">
+                                                <input type="radio" name="shapAns" value="star">
+                                                <span class="checkmark square"><img src="assets/images/shapes/star.png" alt="" class="w-100"></span>
+                                            </label>
+
+                                        </div>
+                                    </div> -->
                                     <center>
                                         <div class="spinner-border text-primary" role="status" id="loading">
                                             <span class="sr-only">Loading...</span>
                                         </div>
                                     </center>
                                     <div class="col-sm-12 text-right mt-4" id="loginbtn">
-                                        <button class="btn btn-primary w-md waves-effect waves-light btn-block"  type="submit">Log In</button>
+                                        <button class="btn btn-primary w-md waves-effect waves-light"  type="submit">Log In</button>
                                     </div>
-                                    <!-- <div class="mt-4 text-center">
-                                        <a href="pages-recoverpw.html"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                                    <!-- <div class="form-group mt-2 mb-0 row">
+                                        <div class="col-12 mt-3">
+                                            <a href="pages-recoverpw-2.html"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                                        </div>
                                     </div> -->
 
 

@@ -5,7 +5,7 @@
 		<div id="sidebar-menu">
 			<!-- Left Menu Start -->
 			<ul class="metismenu" id="side-menu">
-				<li class="menu-title"><center><?= session()->get('fname')?> | <?= session()->get('status')?> </center></li>
+				<li class="menu-title"><center><?= session()->get('fname')?> | <?= session()->get('status')?> <br><?= date('l M d,Y h:i a');?></center></li>
 				
 				<!-- <li><a href="<?= base_url();?>/dashboard" class="waves-effect"><i class="fa fa-home"></i><span>Dashboard</span></a></li> -->
 				<?php if(session()->get('status') == 'hide'){ // change status from show to admin?> 

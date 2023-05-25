@@ -45,40 +45,43 @@ border: none;
 $html .= '<table>
 			<thead>
 				<tr class="grey">
-					<th width="5%"><b>#</b></th>
-					<th width="10%"><b>Utility#</b></th>
-					<th width="10%"><b>Meter Serial</b></th>
+					<th width="6%"><b>#</b></th>
+					<th width="16%"><b>Utility#</b></th>
+					<th width="12%"><b>Meter Serial</b></th>
+					<th width="12%"><b>Region</b></th>
 					<th width="10%"><b>Scenario</b></th>
-					<th width="10%"><b>Meter Type</b></th>
-					<th width="10%"><b>Protocal</b></th>
-					<th width="10%"><b>Meter Model</b></th>
-					<th width="10%"><b>Premise Type</b></th>
-					<th width="8%"><b>Status</b></th>
-					<th width="8%"><b>Assign To</b></th>
-					<th width="9%"><b>Assign On</b></th>
+					<th width="12%"><b>GW Serial</b></th>
+					<th width="12%"><b>By</b></th>
+					<th width="8%"><b>Remarks</b></th>
+					<th width="12%"><b>Assign On</b></th>
 				</tr>
 			</thead><tbody>';
 
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
-	$assignTo = null;
+	$assignTo = $gwSerial = null;
 	if(!empty($value->assign_to)){
 		$assignTo = $modelUsers->get_users($value->assign_to)->get()->getRow()->username;
 	}
 	$status = ($value->status == 'complete') ? 'installed' : ( ($value->status == 'reject') ? 'return' : $value->status);
+	//
+	if($value->status == 'complete' || $value->status == 'comission'){
+	$taskDetail = $modelTask->get_task_detail(null,$value->id)->get()->getRow();
+	$gateway = $modelGeneral->get_task_gateway(null,$taskDetail->task_id,null,$taskDetail->id)->get()->getRow();
+	if($gateway){
+		$gwSerial = $gateway->gateway_serial;
+	}}
 	// 
 $html .= '<tr>
-			<td width="5%">'.$key.'</td>
-			<td width="10%">'.$value->un_number.'</td>
-			<td width="10%">'.$value->meter_number.'</td>
+			<td width="6%">'.$key.'</td>
+			<td width="16%">'.$value->un_number.'</td>
+			<td width="12%">'.$value->meter_number.'</td>
+			<td width="12%">region</td>
 			<td width="10%">'.$value->scenario.'</td>
-			<td width="10%">'.$value->meter_type.'</td>
-			<td width="10%">'.$value->protocol.'</td>
-			<td width="10%">'.$value->meter_model.'</td>
-			<td width="10%">'.$value->prem_type.'</td>
+			<td width="12%">'.$gwSerial.'</td>
+			<td width="12%">'.$assignTo.'</td>
 			<td width="8%">'.$status.'</td>
-			<td width="8%">'.$assignTo.'</td>
-			<td width="9%">'.$value->assign_on.'</td>
+			<td width="12%">'.$value->assign_on.'</td>
 		</tr>';
 }
 $html .= '<tbody></table>';

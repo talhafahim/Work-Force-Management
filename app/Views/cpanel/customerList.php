@@ -57,6 +57,7 @@ echo view('cpanel-layout/navbar');
                                         <th>Meter Model</th>
                                         <th>Premise Type</th>
                                         <th>Status</th>
+                                        <th>Assign To</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -85,7 +86,7 @@ echo view('cpanel-layout/navbar');
                     <div class="mb-3">
 
                         <label for="exampleFormControlInput1">Assign To</label>
-                        <select class="form-control" required="" name="technician_id">
+                        <select class="form-control js-select2" required="" name="technician_id">
                         </select>
 
                     </div>
@@ -146,6 +147,7 @@ echo view('cpanel-layout/footer');
                 {data: 'meter_model'},
                 {data: 'prem_type'},
                 {data: 'taskStatus'},
+                {data: 'assign_to'},
                 {data: 'action', orderable: false, searchable: false},
                 ]  
         });
@@ -199,6 +201,25 @@ echo view('cpanel-layout/footer');
   });
 });
 
+</script>
+<script>
+    $(document).on('click','.delete',function(){
+        var val = $(this).attr('data-serial');
+//
+        if(confirm("Do you really want to delete this?")){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>/customer/delete_task_action",
+                data:'id='+val,
+                success: function(data){
+                    toastr.success(data);
+                    table.ajax.reload();  
+                },error: function(jqXHR, text, error){
+                    toastr.error(error);
+                }
+            });
+        }
+    });
 </script>
 
 

@@ -26,7 +26,7 @@ class Dashboard extends BaseController
 			$id = session()->get('id');
 			$today = date('Y-m-d');
 			//
-			$data['taskPieGraph'] = $data['taskStatusWise'] = $data['equipmentReport'] = $data['gatewayReport'] = $data['dailyStaffWise'] = null;
+			$data['taskPieGraph'] = $data['taskStatusWise'] = $data['equipmentReport'] = $data['gatewayReport'] = $data['dailyStaffWise'] = $data['profit'] = null;
 		//
 			if($status == 'engineer'){	
 			////////////////////////////////////////////////////////
@@ -98,7 +98,9 @@ class Dashboard extends BaseController
 				}
 				////////////////////////////////////////////////////
 				//
-				$data['profit'] = $this->profit_graph_data();	
+				if(access_crud('Profit & Loss Report','view')){
+					$data['profit'] = $this->profit_graph_data();	
+				}	
 				///////////////////////////////////////////////////////
 				return view('cpanel/dashboard',$data);
 			}

@@ -184,6 +184,12 @@ echo view('cpanel-layout/navbar');
 																foreach($taskGateways->get()->getResult() as $gateways){ echo $gateways->gateway_serial.'  '; }?></td>
 															</tr>
 															<tr>
+																<td><b>SIM ICC ID</b></td>
+																<td><?php 
+																$taskSim = $modelGeneral->get_task_sim(null,$value->task_id,null,$value->id);
+																foreach($taskSim->get()->getResult() as $sims){ echo $sims->sim_icc_id.'  '; }?></td>
+															</tr>
+															<tr>
 																<td><b>Equipment</b></td>
 																<td>
 																	<table class="table table-bordered">

@@ -46,11 +46,13 @@ $html .= '<table>
 			<thead>
 				<tr class="grey">
 					<th width="5%"><b>#</b></th>
-					<th width="15%"><b>Serial</b></th>
+					<th width="10%"><b>Serial</b></th>
 					<th width="10%"><b>Vendor</b></th>
-					<th width="20%"><b>Model</b></th>
-					<th width="10%"><b>Scenario</b></th>
-					<th width="10%"><b>Assigned To</b></th>
+					<th width="15%"><b>Model</b></th>
+					<th width="7%"><b>CTN/Box#</b></th>
+					<th width="7%"><b>Received Date</b></th>
+					<th width="8%"><b>DN#</b></th>
+					<th width="8%"><b>Assigned To</b></th>
 					<th width="10%"><b>Assigned On</b></th>
 					<th width="8%"><b>Status</b></th>
 					<th width="12%"><b>UN#</b></th>
@@ -59,8 +61,11 @@ $html .= '<table>
 
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
-	$assignTo = $modelUsers->get_users($value->assign_to)->get()->getRow()->username;
-	$status = ($value->status == 'used') ? 'Utilized' : ( ($value->status == 'free') ? 'In Stock' : 'Assigned');
+	$assignTo = null;
+	if(!empty($value->assign_to)){
+		$assignTo = $modelUsers->get_users($value->assign_to)->get()->getRow()->username;
+	}
+	$status = ($value->status == 'used') ? 'Utilized' : ( ($value->status == 'free') ? 'In Stock' : ucfirst($value->status));
 	$un = null;
 	if($status == 'Utilized'){
 		$task_id = $modelGeneral->get_task_gateway(null,null,$value->serial)->get()->getRow();
@@ -68,11 +73,13 @@ foreach($data->get()->getResult() as $key => $value){
 	}
 $html .= '<tr>
 			<td width="5%">'.$key.'</td>
-			<td width="15%">'.$value->serial.'</td>
+			<td width="10%">'.$value->serial.'</td>
 			<td width="10%">'.$value->vendor.'</td>
-			<td width="20%">'.$value->model.'</td>
-			<td width="10%">'.$value->scenario.'</td>
-			<td width="10%">'.$assignTo.'</td>
+			<td width="15%">'.$value->model.'</td>
+			<td width="7%">'.$value->ctn.'</td>
+			<td width="7%">'.$value->received_date.'</td>
+			<td width="8%">'.$value->dn.'</td>
+			<td width="8%">'.$assignTo.'</td>
 			<td width="10%">'.$value->assign_on.'</td>
 			<td width="8%">'.$status.'</td>
 			<td width="12%">'.$un.'</td>
@@ -111,7 +118,7 @@ $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 // Start First Page Group
 // $pdf->startPageGroup();
-$pdf->AddPage('P', 'A4');
+$pdf->AddPage('L', 'A4');
 // print an ending header line
 $pdf->SetFont('', '', 14);
 // MultiCell(width, height, 'Cell text', border 1/0, 'text-align', blackout, linebreak, '', '', true);

@@ -47,14 +47,7 @@ echo view('cpanel-layout/navbar');
 										</div><!-- input-group -->
 									</div>
 								</div>
-								<div class="form-group mb-4">
-									<label>CNIC</label>
-									<div>
-										<div class="input-group">
-											<input type="text" class="form-control" name="cnic" readonly value="<?= $info->nic;?>">
-										</div><!-- input-group -->
-									</div>
-								</div>
+								
 
 								<div class="form-group mb-4">
 									<label>Mobile No.*</label>
@@ -65,14 +58,7 @@ echo view('cpanel-layout/navbar');
 									</div>
 								</div>
 
-								<div class="form-group mb-4">
-									<label>Address*</label>
-									<div>
-										<div class="input-group">
-											<input type="text" class="form-control" name="address" placeholder="" value="<?= $info->address;?>">
-										</div><!-- input-group -->
-									</div>
-								</div>
+								
 								<button type="submit" class="btn btn-primary waves-effect waves-light float-right">Save</button>
 							</form>
 						</div>

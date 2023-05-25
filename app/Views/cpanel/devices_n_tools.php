@@ -36,9 +36,9 @@ echo view('cpanel-layout/navbar');
                     <form id="addNewCityForm">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                             <input type="text" class="form-control" placeholder="Name" name="name" required>
-                         </div>
-                         <div class="col-md-3 mb-3">
+                               <input type="text" class="form-control" placeholder="Name" name="name" required>
+                           </div>
+                           <div class="col-md-3 mb-3">
                             <button class="btn btn-primary" type="submit">Add</button>
                         </div>
                     </div>
@@ -59,6 +59,8 @@ echo view('cpanel-layout/navbar');
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
+                                    <th>In Stock</th>
+                                    <th>Action</th>
                                     <th>Assign</th>
                                 </tr>
                             </thead>
@@ -68,20 +70,26 @@ echo view('cpanel-layout/navbar');
                                     <tr>
                                         <td><?= $key+1;?></td>
                                         <td><?= $value->name;?></td>
+                                        <td><?= $modelGeneral->get_devices_detail($value->id,null,'in stock')->countAllResults(); ?></td>
                                         <td>
-                                            <button class="btn btn-primary btn-sm assignBtn" data-id="<?= $value->id;?>" data-name="<?= $value->name;?>">Assign to</button>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                           <a href="javascript:void(0);" class="text-info edit" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" data-id="<?= $value->id;?>" data-name="<?= $value->name;?>"><i class="fa fa-edit"></i></a>
+                                           &nbsp;&nbsp;&nbsp;
+                                           <a href="javascript:void(0);" class="text-danger delete" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" data-serial="<?= $value->id;?>"><i class="fa fa-trash-alt"></i></a>
+                                       </td>
+                                       <td>
+                                        <button class="btn btn-primary btn-sm assignBtn" data-id="<?= $value->id;?>" data-name="<?= $value->name;?>">Assign to</button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        </div> <!-- end col -->
+        </div>
+    </div> <!-- end col -->
 
-    </div>
-    <!-- end row -->
+</div>
+<!-- end row -->
 </div>
 <!-- container-fluid -->
 </div>
@@ -91,13 +99,19 @@ echo view('cpanel-layout/navbar');
 <div id="assignModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Assign</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <form id="updUserForm" class="form-horizontal form-label-left input_mask">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
-                         <div class="form-group"> 
+                           <div class="form-group"> 
                             <label for="exampleFormControlInput1">Assign To</label>
-                            <select class="form-control" required="" name="technician_id">
+                            <select class="form-control js-select2" required="" name="technician_id">
                                 <option value="">select whom to assign</option>
                                 <?php foreach ($users->get()->getResult() as $value) { ?>
                                     <option value="<?= $value->id;?>" ><?= $value->firstname.' '.$value->lastname;?></option>
@@ -125,6 +139,40 @@ echo view('cpanel-layout/navbar');
 </div><!-- /.modal -->
 
 
+
+<!-- sample modal content -->
+<div id="uploadModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Update Stock</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="uploadDataForm">
+                <div class="modal-body">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <input type="hidden" name="deviceId" id="otherEquipmentId">
+                        <input type="text" class="form-control" id="otherEquipment" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control" name="file" required>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="<?= base_url();?>/csv_sample_files/device.csv" class="btn btn-info waves-effect">Download Sample File</a>
+                <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary waves-effect waves-light">Update</button>
+            </div>
+        </form>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- content -->
 <?php 
 // echo view('cpanel-layout/action_loader');
@@ -143,10 +191,10 @@ echo view('cpanel-layout/footer');
                 url: '<?php echo base_url();?>/general/add_devices_n_tools',
                 data:$("#addNewCityForm").serialize(),
                 success: function (data) {
-                 toastr.success(data);
-                 location.reload(); 
-             },
-             error: function(jqXHR, text, error){
+                   toastr.success(data);
+                   location.reload(); 
+               },
+               error: function(jqXHR, text, error){
                     // Displaying if there are any errors
                 toastr.error(error);
             }
@@ -155,43 +203,35 @@ echo view('cpanel-layout/footer');
         });
     });
 </script>
-<script>
-    $(document).on('click','.delete',function(){
-        var val = $(this).attr('data-serial');
-//
-        if(confirm("Do you really want to delete this?")){
-            $.ajax({
-                type: "POST",
-                url: "<?php echo base_url();?>/general/delete_return_reason",
-                data:'ser='+val,
-                success: function(data){
-                    toastr.success(data);
-                    setTimeout(function(){ 
-                        location.reload();
-                    }, 2000);  
-                },error: function(jqXHR, text, error){
-                    toastr.error(error);
-                }
-            });
-        }
-    });
-</script>
+
 
 <script type="text/javascript">
- $(document).on('click','.assignBtn',function(){
+   $(document).on('click','.assignBtn',function(){
     $("#updUserForm").trigger('reset');
     var dataname = $(this).attr('data-name');
-    $('#otherEquipment').val(dataname);
+    $('#updUserForm #otherEquipment').val(dataname);
     var dataid = $(this).attr('data-id');
-    $('#otherEquipmentId').val(dataid);
+    $('#updUserForm #otherEquipmentId').val(dataid);
         //
     $('#assignModel').modal('show');
         //
 });
 
+
+   $(document).on('click','.edit',function(){
+    $("#uploadDataForm").trigger('reset');
+    var dataname = $(this).attr('data-name');
+    $('#uploadDataForm #otherEquipment').val(dataname);
+    var dataid = $(this).attr('data-id');
+    $('#uploadDataForm #otherEquipmentId').val(dataid);
+        //
+    $('#uploadModel').modal('show');
+        //
+});
+
    // ///////////////////////////////////////////////////
 
- $(document).ready(function() {
+   $(document).ready(function() {
     $("#updUserForm").submit(function() {
       $.ajax({
         type: "POST",
@@ -209,4 +249,57 @@ echo view('cpanel-layout/footer');
       return false;
   });
 });
+</script>
+
+<script>
+    $(document).on('click','.delete',function(){
+        var val = $(this).attr('data-serial');
+//
+        if(confirm("Do you really want to delete this?")){
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url();?>/general/delete_device_n_tool",
+                data:'id='+val,
+                success: function(data){
+                    toastr.success(data);
+                    setTimeout(function(){ 
+                        location.reload();
+                    }, 2000);  
+                },error: function(jqXHR, text, error){
+                    toastr.error(error);
+                }
+            });
+        }
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#uploadDataForm").submit(function() {
+            $('#action_loader').modal('show');
+            $.ajax({
+                type: "POST",
+                url: '<?php echo base_url();?>/General/device_upload_action',
+                data:  new FormData(this),
+                contentType: false,
+                cache: false,
+                processData:false,
+                success: function (data) {
+                    setTimeout(function(){ 
+                        $('#action_loader').modal('hide');
+                        toastr.success(data);
+                        $('#uploadModel').modal('hide');
+                        location.reload();
+                    }, 2000); 
+
+                },
+                error: function(jqXHR, text, error){
+                    setTimeout(function(){ 
+                        $('#action_loader').modal('hide');
+                        toastr.error(error);
+                    }, 500);
+                }
+            });
+            return false;
+        });
+    });
 </script>

@@ -152,5 +152,76 @@ class Model_General extends Model {
 		$builder->select('count(gateway.id) as gatewayCount');
 		return $builder;
 	}
+	//
+	function get_task_equip_count($from=null,$to=null,$user_id=null,$task_id=null,$equip_id=null,$status=null){
+		$builder = $this->db->table('task_detail as task');
+		$builder->join('task_misc_equipment as equi','task.id = equi.task_detail_id');
+		if(!empty($status)){
+			$builder->where('task.status',$status);
+		} if(!empty($from)){
+			$builder->where('equi.created_on >=',$from.' 00:00:00');
+		} if(!empty($to)){
+			$builder->where('equi.created_on <=',$to.' 23:59:59');
+		} if(!empty($user_id)){
+			$builder->where('task.user_id',$user_id);
+		} if(!empty($equip_id)){
+			$builder->where('equi.equip_id',$equip_id);
+		} if(!empty($task_id)){
+			$builder->where('task.task_id',$task_id);
+		}
+		return $builder;
+	}
+	//
+	function get_devices_detail($device_id = null,$serial=null,$status=null,$user_id=null){
+		$builder = $this->db->table('device_detail');
+		if(!empty($device_id)){
+			$builder->where('device_id',$device_id);
+		}if(!empty($serial)){
+			$builder->where('serial',$serial);
+		}if(!empty($status)){
+			$builder->where('status',$status);
+		}if(!empty($user_id)){
+			$builder->where('user_id',$user_id);
+		}
+		$builder->orderBy('id');
+		return $builder;
+	}
+	//
+	function get_sim($id = null,$icc_id=null,$user_id=null,$status=null,$from=null,$to=null){
+		$db = \Config\Database::connect();
+		//
+		$builder = $db->table('sim');
+		if(!empty($id)){
+			$builder->where('id',$id);
+		}if(!empty($icc_id)){
+			$builder->where('icc_id',$icc_id);
+		}if(!empty($user_id)){
+			$builder->where('user_id',$user_id);
+		}if(!empty($status)){
+			$builder->where('status',$status);
+		}if(!empty($from)){
+			$builder->where('assign_on >=',$from.' 00:00:00');
+		}if(!empty($to)){
+			$builder->where('assign_on <=',$to.' 23:59:59');
+		}
+		return $builder;
+	}
+	//
+	function get_task_sim($id=null,$task_id = null,$icc_id=null, $task_detail_id=null){
+		$db = \Config\Database::connect();
+		//
+		$builder = $db->table('task_sim as sim');
+		$builder->join('task_detail as task','sim.task_detail_id = task.id');
+		if(!empty($id)){
+			$builder->where('sim.id',$id);
+		}if(!empty($task_id)){
+			$builder->where('task.task_id',$task_id);
+		}if(!empty($icc_id)){
+			$builder->where('sim.sim_icc_id',$icc_id);
+		}if(!empty($task_detail_id)){
+			$builder->where('task.id',$task_detail_id);
+		}
+		return $builder;
+	}
 
 }

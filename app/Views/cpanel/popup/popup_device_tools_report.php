@@ -22,8 +22,18 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label for="exampleFormControlInput1">Status</label>
+                                <select class="form-control" name="status">
+                                    <option value="">select</option>
+                                    <option value="in stock">In Stock</option>
+                                    <option value="assigned">Assigned</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label for="exampleFormControlInput1">Assign To</label>
-                                <select class="form-control globalUserList" name="assignto">
+                                <select class="form-control globalUserList js-select2" name="assignto">
                                     <option value="">select</option>
                                 </select>
                             </div>

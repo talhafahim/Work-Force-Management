@@ -212,10 +212,108 @@ class Team extends BaseController
 			<?php }
 		//
 		}
+		/////////////////////////////////////////////////////////
+		public function team_upload_csv_action(){
+				$error = null;
+				$modelUsers = new Model_Users();
+				$modelTeam = new Model_Team();
+				$uniqIDArray = array();
+				//
+				$csv = $_FILES['file']['tmp_name'];
+				if(!isLoggedIn()){
+					$error = 'Error : Session expired';
+				}if(!access_crud('Team','create')){
+					$error = 'Access denied';
+				}
+				if(isset($_FILES['file'])){
+					$file_name = $_FILES['file']['name'];
+					$handle = fopen($_FILES['file']['tmp_name'],"r");
+					$ext = pathinfo($file_name, PATHINFO_EXTENSION);
+					//
+					if(count(fgetcsv($handle)) != "5"){
+						$error = 'Error : Invalid file structure';
+					}if($ext != 'csv'){
+						$error = 'Error : Invalid file format';
+					}
+				}
+				///////////
+				if(empty($error)){
+					$remove = array("'","`","(",")",",",'"');
+					$handle = fopen($csv,"r");
+					$num = 0;
+					// 
+					while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+					{
+						if($num > 0){
+							//
+							$line = $num+1;
+							//
+							$teamIdExist = $modelTeam->get_team($row[0])->countAllResults();
+							if($teamIdExist <= 0){
+								$error = 'Error : Invalid Team ID at line#'.$line;
+								break;
+							}
+							//
+							if(empty($error)){
+								foreach($row as $rowKey => $rowValue){
+									if($rowKey > 0 && !empty($rowValue)){
+										$strr = explode("(",$rowValue);
+										$strrr = explode("-",$strr[1]);
+										$userID = str_replace(')','',$strrr[1]);
+										//
+										$teamIdExist = $modelUsers->get_users(null,null,null,null,null,null,$userID)->countAllResults();
+										if($teamIdExist <= 0){
+											$error = 'Error : Invalid User Unique ID at line#'.$line;
+											break;
+										}
+										array_push($uniqIDArray, trim($rowValue));
+									}
+								}
+							}
+							//
+							if(empty($error)){
+								if (count(array_diff_assoc($uniqIDArray, array_unique($uniqIDArray))) > 0) {
+									$error = 'Error : Duplicate Users ID in sheet';	
+								}
+							}
+						//
+						}
+						$num++;
+					}
+
+				}
+				//////////
+				if(empty($error)){
+					$remove = array("'","`","(",")",",",'"');
+					$handle = fopen($csv,"r");
+					$num = 0;
+					$this->db->transStart();
+					while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+					{
+						if($num > 0){
+							$teamID = trim($row[0]);
+							//
+							foreach($row as $rowKey => $rowValue){
+								if($rowKey > 0 && !empty($rowValue)){
+									$strr = explode("(",$rowValue);
+									$strrr = explode("-",$strr[1]);
+									$userID = str_replace(')','',$strrr[1]);
+										//
+									$userInfo = $modelUsers->get_users(null,null,null,null,null,null,$userID)->get()->getRow();
+									$this->db->table('team_member')->insert(['team_id' => $teamID, 'user_id' => $userInfo->id]);
+								}
+							}
+					//
+						}
+						$num++;
+					}
+					$this->db->transComplete();
+
+					return $this->response->setStatusCode(200)->setBody('Upload Successfully');
+				}else{
+					return $this->response->setStatusCode(401,$error);
+				}
+			}
 
 
-public function test(){
-		$modelTeam = new Model_Team();
-		echo $teamCost = $modelTeam->get_team_cost(5)->get()->getRow()->total_sum;
 	}
-}

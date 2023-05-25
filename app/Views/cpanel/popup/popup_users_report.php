@@ -14,13 +14,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Creation Date (from)</label>
-                                <input type="date" class="form-control" name="from" required>
+                                <input type="date" class="form-control" name="from" >
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Creation Date (to)</label>
-                                <input type="date" class="form-control" name="to" required>
+                                <input type="date" class="form-control" name="to" >
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">User</label>
-                                <select class="form-control globalUserList" name="user">
+                                <select class="form-control globalUserList js-select2" name="user">
                                     <option value="">select</option>
                                 </select>
                             </div>

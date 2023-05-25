@@ -64,19 +64,25 @@ echo view('cpanel-layout/navbar');
                                 <tr>
                                     <th>#</th>
                                     <th>Name</th>
-                                    <th>Stock</th>
+                                    <th>In Stock</th>
+                                    <th>Utilized</th>
                                     <th>UOM</th>
                                     <th>Rate (<?= get_setting_value('Currency');?>)</th>
                                 </tr>
                             </thead>
                             <tbody id="tbody1">
-                                <?php foreach($misc_equipment->get()->getResult() as $key => $value){
+                                <?php 
+                                $user_id = session()->get('id');
+                                //
+                                foreach($misc_equipment->get()->getResult() as $key => $value){
                                    $equipInfo = $modelGeneral->get_misc_equipment($value->equip_id)->get()->getRow();
+                                   $equipCount = $modelGeneral->get_task_equip_count(null,null,$user_id,null,$value->equip_id)->select('sum(equi.qty) as qty')->get()->getRow();
                                     ?>
                                     <tr>
                                         <td><?= $key+1;?></td>
                                         <td><?= $equipInfo->name;?></td>
                                         <td><?= $value->stock;?></td>
+                                        <td><?= $equipCount->qty;?></td>
                                         <td><?= $equipInfo->uom;?></td>
                                         <td><?= $value->rate;?></td>
                                     </tr>

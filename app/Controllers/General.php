@@ -91,15 +91,21 @@ class General extends BaseController
 	//-----------------------------------------------------------------------------
 	public function gateway(){
 		if(access_crud('Gateway','view')){
-			$modelUsers = new Model_Users();
-			$data['users'] = $modelUsers->get_users(null,null,null,['engineer']);
-			return view('cpanel/gateway',$data);
+			$status = session()->get('status');
+			if($status == 'engineer'){
+				return view('customer/gateway');
+			}else{
+				$modelUsers = new Model_Users();
+				$data['users'] = $modelUsers->get_users(null,null,null,['engineer']);
+				return view('cpanel/gateway',$data);
+			}
 		}else{
 			return redirect()->to(base_url('login'));
 		}
 	}
 	//
 	public function get_getway_list(){
+
 		if(access_crud('Gateway','view')){
 			$modelGeneral = new Model_General();
 			$builder = $modelGeneral->get_gateway();
@@ -113,22 +119,64 @@ class General extends BaseController
 			//
 			->add('checkbox', function($row){
 				//
-				if($row->status == 'free'){
+				if($row->status == 'free' || $row->status == 'return'){
 					return '<input type="checkbox" name="dataid[]" value="'.$row->id.'">';
-				}else{
-					$status = ($row->status == 'used') ? 'Utilized' : 'Assigned';
-					return '<span class="badge badge-soft-info">'.ucfirst($status).'</span>';
+				}
+			})
+			//
+			->add('assign_to', function($row){
+				//
+				if(!empty($row->assign_to)){
+					$modelUsers = new Model_Users();
+					$userInfo = $modelUsers->get_users($row->assign_to)->get()->getRow();
+					return $userInfo->firstname.' '.$userInfo->lastname;
 				}
 			})
 			//
 			->add('action', function($row){
 				//
-				if($row->status == 'free'){
-					return '<button class="btn btn-primary btn-sm assignBtn" data-id="'.$row->id.'">Assign to</button>';
-				}else if($row->status == 'assigned'){
-					$modelUsers = new Model_Users();
-					$userInfo = $modelUsers->get_users($row->assign_to)->get()->getRow();
-					return $userInfo->firstname.' '.$userInfo->lastname;
+				if($row->status == 'free' || $row->status == 'assigned'){
+					$actionHtml = '<div class="btn-group">';
+					$actionHtml .= '<button class="btn btn-primary btn-sm assignBtn" data-id="'.$row->id.'"><i class="fa fa-tasks"></i></button>';
+					if($row->status == 'free'){
+						$actionHtml .= '<a type="button" class="btn btn-danger btn-sm delete" data-serial="'.$row->id.'" title="Delete"><i class="fa fa-trash"></i></a>';
+					}
+					$actionHtml .= '</div>';
+					return $actionHtml;
+
+				}else if($row->status == 'used'){
+					$modelGeneral = new Model_General();
+					$taskDetail = $modelGeneral->get_task_gateway(null,null,$row->serial)->get()->getRow();
+					return '<a href="'.base_url().'/customer/view_detail/'.$taskDetail->task_id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a></div>';
+				}
+			})
+			//
+			->toJson(true);
+		}
+	
+	}
+	//
+	public function get_engineer_getway_list(){
+		if(access_crud('Gateway','view')){
+			$modelGeneral = new Model_General();
+			$id = session()->get('id');
+			$builder = $modelGeneral->get_gateway(null,null,$id);
+			//
+			return DataTable::of($builder)->addNumbering('no')
+			//
+			->filter(function ($builder, $request) {
+				if ($request->status)
+					$builder->where('status', $request->status);
+			})
+			//
+			->add('action', function($row){
+				//
+				if($row->status == 'assigned'){
+					$actionHtml = '<div class="btn-group">';
+					$actionHtml .= '<button class="btn btn-danger btn-sm return" data-id="'.$row->id.'">Return</button>';
+					$actionHtml .= '</div>';
+					return $actionHtml;
+
 				}else if($row->status == 'used'){
 					$modelGeneral = new Model_General();
 					$taskDetail = $modelGeneral->get_task_gateway(null,null,$row->serial)->get()->getRow();
@@ -141,27 +189,63 @@ class General extends BaseController
 	}
 	//
 	public function gateway_upload_csv_action(){
+
 		$error = null;
+		$modelGeneral = new Model_General();
+		$serialArray = array();
 		$csv = $_FILES['file']['tmp_name'];
 		if(!isLoggedIn()){
 			$error = 'Error : Session expired';
+		}if(!access_crud('Gateway','create')){
+			$error = 'Access denied';
 		}
 		if(isset($_FILES['file'])){
 			$file_name = $_FILES['file']['name'];
 			$handle = fopen($_FILES['file']['tmp_name'],"r");
 			$ext = pathinfo($file_name, PATHINFO_EXTENSION);
 			//
-			if(count(fgetcsv($handle)) != "5"){
+			if(count(fgetcsv($handle)) != "7"){
 				$error = 'Error : Invalid file structure';
 			}if($ext != 'csv'){
 				$error = 'Error : Invalid file format';
 			}
+		}
+		///////////
+		if(empty($error)){
+			$remove = array("'","`","(",")",",",'"');
+			$handle = fopen($csv,"r");
+			$num = 0;
+			// 
+			while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+			{
+				if($num > 0){
+					//
+					array_push($serialArray, trim($row[0]));
+					//
+					$serialExist = $modelGeneral->get_gateway(null,$row[0])->countAllResults();
+					if($serialExist > 0){
+						$line = $num+1;
+						$error = 'Error : Serial already exist at line#'.$line;
+						break;
+					}
+					//
+					if(empty($error)){
+						if (count(array_diff_assoc($serialArray, array_unique($serialArray))) > 0) {
+							$error = 'Error : Duplicate Serial in sheet';	
+						}
+					}
+					//
+				}
+				$num++;
+			}
+			
 		}
 		//////////
 		if(empty($error)){
 			$remove = array("'","`","(",")",",",'"');
 			$handle = fopen($csv,"r");
 			$num = 0;
+			$this->db->transStart();
 			while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
 			{
 				if($num > 0){
@@ -169,8 +253,10 @@ class General extends BaseController
 						'serial' => str_replace($remove,'',$row[0]),
 						'vendor' => str_replace($remove,'',$row[1]),
 						'model' => str_replace($remove,'',$row[2]),
-						'scenario' => str_replace($remove,'',$row[3]),
-						'cost' => str_replace($remove,'',$row[4]),
+						'ctn' => str_replace($remove,'',$row[3]),
+						'received_date' => str_replace($remove,'',$row[4]),
+						'dn' => str_replace($remove,'',$row[5]),
+						'cost' => str_replace($remove,'',$row[6]),
 					);
 					//
 					$this->db->table('gateway')->insert($data);
@@ -178,6 +264,7 @@ class General extends BaseController
 				}
 				$num++;
 			}
+			$this->db->transComplete();
 
 			return $this->response->setStatusCode(200)->setBody('Upload Successfully');
 		}else{
@@ -338,10 +425,10 @@ class General extends BaseController
 	public function devices_n_tools()
 	{
 		if(access_crud('Devices & Tools','view')){
-			$modelGeneral = new Model_General();
+			$data['modelGeneral'] = new Model_General();
 			$modelUsers = new Model_Users();
 			$data['users'] = $modelUsers->get_users(null,null,null,['engineer','driver']);
-			$data['devices_n_tools'] = $modelGeneral->get_devices_n_tools();
+			$data['devices_n_tools'] = $data['modelGeneral']->get_devices_n_tools();
 			return view('cpanel/devices_n_tools',$data);
 		}else{
 			return redirect()->to(base_url('login'));
@@ -436,15 +523,21 @@ class General extends BaseController
 			$error = 'Please select device and engineer';
 		}
 		//
-		$alreadyAssigned = $modelGeneral->get_users_devices_n_tools($technician_id,$deviceId)->countAllResults();
-		$deviceInfo = $modelGeneral->get_devices_n_tools($deviceId)->get()->getRow();
-		if($alreadyAssigned > 0){
-			$error = 'Error : '.$deviceInfo->name.' already assigned';
+		$alreadyAssigned = $modelGeneral->get_devices_detail($deviceId,$serial,'in stock')->countAllResults();
+		// 
+		if($alreadyAssigned <= 0){
+			$error = 'Error : Invalid serial or not in stock';
 		}
 		//
 		if(empty($error)){
 			//
-			$this->db->table('users_devices_and_tools')->insert(['user_id' => $technician_id, 'tool_id' => $deviceId, 'serial' => $serial]);
+			$deviceInfo = $modelGeneral->get_devices_n_tools($deviceId)->get()->getRow();
+			$deviceDetailInfo = $modelGeneral->get_devices_detail($deviceId,$serial,'in stock')->get()->getRow();
+			//
+			$this->db->transStart();
+			//
+			$this->db->table('device_detail')->where('id',$deviceDetailInfo->id)->update(['status' => 'assigned','user_id' => $technician_id]);
+			$this->db->transComplete();
 			//
 			$modelNoti = new Model_Notification();
 			$modelNoti->set_notification('Device/Tools Assigned', $deviceInfo->name.' has been assigned to you',[$technician_id]);
@@ -467,5 +560,505 @@ class General extends BaseController
 		$query = $modelGeneral->get_devices_n_tools();
 		return (json_encode($query->get()->getResult()));
 	}
+	////////////////////////////////////
+	public function delete_gateway_action(){
+		$error = null;
+		$id = $this->input->getPost('id');
+		if(!isLoggedIn() || !access_crud('Gateway','delete')){
+			$error = 'Access denied';
+		}
+		//
+		$modelGeneral = new Model_General();
+		$checkStatus = $modelGeneral->get_gateway($id,null,null,'free')->countAllResults();
+		if($checkStatus <= 0){
+			$error = 'Error : This can not be deleted';		
+		}
+		//
+		if(empty($error)){
+			//
+			$this->db->table('gateway')->where('id',$id)->where('status','free')->delete();
+			//
+			create_action_log('id#'.$id);
+			return $this->response->setStatusCode(200)->setBody('Delete Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+	///////////////////////////////////
+	public function delete_device_n_tool(){
+		$id = $this->input->getPost('id');
+		if(access_crud('Devices & Tools','delete')){
+			// 
+			$query = $this->db->table('devices_and_tools')->where('id',$id)->delete();
+			if(empty($query)){
+				return $this->response->setStatusCode(401,'You can not delete this.');
+			}else{
+				create_action_log('id#'.$id); 
+				return $this->response->setStatusCode(200)->setBody('Deleted Successfully');
+			}
+			//
+		}else{
+			return $this->response->setStatusCode(401,'Access Denied');
+		}
+	}
+	/////////////////////////////
+	public function device_upload_action(){
+		$error = null;
+		$modelGeneral = new Model_General();
+		$deviceId = $this->input->getPost('deviceId');
+		$csv = $_FILES['file']['tmp_name'];
+		if(!isLoggedIn()){
+			$error = 'Error : Session expired';
+		}if(!access_crud('Devices & Tools','create')){
+			$error = 'Access denied';
+		}
+		//
+		if(isset($_FILES['file'])){
+			$file_name = $_FILES['file']['name'];
+			$handle = fopen($_FILES['file']['tmp_name'],"r");
+			$ext = pathinfo($file_name, PATHINFO_EXTENSION);
+			//
+			if(count(fgetcsv($handle)) != "2"){
+				$error = 'Error : Invalid file structure';
+			}if($ext != 'csv'){
+				$error = 'Error : Invalid file format';
+			}if(empty($deviceId)){
+				$error = 'Please select device first';
+			}
+		}
+		//
+		if(empty($error)){
+			$handle = fopen($csv,"r");
+			$num = 0;
+			$this->db->transStart();
+			while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+			{
+				if($num > 0){
+						//
+					$userdata = $modelGeneral->get_devices_detail(null,$row[0])->countAllResults();
+					if($userdata > 0){
+						$error = "Error : Serial already exist at line#".$num;
+						break;
+					}
+						//
+					if(empty($row[0])){
+						$error = "Error : Serial can not be empty at line#".$num;
+						break;
+					}
+					//
+				}
+				$num++;
+			}
+			$this->db->transComplete();
+		}
+		//////////
+		if(empty($error)){
+			$remove = array("'","`","(",")",",",'"');
+			$handle = fopen($csv,"r");
+			$num = 0;
+			while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+			{
+				if($num > 0){
+					//
+					$this->db->transStart();
+					$data= array(
+						'device_id'=> $deviceId,
+						'serial'=> str_replace($remove,'',$row[0]),
+						'model'=> str_replace($remove,'',$row[1]),
+					);
+					//
+					$builder = $this->db->table('device_detail');
+					$builder->insert($data);
+					//
+					$insert_id = $this->db->insertID();
+					//
+					create_action_log('id '.$insert_id);
+					$this->db->transComplete();
+					//
+				}
+				$num++;
+			}
+
+			return $this->response->setStatusCode(200)->setBody('Upload Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+		////////////////////////////////////////////
+		//-----------------------------------------------------------------------------
+	public function sim(){
+		if(access_crud('SIM','view')){
+			$status = session()->get('status');
+			if($status == 'engineer'){
+				return view('customer/sim');
+			}else{
+				$modelUsers = new Model_Users();
+				$data['users'] = $modelUsers->get_users(null,null,null,['engineer']);
+				return view('cpanel/sim',$data);
+			}
+		}else{
+			return redirect()->to(base_url('login'));
+		}
+	}
+	//------------------------------------------------------------------------------
+	public function get_sim_list(){
+		if(access_crud('SIM','view')){
+			$modelGeneral = new Model_General();
+			$builder = $modelGeneral->get_sim();
+			//
+			return DataTable::of($builder)->addNumbering('no')
+			//
+			->filter(function ($builder, $request) {
+				if ($request->status)
+					$builder->where('status', $request->status);
+			})
+			//
+			->add('checkbox', function($row){
+				//
+				if($row->status == 'in stock' || $row->status == 'return'){
+					return '<input type="checkbox" name="dataid[]" value="'.$row->id.'">';
+				}
+			})
+			//
+			->add('assign_to', function($row){
+				//
+				if(!empty($row->user_id)){
+					$modelUsers = new Model_Users();
+					$userInfo = $modelUsers->get_users($row->user_id)->get()->getRow();
+					return $userInfo->firstname.' '.$userInfo->lastname;
+				}
+			})
+			//
+			->add('action', function($row){
+				//
+				if($row->status == 'in stock' || $row->status == 'assigned'){
+					$actionHtml = '<div class="btn-group">';
+					$actionHtml .= '<button class="btn btn-primary btn-sm assignBtn" data-id="'.$row->id.'"><i class="fa fa-tasks"></i></button>';
+					if($row->status == 'in stock'){
+						$actionHtml .= '<a type="button" class="btn btn-danger btn-sm delete" data-serial="'.$row->id.'" title="Delete"><i class="fa fa-trash"></i></a>';
+					}
+					$actionHtml .= '</div>';
+					return $actionHtml;
+
+				}else if($row->status == 'utilized'){
+					$modelGeneral = new Model_General();
+					$taskDetail = $modelGeneral->get_task_sim(null,null,$row->icc_id)->get()->getRow();
+					return '<a href="'.base_url().'/task/view_detail/'.$taskDetail->task_id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a></div>';
+				}
+			})
+			//
+			->toJson(true);
+		}
+	}
+	//------------------------------------------------------------------------------
+	public function get_engineer_sim_list(){
+		if(access_crud('SIM','view')){
+			$modelGeneral = new Model_General();
+			$id = session()->get('id');
+			$builder = $modelGeneral->get_sim(null,null,$id);
+			//
+			return DataTable::of($builder)->addNumbering('no')
+			//
+			->filter(function ($builder, $request) {
+				if ($request->status)
+					$builder->where('status', $request->status);
+			})
+			//
+			->add('action', function($row){
+				//
+				if($row->status == 'in stock' || $row->status == 'assigned'){
+					$actionHtml = '<div class="btn-group">';
+					$actionHtml .= '<button class="btn btn-danger btn-sm return" data-id="'.$row->id.'">Return</button>';
+					$actionHtml .= '</div>';
+					return $actionHtml;
+
+				}else if($row->status == 'utilized'){
+					$modelGeneral = new Model_General();
+					$taskDetail = $modelGeneral->get_task_sim(null,null,$row->icc_id)->get()->getRow();
+					return '<a href="'.base_url().'/task/view_detail/'.$taskDetail->task_id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a></div>';
+				}
+			})
+			//
+			->toJson(true);
+		}
+	}
+	//-------------------------------------------------------------------------
+	public function sim_upload_csv_action(){
+		
+		$error = null;
+		$iccArray =  array();
+		$modelGeneral = new Model_General();
+		$csv = $_FILES['file']['tmp_name'];
+		if(!isLoggedIn()){
+			$error = 'Error : Session expired';
+		}
+		if(!access_crud('SIM','create')){
+			$error = 'Access denied';
+		}
+		//
+		if(isset($_FILES['file'])){
+			$file_name = $_FILES['file']['name'];
+			$handle = fopen($_FILES['file']['tmp_name'],"r");
+			$ext = pathinfo($file_name, PATHINFO_EXTENSION);
+			//
+			if(count(fgetcsv($handle)) != "1"){
+				$error = 'Error : Invalid file structure';
+			}if($ext != 'csv'){
+				$error = 'Error : Invalid file format';
+			}
+		}
+		///////////
+		if(empty($error)){
+			$remove = array("'","`","(",")",",",'"');
+			$handle = fopen($csv,"r");
+			$num = 0;
+			// 
+			while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+			{
+				if($num > 0){
+					//
+					array_push($iccArray, trim($row[0]));
+					//
+					$serialExist = $modelGeneral->get_sim(null,$row[0])->countAllResults();
+					if($serialExist > 0){
+						$line = $num+1;
+						$error = 'Error : ICC ID already exist at line#'.$line;
+						break;
+					}
+					//
+					if(empty($error)){
+						if (count(array_diff_assoc($iccArray, array_unique($iccArray))) > 0) {
+							$error = 'Error : Duplicate ICC ID in sheet';	
+						}
+					}
+					//
+				}
+				$num++;
+			}
+			
+		}
+		//////////
+		//////////
+		if(empty($error)){
+			$remove = array("'","`","(",")",",",'"');
+			$handle = fopen($csv,"r");
+			$num = 0;
+			$this->db->transStart();
+			while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+			{
+				if($num > 0){
+					$data = array(
+						'icc_id' => str_replace($remove,'',$row[0]),
+					);
+					//
+					$this->db->table('sim')->insert($data);
+					//
+				}
+				$num++;
+			}
+			$this->db->transComplete();
+
+			return $this->response->setStatusCode(200)->setBody('Upload Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	
+	}
+	//-------------------------------------------------------------
+	public function sim_assign_action(){
+		$dataid = $this->input->getPost('dataid');
+		$technician_id = $this->input->getPost('technician_id');
+		//
+		if(!isLoggedIn()){
+			$error = 'Session Timeout';
+		}if(empty($dataid) || empty($technician_id)){
+			$error = 'Please select SIM & Engineer';
+		}
+		if(!access_crud('SIM','update')){
+			$error = 'Access denied';
+		}	
+		//
+		if(empty($error)){
+			$this->db->table('sim')->where('id',$dataid)->update(['user_id' => $technician_id, 'status' => 'assigned', 'assign_on' => date('Y-m-d H:i:s') ]);
+			//
+			$modelNoti = new Model_Notification();
+			$modelNoti->set_notification('SIM Assigned','One SIM has been assigned to you',[$technician_id]);
+			//
+			return $this->response->setStatusCode(200)->setBody('Updated Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+	//--------------------------------------------------------------
+	public function assign_bulk_sim(){
+		$error = null;
+		$simIDList = $this->input->getPost('simIDList');
+		$simIDList = explode(',',$simIDList);
+		$engineer_id = $this->input->getPost('engineer_id');
+		if(!isLoggedIn()){
+			$error = 'Session Timeout';
+		}if(empty($simIDList) || empty($engineer_id)){
+			$error = 'Please select SIM & Engineer';
+		}
+		if(!access_crud('SIM','update')){
+			$error = 'Access denied';
+		}
+		//
+		if(empty($error)){
+			//
+			foreach($simIDList as $value){
+				$this->db->table('sim')->where('id',$value)->update(['user_id' => $engineer_id, 'status' => 'assigned', 'assign_on' => date('Y-m-d H:i:s')]);	
+			}
+			// //
+			$modelNoti = new Model_Notification();
+			$modelNoti->set_notification('SIM Assigned', count($simIDList).' SIM have been assigned to you',[$engineer_id]);
+			//
+			return $this->response->setStatusCode(200)->setBody('Assigned Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+	//---------------------------------------------------------
+	public function delete_sim_action(){
+		$error = null;
+		$id = $this->input->getPost('id');
+		if(!isLoggedIn()){
+			$error = 'Session Timeout';
+		}if(empty($id)){
+			$error = 'Please select SIM';
+		}
+		if(!access_crud('SIM','delete')){
+			$error = 'Access denied';
+		}
+		//
+		$modelGeneral = new Model_General();
+		$checkStatus = $modelGeneral->get_sim($id,null,null,'in stock')->countAllResults();
+		if($checkStatus <= 0){
+			$error = 'Error : This can not be deleted';		
+		}
+		//
+		if(empty($error)){
+			//
+			$this->db->table('sim')->where('id',$id)->where('status','in stock')->delete();
+			//
+			create_action_log('id#'.$id);
+			return $this->response->setStatusCode(200)->setBody('Delete Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+
+	//
+	public function gateway_return_action(){
+		$error = null;
+		$id = session()->get('id');
+		$gateway_id = $this->input->getPost('gateway_id');
+		if(!isLoggedIn()){
+			$error = 'Session Timeout';
+		}if(!access_crud('Gateway','update')){
+			$error = 'Access denied';
+		}
+		if(empty($error)){
+			$modelGeneral = new Model_General();
+			$checkStatus = $modelGeneral->get_gateway($gateway_id,null,$id,'assigned')->countAllResults();
+			if($checkStatus <= 0){
+				$error = 'Error : This can not be returned';
+			}
+		}
+		//
+		if(empty($error)){
+			//
+			$this->db->table('gateway')->where('id',$gateway_id)->where('assign_to',$id)->where('status','assigned')->update(['status' => 'return']);
+			// //
+			create_action_log('id#'.$gateway_id);
+			return $this->response->setStatusCode(200)->setBody('Returned Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+	//
+	public function bulk_gateway_changeStatus(){
+		$error = null;
+		$gatewayIDList = $this->input->getPost('gatewayIDList');
+		$gatewayIDList = explode(',',$gatewayIDList);
+		$status = $this->input->getPost('status');
+		if(!isLoggedIn()){
+			$error = 'Session Timeout';
+		}if(!access_crud('Gateway','update')){
+			$error = 'Access denied';
+		}if(empty($gatewayIDList) || empty($status)){
+			$error = 'Please select Gateway & Status';
+		}
+		//
+		if(empty($error)){
+			//
+			foreach($gatewayIDList as $value){
+				$this->db->table('gateway')->where('id',$value)->update(['status' => $status]);	
+			}
+			//
+			return $this->response->setStatusCode(200)->setBody('Changed Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+	/////
+
+	//
+	public function sim_return_action(){
+		$error = null;
+		$id = session()->get('id');
+		$sim_id = $this->input->getPost('sim_id');
+		if(!isLoggedIn()){
+			$error = 'Session Timeout';
+		}if(!access_crud('SIM','update')){
+			$error = 'Access denied';
+		}
+		if(empty($error)){
+			$modelGeneral = new Model_General();
+			$checkStatus = $modelGeneral->get_sim($sim_id,null,$id,'assigned')->countAllResults();
+
+			if($checkStatus <= 0){
+				$error = 'Error : This can not be returned';
+			}
+		}
+		//
+		if(empty($error)){
+			//
+			$this->db->table('sim')->where('id',$sim_id)->where('user_id',$id)->where('status','assigned')->update(['status' => 'return']);
+			// //
+			create_action_log('id#'.$sim_id);
+			return $this->response->setStatusCode(200)->setBody('Returned Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+	//
+	//
+	public function bulk_sim_changeStatus(){
+		$error = null;
+		$simIDList = $this->input->getPost('simIDList');
+		$simIDList = explode(',',$simIDList);
+		$status = $this->input->getPost('status');
+		if(!isLoggedIn()){
+			$error = 'Session Timeout';
+		}if(!access_crud('SIM','update')){
+			$error = 'Access denied';
+		}if(empty($simIDList) || empty($status)){
+			$error = 'Please select SIM & Status';
+		}
+		//
+		if(empty($error)){
+			//
+			foreach($simIDList as $value){
+			$this->db->table('sim')->where('id',$value)->update(['status' => $status,'user_id' => null]);	
+			}
+			//
+			return $this->response->setStatusCode(200)->setBody('Changed Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+	}
+
+
 	
 }

@@ -68,7 +68,7 @@ echo view('cpanel-layout/navbar');
 												<div class="col-md-6">
 												<div class="form-group" style="float:right;">
 													<label>CSV Sample File</label><br>
-													<a href="<?= base_url();?>/sampleFile.csv?t=<?php echo time(); ?>" type="button" class="btn btn-info" style="color:white;">Download Sample File</a>
+													<a href="<?= base_url();?>/csv_sample_files/task.csv?t=<?php echo time(); ?>" type="button" class="btn btn-info" style="color:white;">Download Sample File</a>
 												</div>
 												<!-- <div class="form-group"></div> -->
 											</div>

@@ -45,22 +45,30 @@ border: none;
 $html .= '<table>
 			<thead>
 				<tr class="grey">
-					<th width="25%"><b>Device/Tool Name</b></th>
-					<th width="25%"><b>User</b></th>
-					<th width="25%"><b>Serial#</b></th>
-					<th width="25%"><b>Assign On</b></th>
+					<th width="20%"><b>Device/Tool Name</b></th>
+					<th width="20%"><b>Serial</b></th>
+					<th width="20%"><b>Model</b></th>
+					<th width="20%"><b>Status</b></th>
+					<th width="20%"><b>User</b></th>
 				</tr>
 			</thead><tbody>';
 
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
-	$deviceInfo = $modelGeneral->get_devices_n_tools($value->tool_id)->get()->getRow();
+	$username = null;
+	$deviceInfo = $modelGeneral->get_devices_n_tools($value->device_id)->get()->getRow();
 	$userInfo = $modelUsers->get_users($value->user_id)->get()->getRow();
+
+	if(!empty($value->user_id)){
+		$username = $userInfo->firstname.' '.$userInfo->lastname;
+	}
+
 $html .= '<tr>
-			<td width="25%">'.$deviceInfo->name.'</td>
-			<td width="25%">'.$userInfo->firstname.' '.$userInfo->lastname.'</td>
-			<td width="25%">'.$value->serial.'</td>
-			<td width="25%">'.$value->updated_on.'</td>
+			<td width="20%">'.$deviceInfo->name.'</td>
+			<td width="20%">'.$value->serial.'</td>
+			<td width="20%">'.$value->model.'</td>
+			<td width="20%">'.$value->status.'</td>
+			<td width="20%">'.$username.'</td>
 		</tr>';
 }
 $html .= '<tbody></table>';

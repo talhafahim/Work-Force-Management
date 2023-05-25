@@ -45,22 +45,32 @@ border: none;
 $html .= '<table>
 			<thead>
 				<tr class="grey">
-					<th width="25%"><b>Equipment</b></th>
-					<th width="25%"><b>User</b></th>
-					<th width="25%"><b>Stock</b></th>
-					<th width="25%"><b>UOM</b></th>
+					<th width="20%"><b>Equipment</b></th>
+					<th width="14%"><b>User</b></th>
+					<th width="10%"><b>Qty</b></th>
+					<th width="6%"><b>UOM</b></th>
+					<th width="20%"><b>UN#</b></th>
+					<th width="10%"><b>Status</b></th>
+					<th width="20%"><b>On Date</b></th>
 				</tr>
 			</thead><tbody>';
 
 foreach($data->get()->getResult() as $key => $value){
+	//
 	$key = $key+1;
 	$equipInfo = $modelGeneral->get_misc_equipment($value->equip_id)->get()->getRow();
 	$userInfo = $modelUsers->get_users($value->user_id)->get()->getRow();
+	$status = ($value->status == 'complete') ? 'installed' : ( ($value->status == 'reject') ? 'return' : $value->status);
+	$taskDetail = $modelCustomer->get_customer_info($value->task_id)->get()->getRow();
+	//
 $html .= '<tr>
-			<td width="25%">'.$equipInfo->name.'</td>
-			<td width="25%">'.$userInfo->firstname.' '.$userInfo->lastname.'</td>
-			<td width="25%">'.$value->stock.'</td>
-			<td width="25%">'.$equipInfo->uom.'</td>
+			<td width="20%">'.$equipInfo->name.'</td>
+			<td width="14%">'.$userInfo->firstname.' '.$userInfo->lastname.'</td>
+			<td width="10%">'.$value->qty.'</td>
+			<td width="6%">'.$equipInfo->uom.'</td>
+			<td width="20%">'.$taskDetail->un_number.'</td>
+			<td width="10%">'.$status.'</td>
+			<td width="20%">'.$value->created_on.'</td>
 		</tr>';
 }
 $html .= '<tbody></table>';

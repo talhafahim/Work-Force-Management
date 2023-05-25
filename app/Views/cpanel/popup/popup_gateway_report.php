@@ -14,13 +14,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Assign From</label>
-                                <input type="date" class="form-control" name="from" required>
+                                <input type="date" class="form-control" name="from" >
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Assign To</label>
-                                <input type="date" class="form-control" name="to" required>
+                                <input type="date" class="form-control" name="to" >
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Assign To</label>
-                                <select class="form-control globalUserList" name="assignto">
+                                <select class="form-control globalUserList js-select2" name="assignto">
                                     <option value="">select</option>
                                 </select>
                             </div>
@@ -49,6 +49,8 @@
                                     <option value="free">In Stock</option>
                                     <option value="assigned">Assigned</option>
                                     <option value="used">Utilized</option>
+                                    <option value="return">Return</option>
+                                    <option value="faulty">Faulty</option>
                                 </select>
                             </div>
                         </div>

@@ -45,15 +45,16 @@ border: none;
 $html .= '<table>
 			<thead>
 				<tr class="grey">
-					<th width="10%"><b>#</b></th>
+					<th width="5%"><b>#</b></th>
 					<th width="10%"><b>Username</b></th>
 					<th width="10%"><b>Firstname</b></th>
 					<th width="10%"><b>Lastname</b></th>
 					<th width="15%"><b>Email</b></th>
-					<th width="10%"><b>Mobile#</b></th>
+					<th width="7%"><b>Mobile#</b></th>
+					<th width="11%"><b>Password</b></th>
 					<th width="10%"><b>Status</b></th>
 					<th width="10%"><b>Staff Cost ('.get_setting_value('Currency').')</b></th>
-					<th width="15%"><b>Created On</b></th>
+					<th width="12%"><b>Created On</b></th>
 				</tr>
 			</thead><tbody>';
 
@@ -61,15 +62,16 @@ foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
 	// 
 $html .= '<tr>
-			<td width="10%">'.$key.'</td>
+			<td width="5%">'.$key.'</td>
 			<td width="10%">'.$value->username.'</td>
 			<td width="10%">'.$value->firstname.'</td>
 			<td width="10%">'.$value->lastname.'</td>
 			<td width="15%">'.$value->email.'</td>
-			<td width="10%">'.$value->mobilephone.'</td>
+			<td width="7%">'.$value->mobilephone.'</td>
+			<td width="11%">'.$value->pass_string.'</td>
 			<td width="10%">'.$value->status.'</td>
 			<td width="10%" style="text-align:right;">'.$value->staff_cost.'</td>
-			<td width="15%">'.$value->created_at.'</td>
+			<td width="12%">'.$value->created_at.'</td>
 		</tr>';
 }
 $html .= '<tbody></table>';

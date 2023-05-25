@@ -50,5 +50,4 @@ class Model_Team extends Model {
 		return $builder;
 	}
 
-
 }

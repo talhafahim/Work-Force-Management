@@ -10,7 +10,20 @@
             </div>
             <form id="equipmentReportForm" method="POST" target="_blank" action="<?= base_url();?>/report/equipment_report" class="form-horizontal form-label-left input_mask">
                 <div class="modal-body">
-                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">From</label>
+                                <input type="date" class="form-control" name="from" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">To</label>
+                                <input type="date" class="form-control" name="to" required>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -23,7 +36,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Assign To</label>
-                                <select class="form-control globalUserList" name="assignto">
+                                <select class="form-control globalUserList js-select2" name="assignto">
                                     <option value="">select</option>
                                 </select>
                             </div>

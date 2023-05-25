@@ -168,13 +168,19 @@ echo view('cpanel-layout/navbar');
 <div id="assignModel" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">Assign Equipment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <form id="updUserForm" class="form-horizontal form-label-left input_mask">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-12">
                          <div class="form-group"> 
                             <label for="exampleFormControlInput1">Assign To</label>
-                            <select class="form-control" required="" name="technician_id">
+                            <select class="form-control js-select2" required="" name="technician_id">
                             </select>
                         </div>
                     </div>

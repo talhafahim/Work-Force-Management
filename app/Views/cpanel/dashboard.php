@@ -18,6 +18,7 @@ echo view('cpanel-layout/navbar');
 				</div>
 			</div>
 			<!-- end row -->
+			<?php if(access_crud('Profit & Loss Report','view')){ ?>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card">
@@ -27,7 +28,7 @@ echo view('cpanel-layout/navbar');
 					</div>
 				</div>
 			</div>
-			<?php if(access_crud('All work Orders','view')){ ?>
+			<?php } if(access_crud('All work Orders','view')){ ?>
 				<div class="row">
 					<div class="col-md-8">
 						<div class="card">
@@ -128,12 +129,12 @@ echo view('cpanel-layout/navbar');
 			// { label: "a", y: 266.21 },
 						<?php
 						if(!empty($dailyStaffWise)){
-							foreach ($dailyStaffWise['schedule'] as $key => $value) {
-								echo '{ label: "'.$dailyStaffWise['schedule'][$key]['username'].'", y: '.$dailyStaffWise['schedule'][$key]['count'].' },';
-							}}
-							?>
+						foreach ($dailyStaffWise['schedule'] as $key => $value) {
+							echo '{ label: "'.$dailyStaffWise['schedule'][$key]['username'].'", y: '.$dailyStaffWise['schedule'][$key]['count'].' },';
+						}}
+						?>
 
-							]
+						]
 				},
 				{
 					type: "column",
@@ -144,12 +145,12 @@ echo view('cpanel-layout/navbar');
 			// { label: "a", y: 266.21 },
 						<?php
 						if(!empty($dailyStaffWise)){
-							foreach ($dailyStaffWise['travelling'] as $key => $value) {
-								echo '{ label: "'.$dailyStaffWise['travelling'][$key]['username'].'", y: '.$dailyStaffWise['travelling'][$key]['count'].' },';
-							}}
-							?>
+						foreach ($dailyStaffWise['travelling'] as $key => $value) {
+							echo '{ label: "'.$dailyStaffWise['travelling'][$key]['username'].'", y: '.$dailyStaffWise['travelling'][$key]['count'].' },';
+						}}
+						?>
 
-							]
+						]
 				},
 				{
 					type: "column",
@@ -160,12 +161,12 @@ echo view('cpanel-layout/navbar');
 			// { label: "a", y: 266.21 },
 						<?php
 						if(!empty($dailyStaffWise)){
-							foreach ($dailyStaffWise['on site'] as $key => $value) {
-								echo '{ label: "'.$dailyStaffWise['on site'][$key]['username'].'", y: '.$dailyStaffWise['on site'][$key]['count'].' },';
-							}}
-							?>
+						foreach ($dailyStaffWise['on site'] as $key => $value) {
+							echo '{ label: "'.$dailyStaffWise['on site'][$key]['username'].'", y: '.$dailyStaffWise['on site'][$key]['count'].' },';
+						}}
+						?>
 
-							]
+						]
 				},
 				{
 					type: "column",
@@ -176,12 +177,12 @@ echo view('cpanel-layout/navbar');
 			// { label: "a", y: 266.21 },
 						<?php
 						if(!empty($dailyStaffWise)){
-							foreach ($dailyStaffWise['complete'] as $key => $value) {
-								echo '{ label: "'.$dailyStaffWise['complete'][$key]['username'].'", y: '.$dailyStaffWise['complete'][$key]['count'].' },';
-							}}
-							?>
+						foreach ($dailyStaffWise['complete'] as $key => $value) {
+							echo '{ label: "'.$dailyStaffWise['complete'][$key]['username'].'", y: '.$dailyStaffWise['complete'][$key]['count'].' },';
+						}}
+						?>
 
-							]
+						]
 				},
 				{
 					type: "column",
@@ -192,12 +193,12 @@ echo view('cpanel-layout/navbar');
 			// { label: "a", y: 266.21 },
 						<?php
 						if(!empty($dailyStaffWise)){
-							foreach ($dailyStaffWise['reject'] as $key => $value) {
-								echo '{ label: "'.$dailyStaffWise['reject'][$key]['username'].'", y: '.$dailyStaffWise['reject'][$key]['count'].' },';
-							}}
-							?>
+						foreach ($dailyStaffWise['reject'] as $key => $value) {
+							echo '{ label: "'.$dailyStaffWise['reject'][$key]['username'].'", y: '.$dailyStaffWise['reject'][$key]['count'].' },';
+						}}
+						?>
 
-							]
+						]
 				},
 				{
 					type: "column",
@@ -208,12 +209,12 @@ echo view('cpanel-layout/navbar');
 			// { label: "a", y: 266.21 },
 						<?php
 						if(!empty($dailyStaffWise)){
-							foreach ($dailyStaffWise['commission'] as $key => $value) {
-								echo '{ label: "'.$dailyStaffWise['commission'][$key]['username'].'", y: '.$dailyStaffWise['commission'][$key]['count'].' },';
-							}}
-							?>
+						foreach ($dailyStaffWise['commission'] as $key => $value) {
+							echo '{ label: "'.$dailyStaffWise['commission'][$key]['username'].'", y: '.$dailyStaffWise['commission'][$key]['count'].' },';
+						}}
+						?>
 
-							]
+						]
 				},
 
 				]
@@ -258,11 +259,11 @@ echo view('cpanel-layout/navbar');
 			// { y: 51.08, label: "In Stock",exploded: true },
 			<?php
 			if(!empty($gatewayReport)){
-				foreach ($gatewayReport as $key => $value) {
-					echo '{ y: '.$gatewayReport[$key]['count'].', label: "'.$gatewayReport[$key]['status'].'",exploded: true },';
-				}}
-				?>
-				]
+			foreach ($gatewayReport as $key => $value) {
+				echo '{ y: '.$gatewayReport[$key]['count'].', label: "'.$gatewayReport[$key]['status'].'",exploded: true },';
+			}}
+			?>
+			]
 	}]
 });
 			setTimeout(function() { 
@@ -302,11 +303,11 @@ echo view('cpanel-layout/navbar');
 			// { y: 3, label: "Sweden" },
 			<?php
 			if(!empty($equipmentReport)){
-				foreach ($equipmentReport as $key => $value) {
-					echo '{ y: '.$value['stock'].', label: "'.$value['name'].'"},';
-				}}
-				?>
-				]
+			foreach ($equipmentReport as $key => $value) {
+				echo '{ y: '.$value['stock'].', label: "'.$value['name'].'"},';
+			}}
+			?>
+			]
 	}]
 });
 			setTimeout(function() { 
@@ -319,6 +320,7 @@ echo view('cpanel-layout/navbar');
 			///////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
+
 
 			var chart4 = new CanvasJS.Chart("profitChartContainer", {
 				animationEnabled: true,
@@ -363,7 +365,6 @@ echo view('cpanel-layout/navbar');
 			setTimeout(function() { 
 				chart4.render();
 			}, 500);
-			
 
 
 			//////////////////////////////////////////////////////////////////////////////////////////
@@ -391,11 +392,11 @@ echo view('cpanel-layout/navbar');
 			// { y: 51.08, label: "In Stock",exploded: true },
 			<?php
 			if(!empty($taskPieGraph)){
-				foreach ($taskPieGraph as $key => $value) {
-					echo '{ y: '.$taskPieGraph[$key]['count'].', label: "'.$taskPieGraph[$key]['status'].'",exploded: true },';
-				}}
-				?>
-				]
+			foreach ($taskPieGraph as $key => $value) {
+				echo '{ y: '.$taskPieGraph[$key]['count'].', label: "'.$taskPieGraph[$key]['status'].'",exploded: true },';
+			}}
+			?>
+			]
 	}]
 });
 			setTimeout(function() { 
@@ -435,11 +436,11 @@ echo view('cpanel-layout/navbar');
 			// { x: new Date(2017, 0, 30), y: 56 },
 			<?php
 			if(!empty($taskStatusWise)){
-				foreach ($taskStatusWise['complete'] as $key => $value) {
-					echo '{ label: "'.$taskStatusWise['complete'][$key]['username'].'", y: '.$taskStatusWise['complete'][$key]['count'].' },';
-				}}
-				?>
-				]
+			foreach ($taskStatusWise['complete'] as $key => $value) {
+				echo '{ label: "'.$taskStatusWise['complete'][$key]['username'].'", y: '.$taskStatusWise['complete'][$key]['count'].' },';
+			}}
+			?>
+			]
 	},
 	{
 		type: "stackedBar",
@@ -451,11 +452,11 @@ echo view('cpanel-layout/navbar');
 			// { x: new Date(2017, 0, 30), y: 52 },
 			<?php
 			if(!empty($taskStatusWise)){
-				foreach ($taskStatusWise['commission'] as $key => $value) {
-					echo '{ label: "'.$taskStatusWise['commission'][$key]['username'].'", y: '.$taskStatusWise['commission'][$key]['count'].' },';
-				}}
-				?>
-				]
+			foreach ($taskStatusWise['commission'] as $key => $value) {
+				echo '{ label: "'.$taskStatusWise['commission'][$key]['username'].'", y: '.$taskStatusWise['commission'][$key]['count'].' },';
+			}}
+			?>
+			]
 	}]
 });
 

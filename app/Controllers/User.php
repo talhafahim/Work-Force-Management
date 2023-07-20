@@ -593,7 +593,7 @@ class User extends BaseController
 		///////////////////////
 		public function global_user_list(){
 			$userModel = new Model_Users();
-			$query = $userModel->get_users(null,null,null,['admin','controller','technician','engineer','driver']);
+			$query = $userModel->get_users(null,null,null,['admin','controller','technician','engineer','driver'])->where('block','no');
 			return (json_encode($query->get()->getResult()));
 		}
 		//////////////////////
@@ -695,6 +695,80 @@ class User extends BaseController
 				return $this->response->setStatusCode(401,$error);
 			}
 		}
+		////////////////////
+		public function bulk_cost_update()
+		{
+			$sess_status = session()->get('status');
+			if(isLoggedIn() && $sess_status == 'admin' && access_crud('User Bulk Cost Update','view')){
+				return view('cpanel/bulk_cost_update');
+			}else{
+				return redirect()->to(base_url('login'));
+			}
+		}
+		//
+		public function bulk_cost_update_action(){
+			$error = null;
+			$userModel = new Model_Users();
+			$csv = $_FILES['file']['tmp_name'];
+			if(!isLoggedIn()){
+				$error = 'Error : Session expired';
+			}
+			if(isset($_FILES['file'])){
+				$file_name = $_FILES['file']['name'];
+				$handle = fopen($_FILES['file']['tmp_name'],"r");
+				$ext = pathinfo($file_name, PATHINFO_EXTENSION);
+			//
+				if(count(fgetcsv($handle)) != "2"){
+					$error = 'Error : Invalid file structure';
+				}if($ext != 'csv'){
+					$error = 'Error : Invalid file format';
+				}
+			}
+		//
+			if(empty($error)){
+				$handle = fopen($csv,"r");
+				$num = 0;
+				while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+				{
+					if($num > 0){
+						//
+						$userdata = $userModel->get_users(null,null,null,null,null,null,$row[0])->countAllResults();
+						if($userdata <= 0){
+							$error = "Error : Invalid Unique ID at line#".$num;
+							break;
+						}
+						//
+						if(empty($row[0]) || empty($row[1])  ){
+							$error = "Error : Cell can not be empty at line#".$num;
+							break;
+						}
+					//
+					}
+					$num++;
+				}
+			}
+		//////////
+			if(empty($error)){
+				$remove = array("'","`","(",")",",",'"');
+				$handle = fopen($csv,"r");
+				$num = 0;
+				while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+				{
+					if($num > 0){
+					//echo $row[0];
+					//
+						$this->db->table('bo_users')->where('unique_id',$row[0])->update(['staff_cost' => $row[1] ]);
+					//
+					}
+					$num++;
+					create_action_log('unique id# '.$row[0]);
+				}
+			//
+				return $this->response->setStatusCode(200)->setBody('Updated Successfully');
+			}else{
+				return $this->response->setStatusCode(401,$error);
+			}
 
+		}
 
 	}

@@ -1,61 +1,54 @@
 <!-- sample modal content -->
-<div id="popup_sim_report" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="popup_day_routine_report" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title mt-0" id="myModalLabel">SIM Report</h5>
+                <h5 class="modal-title mt-0" id="myModalLabel">Users Day Routine Report</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form id="gatewayReportForm" method="POST" target="_blank" action="<?= base_url();?>/report/sim_report" class="form-horizontal form-label-left input_mask">
+            <form id="gatewayReportForm" method="POST" target="_blank" action="<?= base_url();?>/report/users_day_routine_report" class="form-horizontal form-label-left input_mask">
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Assign From</label>
-                                <input type="date" class="form-control" name="from" >
+                                <label for="exampleFormControlInput1">Date (from)</label>
+                                <input type="date" class="form-control" name="from">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Assign To</label>
-                                <input type="date" class="form-control" name="to" >
+                                <label for="exampleFormControlInput1">Date (to)</label>
+                                <input type="date" class="form-control" name="to">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">ICC ID#</label>
-                                <input type="text" class="form-control" name="serial">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Assign To</label>
-                                <select class="form-control globalUserList js-select2" name="assignto">
+                                <label for="exampleFormControlInput1">User</label>
+                                <select class="form-control js-select2 globalUserList" name="user_id">
                                     <option value="">select</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Status</label>
                                 <select class="form-control" name="status">
                                     <option value="">select status</option>
-                                    <option value="in stock">In Stock</option>
-                                    <option value="assigned">Assigned</option>
-                                    <option value="utilized">Utilized</option>
-                                    <option value="return">Return</option>
-                                    <option value="faulty">Faulty</option>
+                                    <option>start</option>
+                                    <option>break</option>
+                                    <option>resume</option>
+                                    <option>end</option>
                                 </select>
                             </div>
                         </div>
-                        
                     </div>
+                   <!--  <div class="row">
+                        
+                    </div> -->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">

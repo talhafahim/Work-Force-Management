@@ -179,6 +179,14 @@ class Task extends BaseController
 				}
 			}
 			//
+			if($status == 'on site' && empty($_FILES['pic1']['name']) && empty($_FILES['pic2']['name']) && empty($_FILES['pic3']['name']) && empty($_FILES['pic4']['name']) && empty($_FILES['pic5']['name']) ){
+				$error = 'Provide atleast one picture';
+			}
+			//
+			if($status == 'complete' && (empty($_FILES['pic1']['name']) || empty($_FILES['pic2']['name']) || empty($_FILES['pic3']['name']) ) ){
+					$error = 'Provide atleast 3 picture';
+			}
+			//
 			if(empty($error) && ($status == 'complete' || $status == 'commission')){
 				//
 				foreach($otherEquipment as $key => $eqValue){
@@ -279,7 +287,10 @@ class Task extends BaseController
 						if($team_id){
 							$teamMember = $modelTeam->get_team_member($team_id->team_id);
 							foreach($teamMember->get()->getResult() as $memberValue){
-								$this->db->table('task_team_member')->insert(['task_id' => $task_id, 'team_id' => $team_id->team_id, 'user_id' => $memberValue->user_id, 'status' => $status]);
+								//
+								$staff_cost = $modelUsers->get_users($memberValue->user_id)->get()->getRow()->staff_cost;
+								//
+								$this->db->table('task_team_member')->insert(['task_id' => $task_id, 'team_id' => $team_id->team_id, 'user_id' => $memberValue->user_id, 'status' => $status, 'staff_cost' => $staff_cost]);
 							}
 						}
 						/////////////////
@@ -287,6 +298,10 @@ class Task extends BaseController
 					}else if($status == 'reject'){
 					//
 						$modelGeneral->task_detail_insert($task_id, $status, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
+					//
+					}else if($status == 'on site'){
+					//
+						$modelGeneral->task_detail_insert($task_id, $status, NULL, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
 					//
 					}
 					//
@@ -328,7 +343,7 @@ class Task extends BaseController
 					//
 					$taskarry = $modelTask->get_task(null,$currTask->un_number,$user_id,$currTask->status);
 					//
-					foreach($taskarry->get()->getResult() as $value){
+					foreach($taskarry->get()->getResult() as $taskKey => $value){
 						$task_id = $value->id;
 						//
 						if($status == 'complete' || $status == 'commission'){
@@ -359,7 +374,9 @@ class Task extends BaseController
 									//
 									$this->db->table('task_misc_equipment')->insert(['task_id' => $task_id, 'equip_id' => $otherEquipment[$key], 'qty' => $equipQty[$key], 'task_detail_id' => $task_detail_id, 'rate' => $equipInfo->rate, 'total' => $equipQty[$key]*$equipInfo->rate ]);
 									//
-									$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `user_id` =  '$user_id' and `equip_id` = '$otherEquipment[$key]' ");
+									if($taskKey == 0){
+										$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` - '$equipQty[$key]'  where `user_id` =  '$user_id' and `equip_id` = '$otherEquipment[$key]' ");
+									}
 								}
 							}
 							/////////////////
@@ -368,7 +385,10 @@ class Task extends BaseController
 							if($team_id){
 								$teamMember = $modelTeam->get_team_member($team_id->team_id);
 								foreach($teamMember->get()->getResult() as $memberValue){
-									$this->db->table('task_team_member')->insert(['task_id' => $task_id, 'team_id' => $team_id->team_id, 'user_id' => $memberValue->user_id, 'status' => $status]);
+									//
+									$staff_cost = $modelUsers->get_users($memberValue->user_id)->get()->getRow()->staff_cost;
+									//
+									$this->db->table('task_team_member')->insert(['task_id' => $task_id, 'team_id' => $team_id->team_id, 'user_id' => $memberValue->user_id, 'status' => $status, 'staff_cost' => $staff_cost]);
 								}
 							}
 							/////////////////
@@ -376,6 +396,9 @@ class Task extends BaseController
 						}else if($status == 'reject'){
 							//
 							$modelGeneral->task_detail_insert($task_id, $status, $returnReason, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
+						}else if($status == 'on site'){
+							//
+							$modelGeneral->task_detail_insert($task_id, $status, NULL, $imgname.'1.jpg', $imgname.'2.jpg', $imgname.'3.jpg', $imgname.'4.jpg', $imgname.'5.jpg',$user_id);
 						}
 						//
 						create_action_log('task id '.$task_id);
@@ -424,8 +447,107 @@ class Task extends BaseController
 	//
 
 
-	public function test(){
-		echo $this->db->table('bo_customer_info')->whereIn('status',['travelling','on site','complete'])->where('assign_to',$user_id)->where('un_number !=',$un_number)->countAllResults();
+	public function task_revert_back()
+	{
+		if(isLoggedIn() && access_crud('Work Order Revert Back','view')){	
+			return view('cpanel/task_revert_back');	
+		}else{
+			return redirect()->to(base_url('login'));
+		}
+	}
+	//
+	public function task_revert_back_action()
+	{
+		$error = null;
+		$meter_serial = $this->input->getPost('meter_serial');
+		$un = $this->input->getPost('un');
+		$modelTask = new Model_Task();
+			//
+		$validation =  \Config\Services::validation();
+		$validate = $this->validate([
+			'un' => ['label' => 'UN Number', 'rules' => 'trim|required'],
+			'meter_serial' => ['label' => 'Meter Serial', 'rules' => 'trim|required'],
+		]);
+		if(!$validate){
+			$error = $validation->listErrors();
+			$error = str_replace(array("\n", "\r"), '', $error);
+			$error =  nl2br($error);
+		}
+		if(!isLoggedIn()){	
+			$error = 'Session Timeout';
+		}if(!access_crud('Work Order Revert Back','update')){	
+			$error = 'Access Denied';	
+		}
+		if(empty($error)){
+			$taskDetail = $modelTask->get_task(null,$un,null,null,null,null,$meter_serial);
+			if($taskDetail->countAllResults() <= 0){
+				$error = 'Invalid Meter Serial or UN Number';
+			}else if($taskDetail->countAllResults() > 0){
+				$taskDetail = $modelTask->get_task(null,$un,null,null,null,null,$meter_serial);
+				if($taskDetail->get()->getRow()->status == 'unallocated'){
+					$error = 'Task Already Unallocated';
+				}
+			}
+
+		}
+		//
+		if(empty($error)){
+			$this->db->transStart();
+			//
+			$taskDetail = $modelTask->get_task(null,$un,null,null,null,null,$meter_serial)->get()->getRow();
+			$task_id = $taskDetail->id;
+			$user_id = $taskDetail->assign_to;
+			////// remove gateway //////
+			$modelGeneral = new Model_General();
+			$gatewayDetail = $modelGeneral->get_task_gateway(null,$task_id);
+			if($gatewayDetail->countAllResults() > 0){
+				$gatewayDetail = $modelGeneral->get_task_gateway(null,$task_id);
+				foreach($gatewayDetail->get()->getResult() as $gtvalue){
+				//
+				$this->db->table('gateway')->where('serial',$gtvalue->gateway_serial)->update(['status' => 'assigned']);
+				//
+				$this->db->table('task_gateway')->where('task_id',$task_id)->where('gateway_serial',$gtvalue->gateway_serial)->delete();
+				}
+			}
+			///////////////////////////
+			///////// remove SIM //////
+			$simDetail = $modelGeneral->get_task_sim(null,$task_id);
+			if($simDetail->countAllResults() > 0){
+				$simDetail = $modelGeneral->get_task_sim(null,$task_id);
+				foreach($simDetail->get()->getResult() as $simvalue){
+				$this->db->table('sim')->where('icc_id',$simvalue->sim_icc_id)->update(['status' => 'assigned']);
+				//
+				$this->db->table('task_sim')->where('task_detail_id',$simvalue->task_detail_id)->where('sim_icc_id',$simvalue->sim_icc_id)->delete();
+				}	
+			}
+			/////////////////////////////////
+			///////// remove Equipment //////
+			$equipDetail = $modelGeneral->get_task_misc_equipment($task_id);
+			if($equipDetail->countAllResults() > 0){
+				$equipDetail = $modelGeneral->get_task_misc_equipment($task_id);
+				foreach($equipDetail->get()->getResult() as $equipvalue){
+					$this->db->query("UPDATE `users_misc_equipment` set `stock` = `stock` + '$equipvalue->qty'  where `user_id` =  '$user_id' and `equip_id` = '$equipvalue->equip_id' ");
+					// //
+					$this->db->table('task_misc_equipment')->where('id',$equipvalue->id)->where('equip_id',$equipvalue->equip_id)->delete();
+				}
+			}
+			/////////////////////////////
+			///////// remove Team //////
+			$this->db->table('task_team_member')->where('task_id',$task_id)->delete();
+			///////// remove Task Detail //////
+			$this->db->table('task_detail')->where('task_id',$task_id)->where('user_id',$user_id)->delete();
+			///////// remove Task Detail //////
+			$this->db->table('bo_customer_info')->where('id',$task_id)->where('assign_to',$user_id)->update(['status' => 'unallocated']);
+			//
+			create_action_log('task_id:'.$task_id.' meter#'.$meter_serial); 
+			$this->db->transComplete();
+			//
+			return $this->response->setStatusCode(200)->setBody('Reverted Successfully');
+		}else{
+			return $this->response->setStatusCode(401,$error);
+		}
+		//
+
 	}
 
 }

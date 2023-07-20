@@ -45,12 +45,13 @@ border: none;
 $html .= '<table>
 			<thead>
 				<tr class="grey">
-					<th width="6%"><b>#</b></th>
-					<th width="16%"><b>Utility#</b></th>
-					<th width="12%"><b>Meter Serial</b></th>
-					<th width="12%"><b>Region</b></th>
-					<th width="10%"><b>Scenario</b></th>
+					<th width="5%"><b>#</b></th>
+					<th width="15%"><b>Utility#</b></th>
+					<th width="10%"><b>Meter Serial</b></th>
+					<th width="5%"><b>Region</b></th>
+					<th width="7%"><b>Scenario</b></th>
 					<th width="12%"><b>GW Serial</b></th>
+					<th width="14%"><b>SIM ICC ID</b></th>
 					<th width="12%"><b>By</b></th>
 					<th width="8%"><b>Remarks</b></th>
 					<th width="12%"><b>Assign On</b></th>
@@ -59,26 +60,38 @@ $html .= '<table>
 
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
-	$assignTo = $gwSerial = null;
+	$assignTo = $gwSerial = $simiccid = null;
 	if(!empty($value->assign_to)){
 		$assignTo = $modelUsers->get_users($value->assign_to)->get()->getRow()->username;
 	}
 	$status = ($value->status == 'complete') ? 'installed' : ( ($value->status == 'reject') ? 'return' : $value->status);
 	//
-	if($value->status == 'complete' || $value->status == 'comission'){
-	$taskDetail = $modelTask->get_task_detail(null,$value->id)->get()->getRow();
-	$gateway = $modelGeneral->get_task_gateway(null,$taskDetail->task_id,null,$taskDetail->id)->get()->getRow();
+	if($value->status == 'complete' || $value->status == 'commission'){
+	// $taskDetail = $modelTask->get_task_detail(null,$value->id)->get()->getRow();
+	$gateway = $modelGeneral->get_task_gateway(null,$value->id,null)->get();
 	if($gateway){
-		$gwSerial = $gateway->gateway_serial;
+		// $gwSerial = $gateway->gateway_serial;
+		foreach($gateway->getResult() as $gValue){
+				$gwSerial .= $gValue->gateway_serial.' '; 
+			}
+	}
+	//
+	$sim = $modelGeneral->get_task_sim(null,$value->id,null)->get();
+	if($sim){
+		// 
+		foreach($sim->getResult() as $sValue){
+				$simiccid .= $sValue->sim_icc_id.' '; 
+			}
 	}}
 	// 
 $html .= '<tr>
-			<td width="6%">'.$key.'</td>
-			<td width="16%">'.$value->un_number.'</td>
-			<td width="12%">'.$value->meter_number.'</td>
-			<td width="12%">region</td>
-			<td width="10%">'.$value->scenario.'</td>
+			<td width="5%">'.$key.'</td>
+			<td width="15%">'.$value->un_number.'</td>
+			<td width="10%">'.$value->meter_number.'</td>
+			<td width="5%">region</td>
+			<td width="7%">'.$value->scenario.'</td>
 			<td width="12%">'.$gwSerial.'</td>
+			<td width="14%">'.$simiccid.'</td>
 			<td width="12%">'.$assignTo.'</td>
 			<td width="8%">'.$status.'</td>
 			<td width="12%">'.$value->assign_on.'</td>

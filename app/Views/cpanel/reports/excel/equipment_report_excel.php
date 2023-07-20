@@ -1,12 +1,14 @@
 <?php
 ///////////////////////////////////////////////////////////////////////////////////////
-$delimiter = ",";
-$f = fopen('php://memory', 'w');
+#include the export-xls.class.php file
+require_once(APPPATH.'/Libraries/ExportXLS.php');
+$filename = 'equipment_report.xls'; // The file name you want any resulting file to be called.
+
+#create an instance of the class
+$xls = new ExportXLS($filename);
 //
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-$lineData = array('Equipment','User','Qty','UOM','UN#','Status','On Date');
-fputcsv($f, $lineData, $delimiter);
+$header = array('Equipment','User','Qty','UOM','UN#','Status','On Date');
+$xls->addHeader($header);
 //
 foreach($data->get()->getResult() as $key => $value){
 	//
@@ -16,17 +18,12 @@ foreach($data->get()->getResult() as $key => $value){
 	$status = ($value->status == 'complete') ? 'installed' : ( ($value->status == 'reject') ? 'return' : $value->status);
 	$taskDetail = $modelCustomer->get_customer_info($value->task_id)->get()->getRow();
 // 
-	$lineData = array($equipInfo->name,$userInfo->firstname.' '.$userInfo->lastname,$value->qty,$equipInfo->uom,$taskDetail->un_number,$status,$value->created_on);
-	fputcsv($f, $lineData, $delimiter);
-}				
-/////////////////////////////////////////////////////
-$filename='equipment_report.csv';
-fseek($f, 0);
-//set headers to download file rather than displayed
-header('Content-Type: text/csv');
-header('Content-Disposition: attachment; filename="' . $filename . '";');
-//output all remaining data on a file pointer
-fpassthru($f);
-// }
-exit;
+	$row = array();
+	$row = array($equipInfo->name,$userInfo->firstname.' '.$userInfo->lastname,$value->qty,$equipInfo->uom,$taskDetail->un_number,$status,$value->created_on);
+	$xls->addRow($row);
+}
+
+//
+$xls->sendFile($filename);
+
 ?>

@@ -19,15 +19,15 @@ echo view('cpanel-layout/navbar');
 			</div>
 			<!-- end row -->
 			<?php if(access_crud('Profit & Loss Report','view')){ ?>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-body">
-							<div id="profitChartContainer" style="height: 370px; width: 100%;"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="card">
+							<div class="card-body">
+								<div id="profitChartContainer" style="height: 370px; width: 100%;"></div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			<?php } if(access_crud('All work Orders','view')){ ?>
 				<div class="row">
 					<div class="col-md-8">
@@ -40,198 +40,204 @@ echo view('cpanel-layout/navbar');
 					<div class="col-md-4">
 						<div class="card">
 							<div class="card-body">
-								<div id="chartContainer2" style="height: 370px; width: 100%;"></div>
+								<!-- <div id="chartContainer2" style="height: 370px; width: 100%;"></div> -->
+								<div id="chartContainer2" style="height: 355px; width: 100%;"></div>
+								<div id="taskTotal" style="height: 15px; width: 100%;font-size: 20px;font-weight: bold;text-align:center;">Total <?= $taskTotal;?>
 							</div>
 						</div>
 					</div>
 				</div>
-			<?php } ?>
-			<div class="row">
-				<?php if(access_crud('Gateway','view')){ ?>
-					<div class="col-md-4">
-						<div class="card">
-							<div class="card-body">
-								<div id="gatewaychartContainer" style="height: 370px; width: 100%;"></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-8">
-						<div class="card">
-							<div class="card-body">
-								<div id="gatewaychartContainer2" style="height: 370px; width: 100%;"></div>
-							</div>
-						</div>
-					</div>
-				<?php } ?>
 			</div>
-			<div class="row">
-				<?php if(access_crud('Equipment','view')){ ?>
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-body">
-								<div id="equipmentchartContainer" style="height: 370px; width: 100%;"></div>
-							</div>
+		<?php } ?>
+		<div class="row">
+			<?php if(access_crud('Gateway','view')){ ?>
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<!-- <div id="gatewaychartContainer" style="height: 370px; width: 100%;"></div> -->
+							<div id="gatewaychartContainer" style="height: 355px; width: 100%;"></div>
+							<div id="gatewayTotal" style="height: 15px; width: 100%;font-size: 20px;font-weight: bold;text-align:center;">Total <?= $gatewayTotal;?>
 						</div>
 					</div>
-				<?php } ?>
+				</div>
 			</div>
-			<!-- end row -->
-		</div>
-		<!-- container-fluid -->
-		
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-body">
+						<div id="gatewaychartContainer2" style="height: 370px; width: 100%;"></div>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
 	</div>
-	
-	<!-- content -->
-	
-	<?php 
-// echo view('cpanel-layout/action_loader');
-	echo view('cpanel-layout/footer');
-	?>
-	<script src="<?= base_url();?>/assets/canvasjs/canvasjs.min.js"></script>
+	<div class="row">
+		<?php if(access_crud('Equipment','view')){ ?>
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<div id="equipmentchartContainer" style="height: 370px; width: 100%;"></div>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
+	</div>
+	<!-- end row -->
+</div>
+<!-- container-fluid -->
 
-	<script>
-		window.onload = function () {
+</div>
+
+<!-- content -->
+
+<?php 
+// echo view('cpanel-layout/action_loader');
+echo view('cpanel-layout/footer');
+?>
+<script src="<?= base_url();?>/assets/canvasjs/canvasjs.min.js"></script>
+
+<script>
+	window.onload = function () {
 
 			//////////////////////////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
 
-			var chart = new CanvasJS.Chart("chartContainer", {
-				animationEnabled: true,
-				theme: "dark2",
-				title:{
-					text: "Daily Staff Wise Report",
-					fontSize: 20
-				},	
-				axisY: {
-					title: "Number of Task",
-					titleFontColor: "#4F81BC",
-					lineColor: "#4F81BC",
-					labelFontColor: "#4F81BC",
-					tickColor: "#4F81BC"
-				},	
-				toolTip: {
-					shared: true
-				},
-				legend: {
-					cursor:"pointer",
-					itemclick: toggleDataSeries
-				},
-				data: [
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled: true,
+			theme: "dark2",
+			title:{
+				text: "Daily Staff Wise Report",
+				fontSize: 20
+			},	
+			axisY: {
+				title: "Number of Task",
+				titleFontColor: "#4F81BC",
+				lineColor: "#4F81BC",
+				labelFontColor: "#4F81BC",
+				tickColor: "#4F81BC"
+			},	
+			toolTip: {
+				shared: true
+			},
+			legend: {
+				cursor:"pointer",
+				itemclick: toggleDataSeries
+			},
+			data: [
 
-				{
-					type: "column",
-					name: "schedule",
-					legendText: "Schedule",
-					showInLegend: true, 
-					dataPoints:[
+			{
+				type: "column",
+				name: "schedule",
+				legendText: "Schedule",
+				showInLegend: true, 
+				dataPoints:[
 			// { label: "a", y: 266.21 },
-						<?php
-						if(!empty($dailyStaffWise)){
+					<?php
+					if(!empty($dailyStaffWise)){
 						foreach ($dailyStaffWise['schedule'] as $key => $value) {
 							echo '{ label: "'.$dailyStaffWise['schedule'][$key]['username'].'", y: '.$dailyStaffWise['schedule'][$key]['count'].' },';
 						}}
 						?>
 
 						]
-				},
-				{
-					type: "column",
-					name: "travelling",
-					legendText: "Travelling",
-					showInLegend: true, 
-					dataPoints:[
+			},
+			{
+				type: "column",
+				name: "travelling",
+				legendText: "Travelling",
+				showInLegend: true, 
+				dataPoints:[
 			// { label: "a", y: 266.21 },
-						<?php
-						if(!empty($dailyStaffWise)){
+					<?php
+					if(!empty($dailyStaffWise)){
 						foreach ($dailyStaffWise['travelling'] as $key => $value) {
 							echo '{ label: "'.$dailyStaffWise['travelling'][$key]['username'].'", y: '.$dailyStaffWise['travelling'][$key]['count'].' },';
 						}}
 						?>
 
 						]
-				},
-				{
-					type: "column",
-					name: "on site",
-					legendText: "On Site",
-					showInLegend: true, 
-					dataPoints:[
+			},
+			{
+				type: "column",
+				name: "on site",
+				legendText: "On Site",
+				showInLegend: true, 
+				dataPoints:[
 			// { label: "a", y: 266.21 },
-						<?php
-						if(!empty($dailyStaffWise)){
+					<?php
+					if(!empty($dailyStaffWise)){
 						foreach ($dailyStaffWise['on site'] as $key => $value) {
 							echo '{ label: "'.$dailyStaffWise['on site'][$key]['username'].'", y: '.$dailyStaffWise['on site'][$key]['count'].' },';
 						}}
 						?>
 
 						]
-				},
-				{
-					type: "column",
-					name: "installed",
-					legendText: "Installed",
-					showInLegend: true, 
-					dataPoints:[
+			},
+			{
+				type: "column",
+				name: "installed",
+				legendText: "Installed",
+				showInLegend: true, 
+				dataPoints:[
 			// { label: "a", y: 266.21 },
-						<?php
-						if(!empty($dailyStaffWise)){
+					<?php
+					if(!empty($dailyStaffWise)){
 						foreach ($dailyStaffWise['complete'] as $key => $value) {
 							echo '{ label: "'.$dailyStaffWise['complete'][$key]['username'].'", y: '.$dailyStaffWise['complete'][$key]['count'].' },';
 						}}
 						?>
 
 						]
-				},
-				{
-					type: "column",
-					name: "return",
-					legendText: "Return",
-					showInLegend: true, 
-					dataPoints:[
+			},
+			{
+				type: "column",
+				name: "return",
+				legendText: "Return",
+				showInLegend: true, 
+				dataPoints:[
 			// { label: "a", y: 266.21 },
-						<?php
-						if(!empty($dailyStaffWise)){
+					<?php
+					if(!empty($dailyStaffWise)){
 						foreach ($dailyStaffWise['reject'] as $key => $value) {
 							echo '{ label: "'.$dailyStaffWise['reject'][$key]['username'].'", y: '.$dailyStaffWise['reject'][$key]['count'].' },';
 						}}
 						?>
 
 						]
-				},
-				{
-					type: "column",
-					name: "commission",
-					legendText: "Commission",
-					showInLegend: true, 
-					dataPoints:[
+			},
+			{
+				type: "column",
+				name: "commission",
+				legendText: "Commission",
+				showInLegend: true, 
+				dataPoints:[
 			// { label: "a", y: 266.21 },
-						<?php
-						if(!empty($dailyStaffWise)){
+					<?php
+					if(!empty($dailyStaffWise)){
 						foreach ($dailyStaffWise['commission'] as $key => $value) {
 							echo '{ label: "'.$dailyStaffWise['commission'][$key]['username'].'", y: '.$dailyStaffWise['commission'][$key]['count'].' },';
 						}}
 						?>
 
 						]
-				},
+			},
 
-				]
-			});
-			setTimeout(function() { 
-				chart.render();
-			}, 1000);
+			]
+		});
+		setTimeout(function() { 
+			chart.render();
+		}, 1000);
 
-			function toggleDataSeries(e) {
-				if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-					e.dataSeries.visible = false;
-				}
-				else {
-					e.dataSeries.visible = true;
-				}
-				chart.render();
+		function toggleDataSeries(e) {
+			if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+				e.dataSeries.visible = false;
 			}
+			else {
+				e.dataSeries.visible = true;
+			}
+			chart.render();
+		}
 
 			//////////////////////////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
@@ -239,7 +245,7 @@ echo view('cpanel-layout/navbar');
 			///////////////////////////////////////////////////////////////////////
 
 
-			var chart2 = new CanvasJS.Chart("gatewaychartContainer", {
+		var chart2 = new CanvasJS.Chart("gatewaychartContainer", {
 	theme: "dark2", // "light1", "light2", "dark1", "dark2"
 	exportEnabled: true,
 	animationEnabled: true,
@@ -259,17 +265,17 @@ echo view('cpanel-layout/navbar');
 			// { y: 51.08, label: "In Stock",exploded: true },
 			<?php
 			if(!empty($gatewayReport)){
-			foreach ($gatewayReport as $key => $value) {
-				echo '{ y: '.$gatewayReport[$key]['count'].', label: "'.$gatewayReport[$key]['status'].'",exploded: true },';
-			}}
-			?>
-			]
+				foreach ($gatewayReport as $key => $value) {
+					echo '{ y: '.$gatewayReport[$key]['count'].', label: "'.$gatewayReport[$key]['status'].'",exploded: true },';
+				}}
+				?>
+				]
 	}]
 });
-			setTimeout(function() { 
-				chart2.render();
-			}, 1500);
-			
+		setTimeout(function() { 
+			chart2.render();
+		}, 1500);
+		
 
 
 
@@ -278,8 +284,8 @@ echo view('cpanel-layout/navbar');
 			///////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
 
-			var chart3 = new CanvasJS.Chart("equipmentchartContainer", {
-				animationEnabled: true,
+		var chart3 = new CanvasJS.Chart("equipmentchartContainer", {
+			animationEnabled: true,
 	theme: "dark2", // "light1", "light2", "dark1", "dark2"
 	
 	title:{
@@ -303,16 +309,16 @@ echo view('cpanel-layout/navbar');
 			// { y: 3, label: "Sweden" },
 			<?php
 			if(!empty($equipmentReport)){
-			foreach ($equipmentReport as $key => $value) {
-				echo '{ y: '.$value['stock'].', label: "'.$value['name'].'"},';
-			}}
-			?>
-			]
+				foreach ($equipmentReport as $key => $value) {
+					echo '{ y: '.$value['stock'].', label: "'.$value['name'].'"},';
+				}}
+				?>
+				]
 	}]
 });
-			setTimeout(function() { 
-				chart3.render();
-			}, 2000);
+		setTimeout(function() { 
+			chart3.render();
+		}, 2000);
 
 
 
@@ -322,8 +328,8 @@ echo view('cpanel-layout/navbar');
 			///////////////////////////////////////////////////////////////////////
 
 
-			var chart4 = new CanvasJS.Chart("profitChartContainer", {
-				animationEnabled: true,
+		var chart4 = new CanvasJS.Chart("profitChartContainer", {
+			animationEnabled: true,
 	theme: "dark2", // "light1", "light2", "dark1", "dark2"
 	title:{
 		text:"Profit & Loss",
@@ -362,9 +368,9 @@ echo view('cpanel-layout/navbar');
 				]
 	}]
 });
-			setTimeout(function() { 
-				chart4.render();
-			}, 500);
+		setTimeout(function() { 
+			chart4.render();
+		}, 500);
 
 
 			//////////////////////////////////////////////////////////////////////////////////////////
@@ -372,7 +378,7 @@ echo view('cpanel-layout/navbar');
 			///////////////////////////////////////////////////////////////////////
 			///////////////////////////////////////////////////////////////////////
 
-			var chart5 = new CanvasJS.Chart("chartContainer2", {
+		var chart5 = new CanvasJS.Chart("chartContainer2", {
 	theme: "dark2", // "light1", "light2", "dark1", "dark2"
 	exportEnabled: true,
 	animationEnabled: true,
@@ -392,21 +398,21 @@ echo view('cpanel-layout/navbar');
 			// { y: 51.08, label: "In Stock",exploded: true },
 			<?php
 			if(!empty($taskPieGraph)){
-			foreach ($taskPieGraph as $key => $value) {
-				echo '{ y: '.$taskPieGraph[$key]['count'].', label: "'.$taskPieGraph[$key]['status'].'",exploded: true },';
-			}}
-			?>
-			]
+				foreach ($taskPieGraph as $key => $value) {
+					echo '{ y: '.$taskPieGraph[$key]['count'].', label: "'.$taskPieGraph[$key]['status'].'",exploded: true },';
+				}}
+				?>
+				]
 	}]
 });
-			setTimeout(function() { 
-				chart5.render();
-			}, 1500);
-			
+		setTimeout(function() { 
+			chart5.render();
+		}, 1500);
+		
 
 		///////////////////////////////////////////////////////////////////////
 
-			var chart6 = new CanvasJS.Chart("gatewaychartContainer2", {
+		var chart6 = new CanvasJS.Chart("gatewaychartContainer2", {
 	theme: "dark2", // "light1", "light2", "dark1", "dark2"
 	animationEnabled: true,
 	title:{
@@ -436,11 +442,11 @@ echo view('cpanel-layout/navbar');
 			// { x: new Date(2017, 0, 30), y: 56 },
 			<?php
 			if(!empty($taskStatusWise)){
-			foreach ($taskStatusWise['complete'] as $key => $value) {
-				echo '{ label: "'.$taskStatusWise['complete'][$key]['username'].'", y: '.$taskStatusWise['complete'][$key]['count'].' },';
-			}}
-			?>
-			]
+				foreach ($taskStatusWise['complete'] as $key => $value) {
+					echo '{ label: "'.$taskStatusWise['complete'][$key]['username'].'", y: '.$taskStatusWise['complete'][$key]['count'].' },';
+				}}
+				?>
+				]
 	},
 	{
 		type: "stackedBar",
@@ -452,42 +458,41 @@ echo view('cpanel-layout/navbar');
 			// { x: new Date(2017, 0, 30), y: 52 },
 			<?php
 			if(!empty($taskStatusWise)){
-			foreach ($taskStatusWise['commission'] as $key => $value) {
-				echo '{ label: "'.$taskStatusWise['commission'][$key]['username'].'", y: '.$taskStatusWise['commission'][$key]['count'].' },';
-			}}
-			?>
-			]
+				foreach ($taskStatusWise['commission'] as $key => $value) {
+					echo '{ label: "'.$taskStatusWise['commission'][$key]['username'].'", y: '.$taskStatusWise['commission'][$key]['count'].' },';
+				}}
+				?>
+				]
 	}]
 });
 
-			setTimeout(function() { 
-				chart6.render();
-			}, 1500);
+		setTimeout(function() { 
+			chart6.render();
+		}, 1500);
 
-			function toggleDataSeries2(e) {
-				if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-					e.dataSeries.visible = false;
-				}
-				else {
-					e.dataSeries.visible = true;
-				}
-				chart6.render();
+		function toggleDataSeries2(e) {
+			if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+				e.dataSeries.visible = false;
 			}
-
-
-			$(document).on('click','.open-left',function(){
-				chart6.render();
-				chart5.render();
-				chart4.render();
-				chart3.render();
-				chart2.render();
-				chart.render();
-			});
-
+			else {
+				e.dataSeries.visible = true;
+			}
+			chart6.render();
 		}
 
-		
 
-	</script>
+		$(document).on('click','.open-left',function(){
+			chart6.render();
+			chart5.render();
+			chart4.render();
+			chart3.render();
+			chart2.render();
+			chart.render();
+		});
+
+	}
 
 	
+
+</script>
+

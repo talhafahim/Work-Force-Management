@@ -67,6 +67,9 @@
                                     <label class="btn btn-success btn-toggle btn-sm ">
                                         <input type="radio" name="format" autocomplete="off" required value="excel"> <i class="fas fa-file-excel">  </i> EXCEL
                                     </label>
+                                    <label class="btn btn-primary btn-toggle btn-sm ">
+                                        <input type="radio" name="format" autocomplete="off" required value="csv"> <i class="fas fa-file-excel">  </i> CSV
+                                    </label>
                                 </div>
                             </div>
                         </div>

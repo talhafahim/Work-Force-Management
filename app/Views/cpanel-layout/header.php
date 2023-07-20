@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
+	<link rel="manifest" href="manifest.json">
 	<title><?= get_setting_value('App Title');?></title>
 	<meta content="Admin Dashboard" name="description">
 	<meta content="Themesbrand" name="author">
@@ -55,8 +56,21 @@
 			background: #9ea5ab; 
 		}
 		.canvasjs-chart-credit,.canvasjs-chart-toolbar{
-      		display: none;
-   		 }
+			display: none;
+		}
+		.no-spin::-webkit-outer-spin-button,
+		.no-spin::-webkit-inner-spin-button {
+			/* Hide default macOS and iOS spin buttons */
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		.no-spin {
+			/* Hide default spin buttons for other browsers */
+			-moz-appearance: textfield;
+			appearance: textfield;
+			margin: 0;
+		}
 	</style>
 </head>
 <body>

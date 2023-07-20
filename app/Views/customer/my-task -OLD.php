@@ -182,9 +182,7 @@ echo view('cpanel-layout/navbar');
         <label>Picture</label>
         <table style="width:100%;">
             <tr>
-                <td style="width:60%;">
-                    <label class="completeLabel">Gateway with Serial No</label>
-                    <input type="file" class="form-control" name="pic1"></td>
+                <td style="width:60%;"><input type="file" class="form-control" name="pic1"></td>
                 <td style="width:40%;">
                     <div class="btn-group" style="float:right;width:100%;">
                         <button type="button" class="btn btn-success btn-sm addRow"><i class="fa fa-plus"></i></button>
@@ -328,18 +326,16 @@ echo view('cpanel-layout/footer');
     });
 ///////////////////////////////////
     $(document).on('click','.task-status',function(){
-        $('#pictureDiv,#equipDiv,#returnDiv,.completeLabel').hide();
+        $('#pictureDiv,#equipDiv,#returnDiv').hide();
         $('#equipDiv :input').removeAttr('required');
         $('#returnDiv select').removeAttr('required');
         var status = $(this).find(":input").val();
-        taskStatus = status;
         if(status == 'complete' || status == 'reject' || status == 'on site'){
             $('#pictureDiv').show();
         }if(status == 'complete'){
          $('#equipDiv').show(); 
          $('#gateway').prop('required',true);
          $('#sim').prop('required',true);
-         $('.completeLabel').show();
      }if(status == 'reject'){
         $('#returnDiv').show(); 
         $('#returnDiv select').prop('required',true);  
@@ -386,23 +382,15 @@ echo view('cpanel-layout/footer');
 <script type="text/javascript">
     $(document).ready(function(){
         var num = 2;
-        const picLabel = ["","Meter with Serial No","Overall Installation","",""];
 
         $(".addRow").click(function(){
             if(num <= 5){
-                var i = num-1;
-                var markup = '<tr><td colspan="2"><label class="completeLabel">'+picLabel[i]+'</label><input type="file" class="form-control" name="pic'+num+'"></td></tr>';
+
+                var markup = '<tr><td colspan="2"><input type="file" class="form-control" name="pic'+num+'"></td></tr>';
 
                 $("#pictureDiv table").append(markup);
                 num++;
             }
-
-            if(taskStatus == 'complete'){
-                    $('.completeLabel').show();
-            }else{
-                    $('.completeLabel').hide();
-            }
-
         });
 // Find and remove selected table rows
         $("body").on("click",".deleteRow",function(){

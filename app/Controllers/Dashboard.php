@@ -77,15 +77,16 @@ class Dashboard extends BaseController
 					}
 				////////////////////////////////////////////////////////
 					$data['taskPieGraph'] = $this->task_pie_graph_data();
+					$data['taskTotal'] = $this->db->table('bo_customer_info')->whereIn('status',['schedule','travelling','on site','complete','commission'])->where('assign_on >=',$today.' 00:00:00')->where('assign_on <=',$today.' 23:59:59')->countAllResults();	//// total gateway count
 				}
 				////////////////////////////////////////////////////////
 				if(access_crud('Gateway','view')){ 
 					$data['gatewayReport'] = array();
-					$statusArray = array('free','assigned','used');
+					$statusArray = array('free','assigned','used','return','faulty');
 			//
 					foreach($statusArray as $key => $taskstatus){
 						$gatewayCount = $modelGeneral->get_gateway(null,null,null,$taskstatus)->countAllResults();
-						$newtaskstatus = ($taskstatus == 'free') ? 'In Stock' : (($taskstatus == 'assigned') ? 'Assigned' : 'Utilized' );
+						$newtaskstatus = ($taskstatus == 'free') ? 'In Stock' : (($taskstatus == 'assigned') ? 'Assigned' : (($taskstatus == 'used') ? 'Utilized' : $taskstatus ));
 						$data['gatewayReport'][$key]['status'] = $newtaskstatus;
 						$data['gatewayReport'][$key]['count'] = $gatewayCount;
 					}
@@ -102,6 +103,7 @@ class Dashboard extends BaseController
 					$data['profit'] = $this->profit_graph_data();	
 				}	
 				///////////////////////////////////////////////////////
+				$data['gatewayTotal'] = $this->db->table('gateway')->countAllResults();	//// total gateway count
 				return view('cpanel/dashboard',$data);
 			}
 		}else{
@@ -114,6 +116,12 @@ class Dashboard extends BaseController
 	{
 		$error = null;
 		$status = $this->input->getPost('status');
+		$latitude = $this->input->getPost('latitude');
+		$longitude = $this->input->getPost('longitude');
+		if(empty($latitude) || empty($longitude)){
+			$latitude = null;
+			$longitude = null;
+		}
 		$userID = session()->get('id');
 		//
 		if(!isLoggedIn()){
@@ -122,9 +130,14 @@ class Dashboard extends BaseController
 			$error = 'Access denied';
 		}
 		//
+		$checkTask =  $this->db->table('bo_customer_info')->where('assign_to',$userID)->whereIn('status',['schedule','travelling','on site'])->countAllResults();
+		if($checkTask > 0 && $status == 'end'){
+			$error = 'You can not end your day.<br>Please check your task first';
+		}
+		//
 		if(empty($error)){
 			//
-			$data = array('user_id' => $userID , 'status' => $status, 'date' => date('Y-m-d'), 'time' => date('H:i:s'));
+			$data = array('user_id' => $userID , 'status' => $status, 'date' => date('Y-m-d'), 'time' => date('H:i:s'), 'longitude' => $longitude, 'latitude' => $latitude);
 			$this->db->table('day_routine')->insert($data);
 			//
 			$successMsg = ($status == 'start') ? 'Your day has started' : (($status == 'break') ? 'Lets take a break' : 'Your day has ended');

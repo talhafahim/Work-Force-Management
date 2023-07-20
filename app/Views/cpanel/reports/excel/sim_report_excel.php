@@ -1,12 +1,13 @@
 <?php
-///////////////////////////////////////////////////////////////////////////////////////
-$delimiter = ",";
-$f = fopen('php://memory', 'w');
+#include the export-xls.class.php file
+require_once(APPPATH.'/Libraries/ExportXLS.php');
+$filename = 'gateway.xls'; // The file name you want any resulting file to be called.
+
+#create an instance of the class
+$xls = new ExportXLS($filename);
 //
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-$lineData = array('ICC ID','Assigned To','Assigned On','Status','UN#');
-fputcsv($f, $lineData, $delimiter);
+$header = array('ICC ID','Assigned To','Assigned On','Status','UN#');
+$xls->addHeader($header);
 //
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
@@ -17,20 +18,17 @@ foreach($data->get()->getResult() as $key => $value){
 	$un = null;
 	if($value->status == 'utilized'){
 		$task_id = $modelGeneral->get_task_sim(null,null,$value->icc_id)->get()->getRow();
-		$un = $modelCustomer->get_customer_info($task_id->task_id)->get()->getRow()->un_number;
+		$task_info = $modelCustomer->get_customer_info($task_id->task_id)->get()->getRow();
+		if($task_info){
+			$un = $task_info->un_number;
+		}
 	}
 	//
-	$lineData = array($value->icc_id,$assignTo,$value->assign_on,$value->status,$un);
-	fputcsv($f, $lineData, $delimiter);
-}				
-/////////////////////////////////////////////////////
-$filename='sims_report.csv';
-fseek($f, 0);
-//set headers to download file rather than displayed
-header('Content-Type: text/csv');
-header('Content-Disposition: attachment; filename="' . $filename . '";');
-//output all remaining data on a file pointer
-fpassthru($f);
-// }
-exit;
+	$row = array();
+	$row = array($value->icc_id,$assignTo,$value->assign_on,$value->status,$un);
+	$xls->addRow($row);
+}
+//
+$xls->sendFile($filename);
+
 ?>

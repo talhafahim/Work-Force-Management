@@ -108,7 +108,7 @@ echo view('cpanel-layout/navbar');
                 <input type="hidden" name="dataid" id="dataid">
                 <div class="modal-body">
                     <label for="exampleFormControlInput1">Assign To</label>
-                    <select class="form-control" required="" name="technician_id">
+                    <select class="form-control js-select2" required="" name="technician_id">
 
                     </select>
                 </div>
@@ -128,7 +128,7 @@ echo view('cpanel-layout/navbar');
             <form id="bulkassignForm" class="form-horizontal form-label-left input_mask">
                 <div class="modal-body">
                     <label for="exampleFormControlInput1">Assign To</label>
-                    <select class="form-control" required="" name="technician_id" id="technician_id">
+                    <select class="form-control js-select2" required="" name="technician_id" id="technician_id">
                         <option value="">select whom to assign</option>
                         <?php foreach ($users->get()->getResult() as $value) { ?>
                             <option value="<?= $value->id;?>" ><?= $value->firstname.' '.$value->lastname;?></option>

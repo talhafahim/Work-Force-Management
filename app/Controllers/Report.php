@@ -32,6 +32,8 @@ class Report extends BaseController
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/gateway_report_pdf',$data);
+			}else if($format == 'csv'){
+				return view('cpanel/reports/csv/gateway_report_excel',$data);
 			}else{
 				return view('cpanel/reports/excel/gateway_report_excel',$data);
 			}
@@ -56,8 +58,10 @@ class Report extends BaseController
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/equipment_report_pdf',$data);
-			}else{
+			}else if($format == 'excel'){
 				return view('cpanel/reports/excel/equipment_report_excel',$data);
+			}else{
+				return view('cpanel/reports/csv/equipment_report_excel',$data);
 			}
 		}else {
 			return redirect()->to(base_url('login'));
@@ -79,8 +83,10 @@ class Report extends BaseController
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/device_tools_report_pdf',$data);
-			}else{
+			}else if($format == 'excel'){
 				return view('cpanel/reports/excel/device_tools_report_excel',$data);
+			}else{
+				return view('cpanel/reports/csv/device_tools_report_excel',$data);
 			}
 		}else {
 			return redirect()->to(base_url('login'));
@@ -105,8 +111,10 @@ class Report extends BaseController
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/task_report_pdf',$data);
-			}else{
+			}else if($format == 'excel'){
 				return view('cpanel/reports/excel/task_report_excel',$data);
+			}else{
+				return view('cpanel/reports/csv/task_report_excel',$data);
 			}
 		}else {
 			return redirect()->to(base_url('login'));
@@ -129,8 +137,10 @@ class Report extends BaseController
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/users_report_pdf',$data);
-			}else{
+			}else if($format == 'excel'){
 				return view('cpanel/reports/excel/users_report_excel',$data);
+			}else{
+				return view('cpanel/reports/csv/users_report_excel',$data);
 			}
 		}else {
 			return redirect()->to(base_url('login'));
@@ -154,8 +164,10 @@ class Report extends BaseController
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/sim_report_pdf',$data);
-			}else{
+			}else if($format == 'excel'){
 				return view('cpanel/reports/excel/sim_report_excel',$data);
+			}else{
+				return view('cpanel/reports/csv/sim_report_excel',$data);
 			}
 		}else {
 			return redirect()->to(base_url('login'));
@@ -212,16 +224,65 @@ class Report extends BaseController
 			//
 			if($format == 'pdf'){
 				return view('cpanel/reports/pdf/profit_loss_report_pdf',$data);
-			}else{
+			}else if($format == 'excel'){
 				return view('cpanel/reports/excel/profit_loss_report_excel',$data);
+			}else{
+				return view('cpanel/reports/csv/profit_loss_report_excel',$data);
 			}
 		}else {
 			return redirect()->to(base_url('login'));
 		}
-	
+
 	}
 
-	
+	//-----------------------------------------------------------------
+	public function users_day_routine_report(){
+		$from = $this->input->getPost('from');
+		$to = $this->input->getPost('to');
+		$user_id = $this->input->getPost('user_id');
+		$status = $this->input->getPost('status');
+		$format = $this->input->getPost('format');
+		//
+		if(isLoggedIn() && access_crud('Day Routine Report','view')){
+			//
+			$builder = $this->db->table('day_routine');
+			if(!empty($user_id)){
+				$builder->where('user_id',$user_id);
+			}if(!empty($status)){
+				$builder->where('status',$status);
+			}if(!empty($from)){
+				$builder->where('date >=',$from);
+			}if(!empty($to)){
+				$builder->where('date <=',$to);
+			}
+			$data['data'] = $builder;
+			$data['modelUsers'] = new Model_Users();
+			//
+			if($format == 'pdf'){
+				return view('cpanel/reports/pdf/day_routine_report_pdf',$data);
+			}else if($format == 'excel'){
+				return view('cpanel/reports/excel/day_routine_report_excel',$data);
+			}else{
+				return view('cpanel/reports/csv/day_routine_report_excel',$data);
+			}
+		}else {
+			return redirect()->to(base_url('login'));
+		}
+	}
+//
 
+	
+	public function map(){
+		if(isLoggedIn()){
+			$uri = new \CodeIgniter\HTTP\URI(current_url());
+			$latitude = $uri->getSegment(3);
+			$longitude = $uri->getSegment(4);
+			echo $cord = $latitude.','.$longitude;
+			echo '<iframe style="width: 100%;height: 500px;" src = "https://maps.google.com/maps?q='.$cord.'&hl=es;z=14&amp;output=embed"></iframe>';
+		}else {
+			return redirect()->to(base_url('login'));
+		}
+
+	}
 
 }

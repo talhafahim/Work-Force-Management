@@ -1,18 +1,16 @@
 <?php
-#include the export-xls.class.php file
-require_once(APPPATH.'/Libraries/ExportXLS.php');
-$filename = 'task_report.xls'; // The file name you want any resulting file to be called.
-
-#create an instance of the class
-$xls = new ExportXLS($filename);
+///////////////////////////////////////////////////////////////////////////////////////
+$delimiter = ",";
+$f = fopen('php://memory', 'w');
 //
-$header = array('Utility#','Meter Serial','Region','Scenario','GW Serial','SIM ICC ID','By','Remarks','Assign On','Return Reason');
-//
-$xls->addHeader($header);
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+$lineData = array('Utility#','Meter Serial','Region','Scenario','GW Serial','SIM ICC ID','By','Remarks','Assign On','Return Reason');
+fputcsv($f, $lineData, $delimiter);
 //
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
-	$reason = '';
+	$reason = null;
 	$assignTo = $gwSerial = $simiccid = null;
 	if(!empty($value->assign_to)){
 		$assignTo = $modelUsers->get_users($value->assign_to)->get()->getRow()->username;
@@ -43,17 +41,18 @@ foreach($data->get()->getResult() as $key => $value){
 			$reason = $modelGeneral->get_return_reason($reason_id)->get()->getRow()->reason;
 		}
 	}
-	//////////////////////////////////////////////////////////////////////////////////////////////// 
-	//////////////////////////////////////////////////////////////////////////////////////////////// 
-	//////////////////////////////////////////////////////////////////////////////////////////////// 
-	$row = array();
-	$row = array($value->un_number,$value->meter_number,'region',$value->scenario,$gwSerial,$simiccid,$assignTo,$status,$value->assign_on,$reason);
-	
-	//
-	$xls->addRow($row);
-}
-//
-$xls->sendFile($filename);
-//
-
+	// 
+	$lineData = array($value->un_number,$value->meter_number,'region',$value->scenario,$gwSerial,$simiccid,$assignTo,$status,$value->assign_on,$reason);
+	fputcsv($f, $lineData, $delimiter);
+}				
+/////////////////////////////////////////////////////
+$filename='task_report.csv';
+fseek($f, 0);
+//set headers to download file rather than displayed
+header('Content-Type: text/csv');
+header('Content-Disposition: attachment; filename="' . $filename . '";');
+//output all remaining data on a file pointer
+fpassthru($f);
+// }
+exit;
 ?>

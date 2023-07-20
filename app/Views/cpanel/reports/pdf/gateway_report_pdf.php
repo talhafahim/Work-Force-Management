@@ -69,7 +69,10 @@ foreach($data->get()->getResult() as $key => $value){
 	$un = null;
 	if($status == 'Utilized'){
 		$task_id = $modelGeneral->get_task_gateway(null,null,$value->serial)->get()->getRow();
-		$un = $modelCustomer->get_customer_info($task_id->task_id)->get()->getRow()->un_number;
+		$task_info = $modelCustomer->get_customer_info($task_id->task_id)->get()->getRow();
+		if($task_info){
+			$un = $task_info->un_number;
+		}
 	}
 $html .= '<tr>
 			<td width="5%">'.$key.'</td>

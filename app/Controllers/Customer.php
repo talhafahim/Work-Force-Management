@@ -55,14 +55,18 @@ class Customer extends BaseController
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public function show_list(){
 		if(isLoggedIn()){
-			$customerModel = new Model_Customer();
-			$builder = $customerModel->get_customer_info()->orderBy('id','DESC');
+			//$customerModel = new Model_Customer();
+			//$builder = $customerModel->get_customer_info()->orderBy('id','DESC');
+			$builder = $this->db->table('bo_customer_info as task')
+			->select('un_number,meter_number,scenario,meter_type,protocol,meter_model,prem_type,task.status,task.id,assign_to,user.username')
+			->join('bo_users as user','task.assign_to = user.id','left')
+			->orderBy('id','DESC');
 			//
 			return DataTable::of($builder)
 			//
 			->filter(function ($builder, $request) {
-				if ($request->status)
-					$builder->where('status', $request->status);
+				if ($request->status && $request->status != 'all')
+					$builder->where('task.status', $request->status);
 			})
 			//
 			->add('taskStatus', function($row){
@@ -89,7 +93,7 @@ class Customer extends BaseController
 				}
 				$actionHtml .= '<a href="'.base_url().'/task/view-detail/'.$row->id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a>';
 
-				if($row->status == 'unallocated'){
+				if($row->status == 'unallocated' || $row->status == 'schedule' || $row->status == 'travelling' || $row->status == 'on site'){
 					$actionHtml .= '<a type="button" class="btn btn-danger btn-sm delete" data-serial="'.$row->id.'" title="Delete"><i class="fa fa-trash"></i></a>';
 				}
 				
@@ -384,6 +388,7 @@ class Customer extends BaseController
 	///////////////////////////////////////////////////////
 	public function upload_csv_action(){
 		$error = null;
+		$meterNoArray = array();
 		$csv = $_FILES['file']['tmp_name'];
 		if(!isLoggedIn()){
 			$error = 'Error : Session expired';
@@ -399,6 +404,35 @@ class Customer extends BaseController
 				$error = 'Error : Invalid file format';
 			}
 		}
+		//
+		if(empty($error)){
+			$handle = fopen($csv,"r");
+			$num = 0;
+			while (($row = fgetcsv($handle, 10000, ",")) != FALSE) 
+			{
+				if($num > 0){
+					//
+					array_push($meterNoArray, trim($row[1]));
+					//
+					$meterNoExist = $this->db->table('bo_customer_info')->where('meter_number',$row[1])->countAllResults();
+					if($meterNoExist > 0){
+						$line = $num+1;
+						$error = 'Error : Meter Number already exist at line#'.$line;
+						break;
+					}
+					//
+					if(empty($error)){
+						if (count(array_diff_assoc($meterNoArray, array_unique($meterNoArray))) > 0) {
+							$error = 'Error : Duplicate Meter Number in sheet';	
+						}
+					}
+					//
+				}
+				$num++;
+			}
+			//
+		}
+		//
 		//////////
 		if(empty($error)){
 			$remove = array("'","`","(",")",",",'"');
@@ -446,7 +480,7 @@ class Customer extends BaseController
 		if(isLoggedIn()){
 			// $assignid = $this->input->getPost('id');
 			$userModel = new Model_Users();
-			$query=$userModel->get_users(null,null,null,['engineer']);
+			$query=$userModel->get_users(null,null,null,['engineer'])->where('block','no');
 			?>
 			<!-- <option <?= (empty($assignid)) ? 'selected' : '';?> >select technician</option> -->
 			<option value="">select technician</option>
@@ -623,14 +657,15 @@ class Customer extends BaseController
 		}
 		//
 		$modelCustomer = new Model_Customer();
-		$checkStatus = $modelCustomer->get_customer_info($task_id,null,null,'unallocated')->countAllResults();
+		// $checkStatus = $modelCustomer->get_customer_info($task_id,null,null,'unallocated')->countAllResults();
+		$checkStatus = $this->db->table('bo_customer_info')->where('id',$task_id)->whereIn('status',['unallocated','schedule','travelling','on site'])->countAllResults();
 		if($checkStatus <= 0){
 			$error = 'Error : This can not be deleted';		
 		}
 		//
 		if(empty($error)){
 			//
-			$this->db->table('bo_customer_info')->where('id',$task_id)->where('status','unallocated')->delete();
+			$this->db->table('bo_customer_info')->where('id',$task_id)->whereIn('status',['unallocated','schedule','travelling','on site'])->delete();
 			//
 			create_action_log('id#'.$task_id);
 			return $this->response->setStatusCode(200)->setBody('Delete Successfully');

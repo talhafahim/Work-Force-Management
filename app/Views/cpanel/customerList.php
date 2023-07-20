@@ -20,6 +20,7 @@ echo view('cpanel-layout/navbar');
 
 
                             <select class="btn btn-secondary btn-icon" id="status" name="status">
+                                <option value="all">All</option>
                                 <option value="unallocated">Unallocated</option>
                                 <option value="schedule">Schedule</option>
                                 <option value="travelling">Travelling</option>
@@ -147,7 +148,7 @@ echo view('cpanel-layout/footer');
                 {data: 'meter_model'},
                 {data: 'prem_type'},
                 {data: 'taskStatus'},
-                {data: 'assign_to'},
+                {data: 'username'},
                 {data: 'action', orderable: false, searchable: false},
                 ]  
         });

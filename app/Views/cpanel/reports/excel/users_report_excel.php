@@ -1,27 +1,22 @@
 <?php
 ///////////////////////////////////////////////////////////////////////////////////////
-$delimiter = ",";
-$f = fopen('php://memory', 'w');
+#include the export-xls.class.php file
+require_once(APPPATH.'/Libraries/ExportXLS.php');
+$filename = 'user_detail_report.xls'; // The file name you want any resulting file to be called.
+
+#create an instance of the class
+$xls = new ExportXLS($filename);
 //
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-$lineData = array('Username','Firstname','Lastname','Email','Mobile#','Password','Status','Staff Cost','Created On');
-fputcsv($f, $lineData, $delimiter);
+$header = array('Username','Firstname','Lastname','Email','Mobile#','Password','Status','Staff Cost','Created On');
+$xls->addHeader($header);
 //
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
 // 
-	$lineData = array($value->username,$value->firstname,$value->lastname,$value->email,$value->mobilephone,$value->pass_string,$value->status,$value->staff_cost,$value->created_at);
-	fputcsv($f, $lineData, $delimiter);
-}				
-/////////////////////////////////////////////////////
-$filename='users_detail_report.csv';
-fseek($f, 0);
-//set headers to download file rather than displayed
-header('Content-Type: text/csv');
-header('Content-Disposition: attachment; filename="' . $filename . '";');
-//output all remaining data on a file pointer
-fpassthru($f);
-// }
-exit;
+	$row = array();
+	$row = array($value->username,$value->firstname,$value->lastname,$value->email,$value->mobilephone,$value->pass_string,$value->status,$value->staff_cost,$value->created_at);
+	$xls->addRow($row);
+}	
+//
+$xls->sendFile($filename);
 ?>

@@ -96,7 +96,7 @@ class General extends BaseController
 				return view('customer/gateway');
 			}else{
 				$modelUsers = new Model_Users();
-				$data['users'] = $modelUsers->get_users(null,null,null,['engineer']);
+				$data['users'] = $modelUsers->get_users(null,null,null,['engineer'])->where('block','no');
 				return view('cpanel/gateway',$data);
 			}
 		}else{
@@ -427,7 +427,7 @@ class General extends BaseController
 		if(access_crud('Devices & Tools','view')){
 			$data['modelGeneral'] = new Model_General();
 			$modelUsers = new Model_Users();
-			$data['users'] = $modelUsers->get_users(null,null,null,['engineer','driver']);
+			$data['users'] = $modelUsers->get_users(null,null,null,['engineer','driver'])->where('block','no');
 			$data['devices_n_tools'] = $data['modelGeneral']->get_devices_n_tools();
 			return view('cpanel/devices_n_tools',$data);
 		}else{
@@ -693,7 +693,7 @@ class General extends BaseController
 				return view('customer/sim');
 			}else{
 				$modelUsers = new Model_Users();
-				$data['users'] = $modelUsers->get_users(null,null,null,['engineer']);
+				$data['users'] = $modelUsers->get_users(null,null,null,['engineer'])->where('block','no');
 				return view('cpanel/sim',$data);
 			}
 		}else{
@@ -743,7 +743,7 @@ class General extends BaseController
 				}else if($row->status == 'utilized'){
 					$modelGeneral = new Model_General();
 					$taskDetail = $modelGeneral->get_task_sim(null,null,$row->icc_id)->get()->getRow();
-					return '<a href="'.base_url().'/task/view_detail/'.$taskDetail->task_id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a></div>';
+					return '<a href="'.base_url().'/task/view-detail/'.$taskDetail->task_id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a></div>';
 				}
 			})
 			//
@@ -775,7 +775,7 @@ class General extends BaseController
 				}else if($row->status == 'utilized'){
 					$modelGeneral = new Model_General();
 					$taskDetail = $modelGeneral->get_task_sim(null,null,$row->icc_id)->get()->getRow();
-					return '<a href="'.base_url().'/task/view_detail/'.$taskDetail->task_id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a></div>';
+					return '<a href="'.base_url().'/task/view-detail/'.$taskDetail->task_id.'" class="btn btn-info btn-sm" title="View Detail"><i class="fa fa-info-circle"></i></a></div>';
 				}
 			})
 			//
@@ -801,7 +801,7 @@ class General extends BaseController
 			$handle = fopen($_FILES['file']['tmp_name'],"r");
 			$ext = pathinfo($file_name, PATHINFO_EXTENSION);
 			//
-			if(count(fgetcsv($handle)) != "1"){
+			if(count(fgetcsv($handle)) != "4"){
 				$error = 'Error : Invalid file structure';
 			}if($ext != 'csv'){
 				$error = 'Error : Invalid file format';
@@ -849,6 +849,9 @@ class General extends BaseController
 				if($num > 0){
 					$data = array(
 						'icc_id' => str_replace($remove,'',$row[0]),
+						'ctn' => str_replace($remove,'',$row[1]),
+						'received_date' => str_replace($remove,'',$row[2]),
+						'dn' => str_replace($remove,'',$row[3]),
 					);
 					//
 					$this->db->table('sim')->insert($data);

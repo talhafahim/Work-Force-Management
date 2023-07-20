@@ -72,14 +72,14 @@ class Model_Task extends Model {
 	function get_total_team_cost($date,$user_id=null){
 		$builder = $this->db->table('bo_customer_info as task')
 		->join('task_team_member as team','task.id = team.task_id')
-		->join('bo_users as user','user.id = team.user_id')
+		// ->join('bo_users as user','user.id = team.user_id')
 		// ->where('task.status','commission')
 		// ->where('team.status','commission')
 		->whereIn('task.status',['commission','complete'])
 		->whereIn('team.status',['commission','complete'])
 		->where('team.created_on >=',$date.' 00:00:00')
 		->where('team.created_on <=',$date.' 23:59:59')
-		->select('sum(staff_cost) as total_sum');
+		->select('sum(team.staff_cost) as total_sum');
 		if(!empty($user_id)){
 			$builder = $builder->where('task.assign_to',$user_id);
 		}

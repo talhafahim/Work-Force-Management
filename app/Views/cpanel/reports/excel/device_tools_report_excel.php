@@ -1,12 +1,14 @@
 <?php
 ///////////////////////////////////////////////////////////////////////////////////////
-$delimiter = ",";
-$f = fopen('php://memory', 'w');
+#include the export-xls.class.php file
+require_once(APPPATH.'/Libraries/ExportXLS.php');
+$filename = 'device_tools_report.xls'; // The file name you want any resulting file to be called.
+
+#create an instance of the class
+$xls = new ExportXLS($filename);
 //
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-$lineData = array('Device','Serial','Model','Status','User');
-fputcsv($f, $lineData, $delimiter);
+$header = array('Device','Serial','Model','Status','User');
+$xls->addHeader($header);
 //
 foreach($data->get()->getResult() as $key => $value){
 	$username = null;
@@ -17,17 +19,11 @@ foreach($data->get()->getResult() as $key => $value){
 		$username = $userInfo->firstname.' '.$userInfo->lastname;
 	}
 // 
-	$lineData = array($deviceInfo->name,$value->serial,$value->model,$value->status,$username);
-	fputcsv($f, $lineData, $delimiter);
-}				
-/////////////////////////////////////////////////////
-$filename='device_tools_report.csv';
-fseek($f, 0);
-//set headers to download file rather than displayed
-header('Content-Type: text/csv');
-header('Content-Disposition: attachment; filename="' . $filename . '";');
-//output all remaining data on a file pointer
-fpassthru($f);
-// }
-exit;
+	$row = array();
+	$row = array($deviceInfo->name,$value->serial,$value->model,$value->status,$username);
+	$xls->addRow($row);
+}
+//
+$xls->sendFile($filename);
+
 ?>

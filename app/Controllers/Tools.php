@@ -11,7 +11,6 @@ class Tools extends BaseController
 		parent::__construct();
 		$this->db = \Config\Database::connect();
 		$this->input = \Config\Services::request();
-		date_default_timezone_set("Asia/Karachi");
 	}
 	//
 	public function notification()

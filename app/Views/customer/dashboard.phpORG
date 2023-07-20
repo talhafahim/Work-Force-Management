@@ -22,7 +22,7 @@ echo view('cpanel-layout/navbar');
                 <div class="row align-items-center">
                     <div class="col-sm-12">
                         <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width:100%">
-                                <input type="hidden" id="currentTimeBtnStatus">
+                          
                                 <button class="btn btn-success  timeBtn" data-status="start"><i class="fa fa-play"></i> DAY START</button>
 
                                 <button class="btn btn-primary  timeBtn" data-status="break"><i class="fa fa-pause"></i> BREAK</button>
@@ -231,59 +231,33 @@ chart2.render();
 </script>
 
 <script type="text/javascript">
-   
-$(document).on('click','.timeBtn',function(){
+    $(document).on('click','.timeBtn',function(){
         var status = $(this).attr('data-status');
-        $('#currentTimeBtnStatus').val(status);
-        //
-        if(confirm('Do you really want to '+status+' your day?')){  
-        //
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(update_Routine);
-            } else {
-                update_Routine(null);
-            }
-
-
-        }
-    });
-
-    
-
-    function update_Routine(position) {
+        if(confirm('Do you really want to '+status+' your day?')){
         $('#action_loader').modal('show');
-        var latitude = null;
-        var longitude = null;
-        var status = $('#currentTimeBtnStatus').val()
         //
-        if(position){
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-        }
-  //
-  //
         $.ajax({
             method: 'POST',
             url: '<?php echo base_url();?>/dashboard/update_day_status',
-            data:'status='+status+'&latitude='+latitude+'&longitude='+longitude,
+            data:'status='+status,
             // 
             success: function(data){
-                setTimeout(function(){ 
-                    $('#action_loader').modal('hide');
-                    toastr.success(data);
+               setTimeout(function(){ 
+                $('#action_loader').modal('hide');
+                toastr.success(data);
                 // $('button[data-status="'+status+'"]').hide();
-                    checkStatus();
-                }, 1000);
-            },
-            error: function(jqXHR, text, error){
-                setTimeout(function(){
-                    $('#action_loader').modal('hide');
-                    toastr.error(error);
-                }, 1000);
-            }
-        });
-    }
-
+                checkStatus();
+            }, 1000);
+           },
+           error: function(jqXHR, text, error){
+            setTimeout(function(){
+                $('#action_loader').modal('hide');
+                toastr.error(error);
+            }, 1000);
+        }
+    })
+}
+    });
 
     ////////////////////////////////
     $(document).ready(function(){

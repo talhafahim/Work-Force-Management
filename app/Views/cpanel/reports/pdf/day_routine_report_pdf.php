@@ -45,37 +45,34 @@ th {
 $html .= '<table>
 <thead>
 <tr class="grey">
-<th width="5%"><b>#</b></th>
-<th width="20%"><b>ICC ID</b></th>
-<th width="20%"><b>Assigned To</b></th>
-<th width="20%"><b>Assigned On</b></th>
-<th width="15%"><b>Status</b></th>
-<th width="20%"><b>UN#</b></th>
+<th width="10%"><b>#</b></th>
+<th width="20%"><b>Name</b></th>
+<th width="10%"><b>Status</b></th>
+<th width="20%"><b>Date</b></th>
+<th width="20%"><b>Time</b></th>
+<th width="20%"><b>Location Coordinates</b></th>
 </tr>
 </thead><tbody>';
 
 foreach($data->get()->getResult() as $key => $value){
 	$key = $key+1;
-	$assignTo = null;
-	if($value->status == 'assigned' || $value->status == 'utilized'){
-		$assignTo = $modelUsers->get_users($value->user_id)->get()->getRow()->username;
+	if(!empty($value->user_id)){
+		$user = $modelUsers->get_users($value->user_id)->get()->getRow()->username;
 	}
-	$un = null;
-	if($value->status == 'utilized'){
-		$task_id = $modelGeneral->get_task_sim(null,null,$value->icc_id)->get()->getRow();
-		$task_info = $modelCustomer->get_customer_info($task_id->task_id)->get()->getRow();
-		if($task_info){
-			$un = $task_info->un_number;
-		}
-	}
+	// 
 	$html .= '<tr>
-	<td width="5%">'.$key.'</td>
-	<td width="20%">'.$value->icc_id.'</td>
-	<td width="20%">'.$assignTo.'</td>
-	<td width="20%">'.$value->assign_on.'</td>
-	<td width="15%">'.$value->status.'</td>
-	<td width="20%">'.$un.'</td>
-	</tr>';
+	<td width="10%">'.$key.'</td>
+	<td width="20%">'.$user.'</td>
+	<td width="10%">'.$value->status.'</td>
+	<td width="20%">'.$value->date.'</td>
+	<td width="20%">'.$value->time.'</td>';
+	if(empty($value->latitude) || empty($value->longitude)){
+		$html .= '<td width="20%"></td>';
+	}else{
+		$html .= '<td width="20%"><a href="map/'.$value->latitude.'/'.$value->longitude.'" target="_blank">'.number_format((float)$value->latitude, 4, '.', '').' '.number_format((float)$value->longitude, 4, '.', '').'</a></td>';
+	}
+
+	$html .= '</tr>';
 }
 $html .= '<tbody></table>';
 //
@@ -119,7 +116,7 @@ $pdf->SetFont('', 'B', 10);
 $pdf->MultiCell(0, 5, ucwords(session()->get('appTitle')), 0, 'C', 0, 1, '', '', true);
 //
 $pdf->SetFont('', 'B', 12);
-$pdf->MultiCell(0, 5, 'SIM REPORT', 0, 'C', 0, 1, '', '', true);
+$pdf->MultiCell(0, 5, 'USERS DAY ROUTINE REPORT', 0, 'C', 0, 1, '', '', true);
 //
 $pdf->SetFont('', '', 8); 
 // 
@@ -127,7 +124,7 @@ $pdf->MultiCell(90, 5, "", 0, 'L', 0, 1, '', '', true);
 //
 $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 0, 0, true, '', true);
 //
-$pdf->Output("sim-report.pdf");
+$pdf->Output("user-day-routine-report.pdf");
 
 exit();
 ?>

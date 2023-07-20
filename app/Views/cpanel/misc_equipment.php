@@ -189,7 +189,7 @@ echo view('cpanel-layout/navbar');
                         <input type="text" class="form-control" id="otherEquipment" name="otherEquipment" readonly>
                     </div>
                     <div class="col-md-4">
-                        <input type="number" step="0.1" min="0" class="form-control" name="equipQty" placeholder="quantity" value="0" required>
+                        <input type="number"  min="0" class="form-control no-spin" name="equipQty" placeholder="quantity" value="0" required>
                     </div>
                 </div>
 
@@ -358,6 +358,8 @@ echo view('cpanel-layout/footer');
 
     $(document).ready(function() {
         $("#updUserForm").submit(function() {
+            if(confirm('Do you really want to continue?')){
+            $('#action_loader').modal('show');
           $.ajax({
             type: "POST",
             url: '<?php echo base_url();?>/general/equipment_assign_action',
@@ -369,9 +371,15 @@ echo view('cpanel-layout/footer');
             },
             error: function(jqXHR, text, error){
                 toastr.error(error);
+                setTimeout(function(){ 
+                        $('#action_loader').modal('hide');
+                    }, 1000);
             }
         });
-          return false;
+          
+      }
+      return false;
+
       });
     });
 </script>

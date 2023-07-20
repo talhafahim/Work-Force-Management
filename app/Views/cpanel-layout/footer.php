@@ -7,6 +7,7 @@ echo view('cpanel/popup/popup_task_report');
 echo view('cpanel/popup/popup_users_report');
 echo view('cpanel/popup/popup_sim_report');
 echo view('cpanel/popup/popup_profie_loss_report');
+echo view('cpanel/popup/popup_day_routine_report');
 ?>
 <style>
   .call-wrapper{
